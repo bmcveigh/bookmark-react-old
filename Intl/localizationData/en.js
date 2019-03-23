@@ -1,8 +1,8 @@
 export default {
   locale: 'en',
   messages: {
-    siteTitle: 'MERN Starter Blog',
-    addPost: 'Add Post',
+    siteTitle: 'Bookmark Guru',
+    addPost: 'Add Category',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
