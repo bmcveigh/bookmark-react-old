@@ -1,0 +1,30 @@
+[
+  {
+    "username": "jdoe",
+    "pass": "pass",
+    "email": "example@example.com",
+    "created": 0,
+    "lastLogin": 0,
+    "isAdmin": 0,
+    "status": 1,
+    "membershipType": "free_trial",
+    "paymentMethodType": "paypal",
+    "profilePictureUrl": "s3_path",
+    "bookmarkCategories": [
+      {
+        "name": "Sports",
+        "description": "Contains links about sports.",
+        "bookmarks": [
+          {
+            "href": "http://www.espn.com",
+            "label": "ESPN"
+          },
+          {
+            "href": "http://www.nfl.com",
+            "label": "NFL"
+          }
+        ]
+      }
+    ]
+  }
+]
