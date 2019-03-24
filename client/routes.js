@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
+import RegistrationPage from './modules/Login/pages/RegistrationPage/RegistrationPage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -27,13 +28,13 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          const isUserLoggedIn = localStorage.getItem('token') || false;
+          const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
 
           if (isUserLoggedIn) {
             cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
           }
           else {
-            cb(null, require('./modules/Login/LoginPage/LoginPage').default);
+            cb(null, require('./modules/Login/pages/LoginPage/LoginPage').default);
           }
         });
       }}
@@ -44,6 +45,12 @@ export default (
         require.ensure([], require => {
           cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
         });
+      }}
+    />
+    <Route
+      path="/user/register"
+      component={RegistrationPage}
+    />
       }}
     />
   </Route>

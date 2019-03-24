@@ -9,6 +9,8 @@ export default {
     deletePost: 'Supprimer le message',
     createNewPost: 'Créer un nouveau message',
     authorName: 'Nom de l\'auteur',
+    username: 'Username',
+    pass: 'Password',
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',
     submit: 'Soumettre',
