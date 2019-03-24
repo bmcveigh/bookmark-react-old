@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import styles from '../LoginPage/LoginPage.css';
+import { connect } from 'react-redux';
+import { addUserRegistration } from '../../LoginActions';
 
 export class RegistrationPage extends Component {
 
   handleFormSubmit = () => {
-    const usernameRef = this.refs.username;
-    const emailRef = this.refs.email;
-    const passRef = this.refs.pass;
+    const usernameRef = this.refs.username.value;
+    const emailRef = this.refs.email.value;
+    const passRef = this.refs.pass.value;
+
+    const data = {
+      username: usernameRef,
+      email: emailRef,
+      pass: passRef,
+    };
 
     if (usernameRef && emailRef && passRef) {
       // todo: register the user.
+      addUserRegistration(data);
     }
   };
 
@@ -31,4 +40,12 @@ RegistrationPage.propTypes = {
   intl: intlShape.isRequired,
 };
 
-export default injectIntl(RegistrationPage);
+// Retrieve data from store as props
+function mapStateToProps(state, props) {
+  return {
+    user: [],
+  };
+}
+
+export default connect(mapStateToProps)(injectIntl(RegistrationPage));
+

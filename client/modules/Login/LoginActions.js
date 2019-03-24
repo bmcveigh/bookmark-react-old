@@ -1,13 +1,14 @@
 import callApi from '../../util/apiCaller';
-import { addPost } from '../Post/PostActions';
+
+// Export Constants
+export const REGISTER_USER = 'REGISTER_USER';
 
 export function addUserRegistration(user) {
-  return (dispatch) => {
-    return callApi('user-registration', 'post', {
-      post: {
-        name: user.name,
-        email: user.email,
-      },
-    }).then(res => dispatch(addPost(res.post)));
-  };
+  return callApi('user-registration', 'post', {
+    post: {
+      username: user.username,
+      email: user.email,
+      pass: user.pass,
+    },
+  }).then(res => res.post);
 }
