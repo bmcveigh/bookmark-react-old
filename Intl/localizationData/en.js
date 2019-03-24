@@ -9,6 +9,8 @@ export default {
     deletePost: 'Delete Post',
     createNewPost: 'Create new category',
     authorName: 'Author\'s Name',
+    username: 'Username',
+    pass: 'Password',
     postTitle: 'Post Title',
     postContent: 'Post Content',
     submit: 'Submit',

@@ -27,7 +27,14 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
+          const isUserLoggedIn = localStorage.getItem('token') || false;
+
+          if (isUserLoggedIn) {
+            cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
+          }
+          else {
+            cb(null, require('./modules/Login/LoginPage/LoginPage').default);
+          }
         });
       }}
     />
