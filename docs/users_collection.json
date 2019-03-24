@@ -13,6 +13,7 @@
     "bookmarkSpaces" : [
       {
         "name": "Main",
+        "description": "This is the main space.",
         "bookmarkCategories": [
           {
             "name": "Sports",
