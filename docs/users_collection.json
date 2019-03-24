@@ -10,18 +10,23 @@
     "membershipType": "free_trial",
     "paymentMethodType": "paypal",
     "profilePictureUrl": "s3_path",
-    "bookmarkCategories": [
+    "bookmarkSpaces" : [
       {
-        "name": "Sports",
-        "description": "Contains links about sports.",
-        "bookmarks": [
+        "name": "Main",
+        "bookmarkCategories": [
           {
-            "href": "http://www.espn.com",
-            "label": "ESPN"
-          },
-          {
-            "href": "http://www.nfl.com",
-            "label": "NFL"
+            "name": "Sports",
+            "description": "Contains links about sports.",
+            "bookmarks": [
+              {
+                "href": "http://www.espn.com",
+                "label": "ESPN"
+              },
+              {
+                "href": "http://www.nfl.com",
+                "label": "NFL"
+              }
+            ]
           }
         ]
       }
