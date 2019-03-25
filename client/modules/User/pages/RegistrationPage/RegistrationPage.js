@@ -28,7 +28,7 @@ export class RegistrationPage extends Component {
       <div>
         <input ref="username" className={styles['form-field']} placeholder={this.props.intl.messages.username} />
         <input placeholder={"Email"} className={styles['form-field']} ref="email" />
-        <input type="password" placeholder={this.props.intl.messages.username} ref="pass" className={styles['form-field']} />
+        <input type="password" placeholder={this.props.intl.messages.pass} ref="pass" className={styles['form-field']} />
         <button className={styles['post-submit-button']} onClick={this.handleFormSubmit}>Submit</button>
       </div>
     );
