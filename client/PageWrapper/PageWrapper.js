@@ -11,9 +11,6 @@ import { Router, browserHistory } from 'react-router';
 import routes from '../routes';
 import { fetchUserFromSession } from '../modules/User/UserActions';
 
-// Base stylesheet
-require('../main.css');
-
 class PageWrapper extends React.Component {
 
   constructor(props) {
