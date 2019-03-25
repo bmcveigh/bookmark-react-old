@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 
 // Import Reducers
 import app from './modules/App/AppReducer';
-import posts from './modules/Post/PostReducer';
+import posts from './modules/Bookmark/BookmarkReducer';
 import intl from './modules/Intl/IntlReducer';
 import user from './modules/Login/LoginReducer';
 

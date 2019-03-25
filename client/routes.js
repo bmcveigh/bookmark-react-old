@@ -17,8 +17,8 @@ if (typeof require.ensure !== 'function') {
  */
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
-  require('./modules/Post/pages/PostListPage/PostListPage');
-  require('./modules/Post/pages/PostDetailPage/PostDetailPage');
+  require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage');
+  require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage');
 }
 
 // react-router setup with code-splitting
@@ -31,7 +31,7 @@ export default (
           const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
 
           if (isUserLoggedIn) {
-            cb(null, require('./modules/Post/pages/PostListPage/PostListPage').default);
+            cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
           }
           else {
             cb(null, require('./modules/Login/pages/LoginPage/LoginPage').default);
@@ -43,7 +43,7 @@ export default (
       path="/posts/:slug-:cuid"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Post/pages/PostDetailPage/PostDetailPage').default);
+          cb(null, require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage').default);
         });
       }}
     />
