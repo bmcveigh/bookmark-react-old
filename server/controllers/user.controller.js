@@ -18,6 +18,9 @@ export function addUser(req, res) {
   newEmail.username = sanitizeHtml(newEmail.username);
   newEmail.pass = sanitizeHtml(newEmail.pass);
   newEmail.email = sanitizeHtml(newEmail.email);
+  newEmail.created = sanitizeHtml(newEmail.created);
+  newEmail.lastLogin = sanitizeHtml(newEmail.lastLogin);
+  newEmail.isAdmin = sanitizeHtml(newEmail.lastLogin);
 
   newEmail.save((err, saved) => {
     if (err) {

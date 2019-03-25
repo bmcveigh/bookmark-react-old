@@ -9,7 +9,6 @@
     "status": 1,
     "membershipType": "free_trial",
     "paymentMethodType": "paypal",
-    "profilePictureUrl": "s3_path",
     "bookmarkSpaces" : [
       {
         "name": "Main",

@@ -9,6 +9,19 @@ export function addUserRegistration(user) {
       username: user.username,
       email: user.email,
       pass: user.pass,
+      created: 0,
+      lastLogin: 0,
+      isAdmin: 0,
+      status: 1,
+      membershipType: 'free_trial',
+      paymentMethodType: 'paypal',
+      bookmarkSpaces: [
+        {
+          name: 'Main',
+          description: 'This is the main space.',
+          bookmarkCategories: [],
+        },
+      ],
     },
   }).then(res => res.post);
 }
