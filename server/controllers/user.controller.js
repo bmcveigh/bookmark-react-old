@@ -29,3 +29,18 @@ export function addUser(req, res) {
     res.json({ post: saved });
   });
 }
+
+/**
+ * Save a post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function loadUserByUsername(req, res) {
+  User.findOne({ username: req.params.username }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}

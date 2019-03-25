@@ -1,6 +1,7 @@
 import callApi from '../../util/apiCaller';
 
 // Export Constants
+export const GET_USER = 'GET_USER';
 export const REGISTER_USER = 'REGISTER_USER';
 
 export function addUserRegistration(user) {
@@ -25,3 +26,8 @@ export function addUserRegistration(user) {
     },
   }).then(res => res.post);
 }
+
+export const fetchUserFromSession = () => dispatch =>  {
+  const username = 'bmcveigh';
+  return callApi(`user/${username}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
+};
