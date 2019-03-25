@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import styles from '../LoginPage/LoginPage.css';
 import { connect } from 'react-redux';
-import { addUserRegistration } from '../../LoginActions';
+import { addUserRegistration } from '../../UserActions';
 
 export class RegistrationPage extends Component {
 

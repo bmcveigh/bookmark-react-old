@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
-import RegistrationPage from './modules/Login/pages/RegistrationPage/RegistrationPage';
+import RegistrationPage from './modules/User/pages/RegistrationPage/RegistrationPage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -34,7 +34,7 @@ export default (
             cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
           }
           else {
-            cb(null, require('./modules/Login/pages/LoginPage/LoginPage').default);
+            cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
           }
         });
       }}
