@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
-import PostCreateWidget from '../../components/BookmarkCreateWidget/BookmarkCreateWidget';
+import BookmarkCreateWidget from '../../components/BookmarkCreateWidget/BookmarkCreateWidget';
 
 // Import Actions
 import { addPostRequest, fetchPosts, deletePostRequest } from '../../BookmarkActions';
@@ -19,22 +19,10 @@ class BookmarkListPage extends Component {
     this.props.dispatch(fetchPosts());
   }
 
-  handleDeletePost = post => {
-    if (confirm('Do you want to delete this post')) { // eslint-disable-line
-      this.props.dispatch(deletePostRequest(post));
-    }
-  };
-
-  handleAddPost = (name, title, content) => {
-    this.props.dispatch(toggleAddPost());
-    this.props.dispatch(addPostRequest({ name, title, content }));
-  };
-
   render() {
     return (
       <div>
-        <PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />
-        <BookmarkList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />
+        <BookmarkList user={this.props.user} />
       </div>
     );
   }
@@ -48,16 +36,12 @@ function mapStateToProps(state) {
   return {
     showAddPost: getShowAddPost(state),
     posts: getPosts(state),
+    user: state.user,
   };
 }
 
 BookmarkListPage.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  })).isRequired,
-  showAddPost: PropTypes.bool.isRequired,
+  user: PropTypes.any.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
