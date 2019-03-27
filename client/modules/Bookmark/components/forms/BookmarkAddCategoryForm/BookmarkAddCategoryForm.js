@@ -8,6 +8,7 @@ function BookmarkAddCategoryForm(props) {
 
       <div><label htmlFor="description">Description</label></div>
       <div><input type="text" id="description" /></div>
+      <div><button>Done</button></div>
     </form>
   );
 }
