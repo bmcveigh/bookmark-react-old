@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 
 function BookmarkList(props) {
+  if (!props.user.bookmarkSpaces) {
+    return '';
+  }
+
   return (
     <div className="listView">
       <BookmarkAddCategoryButton />

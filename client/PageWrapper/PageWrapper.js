@@ -3,6 +3,8 @@
  */
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 
 import { Router, browserHistory } from 'react-router';
@@ -15,7 +17,7 @@ class PageWrapper extends React.Component {
 
   constructor(props) {
     super(props);
-    fetchUserFromSession();
+    props.dispatch(props.fetchUserFromSession());
   }
 
   render() {
@@ -34,4 +36,15 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, fetchUserFromSession)(PageWrapper);
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    fetchUserFromSession,
+  };
+}
+
+PageWrapper.propTypes = {
+  dispatch: PropTypes.func,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PageWrapper);

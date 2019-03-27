@@ -23,7 +23,7 @@ function BookmarkListPage(props) {
 BookmarkListPage.propTypes = {
   user: PropTypes.any.isRequired,
   dispatch: PropTypes.func.isRequired,
-  shouldDisplayBookmark: PropTypes.bool.isRequired,
+  shouldDisplayBookmark: PropTypes.bool,
 };
 
 BookmarkListPage.contextTypes = {
