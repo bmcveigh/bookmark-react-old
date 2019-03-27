@@ -1,34 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Import Components
-import BookmarkListItem from './BookmarkListItem/BookmarkListItem';
+import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
+import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
+import { connect } from 'react-redux';
 
 function BookmarkList(props) {
+  if (!props.user.bookmarkSpaces) {
+    return '';
+  }
+
   return (
     <div className="listView">
+      <BookmarkAddCategoryButton />
       {
-        props.posts.map(post => (
-          <BookmarkListItem
-            post={post}
-            key={post.cuid}
-            onDelete={() => props.handleDeletePost(post.cuid)}
-          />
-        ))
+        props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
+          const space = bookmarkSpace[0];
+          return (
+            <div key={key}>
+              {space.name}
+              <BookmarkCategories space={bookmarkSpace[0]} />
+            </div>
+          );
+        })
       }
     </div>
   );
 }
 
 BookmarkList.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    cuid: PropTypes.string.isRequired,
-  })).isRequired,
-  handleDeletePost: PropTypes.func.isRequired,
+  user: PropTypes.any.isRequired, // .isRequired,
 };
 
 export default BookmarkList;

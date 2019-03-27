@@ -3,6 +3,7 @@ import callApi from '../../util/apiCaller';
 // Export Constants
 export const GET_USER = 'GET_USER';
 export const REGISTER_USER = 'REGISTER_USER';
+export const UPDATE_USER = 'UPDATE_USER';
 
 export function addUserRegistration(user) {
   return callApi('user-registration', 'post', {
@@ -27,7 +28,13 @@ export function addUserRegistration(user) {
   }).then(res => res.post);
 }
 
-export const fetchUserFromSession = () => dispatch =>  {
+export const fetchUserFromSession = () => dispatch => {
   const username = 'bmcveigh';
   return callApi(`user/${username}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
+};
+
+export const updateUserById = (id, body) => dispatch => {
+  return callApi(`user/${id}/update`, 'post', body).then(res => {
+    dispatch({ type: UPDATE_USER, user: res.user });
+  });
 };

@@ -1,7 +1,7 @@
-import { ADD_POST, ADD_POSTS, DELETE_POST } from './BookmarkActions';
+import { ADD_POST, ADD_POSTS, DELETE_POST, TOGGLE_BOOKMARK_CATEGORY_FORM } from '../actions/BookmarkActions';
 
 // Initial State
-const initialState = { data: [] };
+const initialState = { data: [], shouldDisplayBookmark: false };
 
 const BookmarkReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,7 +12,7 @@ const BookmarkReducer = (state = initialState, action) => {
 
     case ADD_POSTS :
       return {
-        data: action.posts,
+        data: action.bookmarks,
       };
 
     case DELETE_POST :
@@ -20,18 +20,16 @@ const BookmarkReducer = (state = initialState, action) => {
         data: state.data.filter(post => post.cuid !== action.cuid),
       };
 
+    case TOGGLE_BOOKMARK_CATEGORY_FORM:
+      return {
+        ...state,
+        shouldDisplayBookmark: !state.shouldDisplayBookmark,
+      };
+
     default:
       return state;
   }
 };
-
-/* Selectors */
-
-// Get all posts
-export const getPosts = state => state.posts.data;
-
-// Get post by cuid
-export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
 
 // Export Reducer
 export default BookmarkReducer;

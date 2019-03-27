@@ -10,7 +10,7 @@ import IntlWrapper from './modules/Intl/IntlWrapper';
 import PageWrapper from './PageWrapper/PageWrapper';
 
 // Base stylesheet
-require('./main.css');
+require('./dist/sierra.css');
 
 export default function App(props) {
   return (

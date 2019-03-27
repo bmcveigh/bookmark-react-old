@@ -44,3 +44,10 @@ export function loadUserByUsername(req, res) {
     res.json({ user });
   });
 }
+
+export function updateUser(req, res) {
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedUser) => {
+    if (err) return res.status(500).send(err);
+    res.json({ user: req.body });
+  });
+}
