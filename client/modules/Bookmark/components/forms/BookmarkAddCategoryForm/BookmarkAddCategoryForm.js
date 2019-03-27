@@ -1,16 +1,49 @@
 import React from 'react';
 
-function BookmarkAddCategoryForm(props) {
-  return (
-    <form>
-      <div><label htmlFor="name">Category Name</label></div>
-      <div><input type="text" id="name" /></div>
+import { connect } from 'react-redux';
+import { updateUserById } from '../../../../../store/actions/UserActions';
 
-      <div><label htmlFor="description">Description</label></div>
-      <div><input type="text" id="description" /></div>
-      <div><button>Done</button></div>
-    </form>
-  );
+class BookmarkAddCategoryForm extends React.Component {
+
+  handleClick(e) {
+    e.preventDefault();
+
+    let user = this.props.user;
+
+    // todo: fine tune this.
+    user.bookmarkSpaces[0][0].bookmarkCategories.push({
+      name: this.refs.name.value,
+      description: this.refs.description.value,
+    });
+
+    this.props.dispatch(updateUserById(this.props.user._id, user));
+  }
+
+  render() {
+    return (
+      <form>
+        <div><label htmlFor="name">Category Name</label></div>
+        <div><input type="text" id="name" ref="name" /></div>
+
+        <div><label htmlFor="description">Description</label></div>
+        <div><input type="text" id="description" ref="description" /></div>
+        <div><button onClick={(e) => this.handleClick(e)}>Done</button></div>
+      </form>
+    );
+  }
+
 }
 
-export default BookmarkAddCategoryForm;
+// Retrieve data from store as props
+function mapStateToProps(state) {
+  return state;
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    updateUserById,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryForm);

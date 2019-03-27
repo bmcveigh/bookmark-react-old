@@ -5,7 +5,9 @@ const router = new Router();
 // Load a user by their username.
 router.route('/user/:username').get(UserController.loadUserByUsername);
 
-// Add a new Post
+router.route('/user/:id/update').post(UserController.updateUser);
+
+// Add a new user registration.
 router.route('/user-registration').post(UserController.addUser);
 
 export default router;
