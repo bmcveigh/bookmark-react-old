@@ -1,4 +1,4 @@
-import { ADD_POST, ADD_POSTS, DELETE_POST, TOGGLE_BOOKMARK_CATEGORY_FORM } from './BookmarkActions';
+import { ADD_POST, ADD_POSTS, DELETE_POST, TOGGLE_BOOKMARK_CATEGORY_FORM } from '../actions/BookmarkActions';
 
 // Initial State
 const initialState = { data: [], shouldDisplayBookmark: false };

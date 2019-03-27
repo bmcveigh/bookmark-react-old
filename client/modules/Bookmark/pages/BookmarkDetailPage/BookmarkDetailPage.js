@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import styles from '../../components/BookmarkListItem/BookmarkListItem.css';
 
 // Import Actions
-import { fetchPost } from '../../BookmarkActions';
+import { fetchPost } from '../../../../store/actions/BookmarkActions';
 
 // Import Selector
 

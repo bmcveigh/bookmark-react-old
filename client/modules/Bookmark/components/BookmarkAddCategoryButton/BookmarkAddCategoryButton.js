@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { toggleBookmarkCategoryForm } from '../../BookmarkActions';
+import { toggleBookmarkCategoryForm } from '../../../../store/actions/BookmarkActions';
 
 function BookmarkAddCategoryButton(props) {
   const styles = props.styles || {};

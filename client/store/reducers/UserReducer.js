@@ -1,4 +1,4 @@
-import { GET_USER, REGISTER_USER } from './UserActions';
+import { GET_USER, REGISTER_USER } from '../actions/UserActions';
 
 // Initial State
 const initialState = { data: {} };

@@ -14,7 +14,7 @@ import { setGlobalStyles } from '../store/actions/globalStylesActions';
 
 // Import Routes
 import routes from '../routes';
-import { fetchUserFromSession } from '../modules/User/UserActions';
+import { fetchUserFromSession } from '../store/actions/UserActions';
 
 class PageWrapper extends React.Component {
 
