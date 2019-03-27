@@ -27,7 +27,7 @@ export function addUserRegistration(user) {
   }).then(res => res.post);
 }
 
-export const fetchUserFromSession = () => dispatch =>  {
+export const fetchUserFromSession = () => dispatch => {
   const username = 'bmcveigh';
   return callApi(`user/${username}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
 };

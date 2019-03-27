@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 
 function BookmarkList(props) {
   return (
     <div className="listView">
+      <BookmarkAddCategoryButton />
       {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
           const space = bookmarkSpace[0];
