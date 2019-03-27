@@ -34,5 +34,7 @@ export const fetchUserFromSession = () => dispatch => {
 };
 
 export const updateUserById = (id, body) => dispatch => {
-  return callApi(`user/${id}/update`, 'post', body).then(res => dispatch({ type: UPDATE_USER, user: res.user }));
+  return callApi(`user/${id}/update`, 'post', body).then(res => {
+    dispatch({ type: UPDATE_USER, user: res.user });
+  });
 };

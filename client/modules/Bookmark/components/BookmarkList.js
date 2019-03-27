@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
+import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
+import { connect } from 'react-redux';
 
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
@@ -16,6 +18,7 @@ function BookmarkList(props) {
           return (
             <div key={key}>
               {space.name}
+              <BookmarkCategories space={bookmarkSpace[0]} />
             </div>
           );
         })
