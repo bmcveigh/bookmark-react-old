@@ -20,7 +20,7 @@ class BookmarkCategory extends React.Component {
           let user = props.user;
 
           user.bookmarkSpaces[0][0].bookmarkCategories.forEach(function (c, index) {
-            if (c.name === category.name && c.description === category.description) {
+            if (c.categoryId === category.categoryId) {
               // todo: check by an id instead.
               user.bookmarkSpaces[0][0].bookmarkCategories.splice(index);
               props.dispatch(updateUserById(user._id, user));
