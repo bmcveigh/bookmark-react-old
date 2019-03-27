@@ -22,7 +22,8 @@ const BookmarkReducer = (state = initialState, action) => {
 
     case TOGGLE_BOOKMARK_CATEGORY_FORM:
       return {
-        data: [action.shouldDisplayBookmark, ...state.shouldDisplayBookmark],
+        ...state,
+        shouldDisplayBookmark: action.shouldDisplayBookmark,
       };
 
     default:
