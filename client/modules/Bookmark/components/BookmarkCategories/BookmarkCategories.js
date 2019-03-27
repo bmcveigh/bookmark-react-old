@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 function BookmarkCategories(props) {
   const output = props.space.bookmarkCategories.map(function (category, index) {
     return (
-      <div className={`${props.styles['col-md-3']} ${props.styles['bg-gray-light']} `} key={index}>
+      <div className={`${props.styles['col-md-3']} ${props.styles['bg-gray-light']} ${props.styles['m-medium']} ${props.styles['p-medium']} `} key={index}>
         <div>{category.name}</div>
         <div>{category.description}</div>
       </div>
