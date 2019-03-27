@@ -6,7 +6,7 @@ import { toggleBookmarkCategoryForm } from '../../BookmarkActions';
 
 function BookmarkAddCategoryButton(props) {
   return (
-    <button onClick={() => props.dispatch(toggleBookmarkCategoryForm())}>Add category</button>
+    <button onClick={() => props.dispatch(toggleBookmarkCategoryForm(true))}>Add category</button>
   );
 }
 

@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
+import BookmarkAddCategoryForm from '../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
 
 function BookmarkListPage(props) {
+  let addForm;
+
+  if (props.posts.shouldDisplayBookmark) {
+    addForm = <BookmarkAddCategoryForm />;
+  }
+
   return (
     <div>
       <BookmarkList user={props.user} />
+      {addForm}
     </div>
   );
 }
@@ -23,9 +31,7 @@ BookmarkListPage.contextTypes = {
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
-  return {
-    user: state.user,
-  };
+  return state;
 }
 
 export default connect(mapStateToProps)(BookmarkListPage);

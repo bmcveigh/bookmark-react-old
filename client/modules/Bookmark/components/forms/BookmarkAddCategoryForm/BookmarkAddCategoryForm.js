@@ -3,8 +3,11 @@ import React from 'react';
 function BookmarkAddCategoryForm(props) {
   return (
     <form>
-      <label htmlFor="name">Category Name</label>
-      <input type="text" id="name" />
+      <div><label htmlFor="name">Category Name</label></div>
+      <div><input type="text" id="name" /></div>
+
+      <div><label htmlFor="description">Description</label></div>
+      <div><input type="text" id="description" /></div>
     </form>
   );
 }
