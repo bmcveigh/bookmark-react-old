@@ -10,8 +10,7 @@ import styles from '../../components/BookmarkListItem/BookmarkListItem.css';
 // Import Actions
 import { fetchPost } from '../../BookmarkActions';
 
-// Import Selectors
-import { getPost } from '../../BookmarkReducer';
+// Import Selector
 
 export function BookmarkDetailPage(props) {
   return (
@@ -31,13 +30,6 @@ BookmarkDetailPage.need = [params => {
   return fetchPost(params.cuid);
 }];
 
-// Retrieve data from store as props
-function mapStateToProps(state, props) {
-  return {
-    post: getPost(state, props.params.cuid),
-  };
-}
-
 BookmarkDetailPage.propTypes = {
   post: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -48,4 +40,4 @@ BookmarkDetailPage.propTypes = {
   }).isRequired,
 };
 
-export default connect(mapStateToProps)(BookmarkDetailPage);
+export default connect()(BookmarkDetailPage);

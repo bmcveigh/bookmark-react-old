@@ -8,7 +8,7 @@ import BookmarkAddCategoryForm from '../../components/forms/BookmarkAddCategoryF
 function BookmarkListPage(props) {
   let addForm;
 
-  if (props.posts.shouldDisplayBookmark) {
+  if (props.bookmarks.shouldDisplayBookmark) {
     addForm = <BookmarkAddCategoryForm />;
   }
 
@@ -23,6 +23,7 @@ function BookmarkListPage(props) {
 BookmarkListPage.propTypes = {
   user: PropTypes.any.isRequired,
   dispatch: PropTypes.func.isRequired,
+  shouldDisplayBookmark: PropTypes.bool.isRequired,
 };
 
 BookmarkListPage.contextTypes = {

@@ -12,7 +12,7 @@ const BookmarkReducer = (state = initialState, action) => {
 
     case ADD_POSTS :
       return {
-        data: action.posts,
+        data: action.bookmarks,
       };
 
     case DELETE_POST :
@@ -23,18 +23,13 @@ const BookmarkReducer = (state = initialState, action) => {
     case TOGGLE_BOOKMARK_CATEGORY_FORM:
       return {
         ...state,
-        shouldDisplayBookmark: action.shouldDisplayBookmark,
+        shouldDisplayBookmark: !state.shouldDisplayBookmark,
       };
 
     default:
       return state;
   }
 };
-
-/* Selectors */
-
-// Get post by cuid
-export const getPost = (state, cuid) => state.posts.data.filter(post => post.cuid === cuid)[0];
 
 // Export Reducer
 export default BookmarkReducer;
