@@ -5,12 +5,20 @@ import { connect } from 'react-redux';
 import { toggleBookmarkCategoryForm } from '../../BookmarkActions';
 
 function BookmarkAddCategoryButton(props) {
+  const styles = props.styles || {};
+
   return (
     <button
-      className="button button--small button--primary"
+      className={`${styles.button} ${styles['button--small']}`}
       onClick={() => props.dispatch(toggleBookmarkCategoryForm(true))}
     >Add category</button>
   );
+}
+
+function mapStateToProps(state) {
+  return {
+    styles: state.styles.data,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -19,4 +27,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(BookmarkAddCategoryButton);
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryButton);

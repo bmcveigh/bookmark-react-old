@@ -9,6 +9,9 @@ import { connect } from 'react-redux';
 
 import { Router, browserHistory } from 'react-router';
 
+import styles from '../dist/sierra.css';
+import { setGlobalStyles } from '../store/actions/globalStylesActions';
+
 // Import Routes
 import routes from '../routes';
 import { fetchUserFromSession } from '../modules/User/UserActions';
@@ -18,6 +21,7 @@ class PageWrapper extends React.Component {
   constructor(props) {
     super(props);
     props.dispatch(props.fetchUserFromSession());
+    props.dispatch(props.setGlobalStyles(styles));
   }
 
   render() {
@@ -40,11 +44,14 @@ function mapDispatchToProps(dispatch) {
   return {
     dispatch,
     fetchUserFromSession,
+    setGlobalStyles,
   };
 }
 
 PageWrapper.propTypes = {
   dispatch: PropTypes.func,
+  fetchUserFromSession: PropTypes.func,
+  setGlobalStyles: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageWrapper);
