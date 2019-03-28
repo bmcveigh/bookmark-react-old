@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { updateUserById } from '../../../../../store/actions/UserActions';
+import { updateUserById } from '../../../store/actions/UserActions';
 
 class BookmarkAddCategoryForm extends React.Component {
 

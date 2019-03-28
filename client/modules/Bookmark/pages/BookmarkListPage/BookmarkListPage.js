@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
-import BookmarkAddCategoryForm from '../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
+import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
 
 function BookmarkListPage(props) {
   let addForm;

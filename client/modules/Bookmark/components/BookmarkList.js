@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
-import { connect } from 'react-redux';
 
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
