@@ -46,7 +46,14 @@ class BookmarkEditCategoryForm extends Component {
         <div>
           <a href="#">{messages.addBookmark}</a>
         </div>
-        <div><button onClick={(e) => this.handleClick(e)}>{messages.update}</button></div>
+        <div>
+          <button
+            onClick={(e) => this.handleClick(e)}
+            className={`${globalStyles.button} ${globalStyles['button--green']} ${globalStyles['button--small']}`}
+          >{messages.update}
+          </button>
+          <a href="#">{messages.cancel}</a>
+        </div>
       </form>
     );
   }

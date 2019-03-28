@@ -4,6 +4,7 @@ export default {
     siteTitle: 'Bookmark Guru',
     addBookmark: 'Add bookmark',
     addPost: 'Add Category',
+    cancel: 'Cancel',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',

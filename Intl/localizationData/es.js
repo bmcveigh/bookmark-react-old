@@ -4,6 +4,7 @@ export default {
     siteTitle: 'Marcador Gurú',
     addBookmark: 'Añadir marcador',
     addPost: 'Ajouter Poster',
+    cancel: 'Cancelar',
     switchLanguage: 'Cambiar idioma',
     twitterMessage: 'Somos en Twitter',
     by: 'Par',
