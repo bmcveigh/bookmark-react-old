@@ -14,6 +14,7 @@ export default {
     postTitle: 'Post Title',
     postContent: 'Post Content',
     submit: 'Submit',
+    update: 'Update',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}

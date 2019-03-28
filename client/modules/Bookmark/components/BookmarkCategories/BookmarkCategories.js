@@ -5,14 +5,12 @@ import { connect } from 'react-redux';
 import BookmarkCategory from './BookmarkCategory/BookmarkCategory';
 
 function BookmarkCategories(props) {
-  const output = props.space.bookmarkCategories.map(function (category, index) {
-    return (
-      <BookmarkCategory
-        category={category}
-        key={index}
-      />
-    );
-  });
+  const output = props.space.bookmarkCategories.map((category, index) => (
+    <BookmarkCategory
+      category={category}
+      key={index}
+    />
+  ));
 
   return (
     <div className={`${props.styles.container}`}>

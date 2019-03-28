@@ -5,14 +5,23 @@ import { connect } from 'react-redux';
 
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
+import BookmarkEditCategoryForm from '../../../../../components/forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 
 class BookmarkCategory extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleEditForm: false,
+    };
+  }
 
   handleClick(e, action, category, props) {
     e.preventDefault();
 
     switch (action) {
       case 'edit':
+        this.setState({ toggleEditForm: !this.state.toggleEditForm });
         break;
 
       case 'delete':
@@ -35,11 +44,21 @@ class BookmarkCategory extends React.Component {
     const category = this.props.category;
     const styles = this.props.styles;
 
+    let output = (
+      <div>
+        <div>{category.name}</div>
+        <div>{category.description}</div>
+      </div>
+    );
+
+    if (this.state.toggleEditForm) {
+      output = <BookmarkEditCategoryForm category={category} />;
+    }
+
     return (
       <div
         className={`${styles['col-md-3']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}>
-        <div>{category.name}</div>
-        <div>{category.description}</div>
+        {output}
         <div className={classes.BookmarkCategoryActions}>
           <a href="#" onClick={(e) => this.handleClick(e, 'edit', category, this.props)}>Edit</a>
           <a href="#" onClick={(e) => this.handleClick(e, 'delete', category, this.props)}>Delete</a>
