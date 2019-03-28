@@ -48,11 +48,23 @@ class BookmarkCategory extends React.Component {
       <div>
         <div>{category.name}</div>
         <div>{category.description}</div>
+        <ul>
+          {
+            category.bookmarks.map((bookmark, key) => (
+              <li key={key}>
+                <a
+                  href={bookmark.href}
+                  target="_blank"
+                >{bookmark.label}</a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     );
 
     if (this.state.toggleEditForm) {
-      output = <BookmarkEditCategoryForm category={category} />;
+      output = <BookmarkEditCategoryForm category={category}/>;
     }
 
     return (

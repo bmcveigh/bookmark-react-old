@@ -58,6 +58,25 @@ class BookmarkFormWidget extends Component {
     }
   }
 
+  handleMouseLeave(event, bookmark, props) {
+    const user = props.user;
+    const category = props.category;
+    const refs = this.refs;
+
+    user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+      if (c.categoryId === category.categoryId) {
+        // todo: check by an id instead.
+        user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b, key) => {
+          if (b.bookmarkId === bookmark.bookmarkId) {
+            b.label = refs[`label--${b.bookmarkId}`].value;
+            b.href = refs[`href--${b.bookmarkId}`].value;
+          }
+        });
+        props.dispatch(updateUserById(user._id, user));
+      }
+    });
+  }
+
   render() {
     const category = this.props.category;
     const bookmarks = category.bookmarks;
@@ -81,7 +100,8 @@ class BookmarkFormWidget extends Component {
               type="text"
               placeholder="URL"
               onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
-              defaultValue={bookmark.href}
+              onMouseLeave={(e) => this.handleMouseLeave(e, bookmark, this.props)}
+              defaultValue={bookmark.href.length ? bookmark.href : 'http://'}
               ref={`href--${bookmark.bookmarkId}`}
             />
           </div>
