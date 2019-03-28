@@ -14,6 +14,7 @@ class BookmarkAddCategoryForm extends React.Component {
     user.bookmarkSpaces[0][0].bookmarkCategories.push({
       name: this.refs.name.value,
       description: this.refs.description.value,
+      bookmarks: [],
       categoryId: Math.random().toString(36).substring(7),
     });
 

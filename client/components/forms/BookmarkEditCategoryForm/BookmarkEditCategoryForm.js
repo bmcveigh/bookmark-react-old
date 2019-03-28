@@ -8,16 +8,36 @@ import { injectIntl } from 'react-intl';
 
 class BookmarkEditCategoryForm extends Component {
 
-  handleClick(e) {
+  handleClick(e, type) {
     e.preventDefault();
 
     const user = this.props.user;
+    const category = this.props.category;
+    const props = this.props;
 
-    this.props.dispatch(updateUserById(this.props.user._id, user));
+    switch (type) {
+      case 'add_bookmark':
+        user.bookmarkSpaces[0][0].bookmarkCategories.forEach(function (c, index) {
+          if (c.categoryId === category.categoryId) {
+            // todo: check by an id instead.
+            user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.push({
+              label: '',
+              href: '',
+              bookmarkId: Math.random().toString(36).substring(7),
+            });
+            props.dispatch(updateUserById(user._id, user));
+          }
+        });
+        break;
+
+      default:
+        break;
+    }
   }
 
   render() {
     const category = this.props.category;
+    const bookmarks = category.bookmarks;
     const globalStyles = this.props.styles.data;
     const messages = this.props.intl.messages;
 
@@ -44,15 +64,42 @@ class BookmarkEditCategoryForm extends Component {
           />
         </div>
         <div>
-          <a href="#">{messages.addBookmark}</a>
+          <a
+            href="#"
+            onClick={(e) => this.handleClick(e, 'add_bookmark')}
+          >{messages.addBookmark}</a>
+        </div>
+        <div>
+          {
+            bookmarks.map((bookmark, key) => {
+              return (
+                <div key={key}>
+                  <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
+                    <input
+                      type="text"
+                      placeholder="Label"
+                    />
+                  </div>
+                  <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
+                    <input
+                      type="text"
+                      placeholder="URL"
+                    />
+                  </div>
+                </div>
+              );
+            })
+          }
         </div>
         <div>
           <button
-            onClick={(e) => this.handleClick(e)}
+            onClick={(e) => this.handleClick(e, 'update_category')}
             className={`${globalStyles.button} ${globalStyles['button--green']} ${globalStyles['button--small']}`}
           >{messages.update}
           </button>
-          <a href="#">{messages.cancel}</a>
+          <a
+            href="#"
+          >{messages.cancel}</a>
         </div>
       </form>
     );
