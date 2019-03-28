@@ -2,6 +2,7 @@ export default {
   locale: 'en',
   messages: {
     siteTitle: 'Bookmark Guru',
+    addBookmark: 'Add bookmark',
     addPost: 'Add Category',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',

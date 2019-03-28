@@ -18,11 +18,13 @@ class BookmarkEditCategoryForm extends Component {
 
   render() {
     const category = this.props.category;
+    const globalStyles = this.props.styles.data;
+    const messages = this.props.intl.messages;
 
     return (
       <form>
         <div><label htmlFor="name">Category Name</label></div>
-        <div>
+        <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
           <input
             type="text"
             id="name"
@@ -31,9 +33,9 @@ class BookmarkEditCategoryForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Category Description</label>
         </div>
-        <div>
+        <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
           <input
             type="text"
             id="description"
@@ -41,7 +43,10 @@ class BookmarkEditCategoryForm extends Component {
             defaultValue={category.description}
           />
         </div>
-        <div><button onClick={(e) => this.handleClick(e)}>{this.props.intl.messages.update}</button></div>
+        <div>
+          <a href="#">{messages.addBookmark}</a>
+        </div>
+        <div><button onClick={(e) => this.handleClick(e)}>{messages.update}</button></div>
       </form>
     );
   }
@@ -53,6 +58,7 @@ BookmarkEditCategoryForm.propTypes = {
   dispatch: PropTypes.func,
   intl: PropTypes.object,
   user: PropTypes.object,
+  styles: PropTypes.object,
 };
 
 // Retrieve data from store as props

@@ -2,6 +2,7 @@ export default {
   locale: 'es',
   messages: {
     siteTitle: 'Marcador Gurú',
+    addBookmark: 'Añadir marcador',
     addPost: 'Ajouter Poster',
     switchLanguage: 'Cambiar idioma',
     twitterMessage: 'Somos en Twitter',
