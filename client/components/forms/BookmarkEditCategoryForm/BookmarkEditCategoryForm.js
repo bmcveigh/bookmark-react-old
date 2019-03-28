@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateUserById } from '../../../store/actions/UserActions';
 import { injectIntl } from 'react-intl';
+import BookmarkFormWidget from '../../widgets/BookmarkFormWidget/BookmarkFormWidget';
 
 class BookmarkEditCategoryForm extends Component {
 
@@ -37,7 +38,6 @@ class BookmarkEditCategoryForm extends Component {
 
   render() {
     const category = this.props.category;
-    const bookmarks = category.bookmarks;
     const globalStyles = this.props.styles.data;
     const messages = this.props.intl.messages;
 
@@ -63,44 +63,7 @@ class BookmarkEditCategoryForm extends Component {
             defaultValue={category.description}
           />
         </div>
-        <div>
-          <a
-            href="#"
-            onClick={(e) => this.handleClick(e, 'add_bookmark')}
-          >{messages.addBookmark}</a>
-        </div>
-        <div>
-          {
-            bookmarks.map((bookmark, key) => {
-              return (
-                <div key={key}>
-                  <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-                    <input
-                      type="text"
-                      placeholder="Label"
-                    />
-                  </div>
-                  <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-                    <input
-                      type="text"
-                      placeholder="URL"
-                    />
-                  </div>
-                </div>
-              );
-            })
-          }
-        </div>
-        <div>
-          <button
-            onClick={(e) => this.handleClick(e, 'update_category')}
-            className={`${globalStyles.button} ${globalStyles['button--green']} ${globalStyles['button--small']}`}
-          >{messages.update}
-          </button>
-          <a
-            href="#"
-          >{messages.cancel}</a>
-        </div>
+        <BookmarkFormWidget category={category} />
       </form>
     );
   }
