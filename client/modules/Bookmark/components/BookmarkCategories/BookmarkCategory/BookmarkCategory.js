@@ -69,7 +69,7 @@ class BookmarkCategory extends React.Component {
 
     return (
       <div
-        className={`${styles['col-md-4']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}>
+        className={`${styles['col-md-2']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
           <a href="#" onClick={(e) => this.handleClick(e, 'edit', category, this.props)}>Edit</a>

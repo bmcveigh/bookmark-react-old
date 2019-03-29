@@ -13,7 +13,7 @@ function BookmarkCategories(props) {
   ));
 
   return (
-    <div className={`${props.styles.container}`}>
+    <div>
       <div className={`${props.styles.row}`}>
         {output}
       </div>
