@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './SidebarMenu.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router';
 
 function SidebarMenu() {
@@ -31,6 +31,11 @@ function SidebarMenu() {
                 </ul>
               </li>
             </ul>
+          </li>
+          <li className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}>
+            <Link to="/">
+              <FontAwesomeIcon icon={faBookmark} />
+            </Link>
           </li>
           <li className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}>
             <a href="#">

@@ -517,15 +517,12 @@ button:focus, a:focus {
 [data-component='sidebar'] .first-menu .list-group-item:hover {
   background-color: #009fff;
 }
-[data-component='sidebar'] .first-menu:hover {
-  width: 160px;
-}
 [data-component='sidebar'] .list-group-item {
   font-size: 14px;
 }
 [data-component='sidebar'] .submenu {
   position: fixed;
-  left: 160px;
+  left: 75px;
   width: 195px;
   top: 60px;
   background-color: #009fff;
