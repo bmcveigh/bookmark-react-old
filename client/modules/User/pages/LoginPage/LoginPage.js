@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
-import styles from './LoginPage.css';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
+import UserLoginForm from '../../../../components/forms/UserLoginForm/UserLoginForm';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-class LoginPage extends Component {
-  handleLoginClick = () => {
-    // todo: make this legit.
-    localStorage.setItem('token', 'token');
-  };
+function LoginPage(props) {
+  const styles = props.styles;
 
-  render() {
-    return (
-      <div>
-        <div className={styles['form-content']}>
-          <h2 className={styles['form-title']}><FormattedMessage id="createNewPost" /></h2>
-          <input placeholder={this.props.intl.messages.username} className={styles['form-field']} ref="username" />
-          <input type="password" placeholder={this.props.intl.messages.pass} className={styles['form-field']} ref="pass" />
-          <a href="/user/register">Create an account</a>
-          <a className={styles['post-submit-button']} href="#" onClick={this.handleLoginClick}><FormattedMessage id="submit" /></a>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className={styles['col-sm-4']}>
+      <UserLoginForm />
+    </div>
+  );
 }
 
 LoginPage.propTypes = {
   intl: intlShape.isRequired,
+  styles: PropTypes.object,
 };
 
-export default injectIntl(LoginPage);
+// Retrieve data from store as props
+function mapStateToProps(state) {
+  return {
+    styles: state.styles.data,
+  };
+}
+
+export default connect(mapStateToProps)(injectIntl(LoginPage));

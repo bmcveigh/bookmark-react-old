@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { injectIntl, intlShape } from 'react-intl';
+import { Link } from 'react-router';
+
 import styles from '../LoginPage/LoginPage.css';
 import { connect } from 'react-redux';
 import { addUserRegistration } from '../../../../store/actions/UserActions';
+
 
 export class RegistrationPage extends Component {
 
@@ -30,6 +33,7 @@ export class RegistrationPage extends Component {
         <input placeholder={"Email"} className={styles['form-field']} ref="email" />
         <input type="password" placeholder={this.props.intl.messages.pass} ref="pass" className={styles['form-field']} />
         <button className={styles['post-submit-button']} onClick={this.handleFormSubmit}>Submit</button>
+        <Link to="/">{this.props.intl.messages.cancel}</Link>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import callApi from '../../util/apiCaller';
 
 // Export Constants
+export const AUTHENTICATE_USER = 'AUTHENTICATE_USER';
 export const GET_USER = 'GET_USER';
 export const REGISTER_USER = 'REGISTER_USER';
 export const UPDATE_USER = 'UPDATE_USER';
@@ -28,9 +29,21 @@ export function addUserRegistration(user) {
   }).then(res => res.post);
 }
 
+export const authenticateUser = (username, pass) => dispatch => {
+  const body = {
+    username,
+    pass,
+  };
+  return callApi('user/authenticate', 'post', body).then(res => dispatch({ type: AUTHENTICATE_USER, user: res.user }));
+};
+
 export const fetchUserFromSession = () => dispatch => {
-  const username = 'bmcveigh';
-  return callApi(`user/${username}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
+  const id = localStorage && localStorage.getItem('token') ? localStorage.getItem('token') : '';
+
+  if (!id.length) {
+    return false;
+  }
+  return callApi(`user/${id}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
 };
 
 export const updateUserById = (id, body) => dispatch => {

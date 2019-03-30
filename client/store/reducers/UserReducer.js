@@ -1,4 +1,4 @@
-import { GET_USER, REGISTER_USER, UPDATE_USER } from '../actions/UserActions';
+import { AUTHENTICATE_USER, GET_USER, REGISTER_USER, UPDATE_USER } from '../actions/UserActions';
 
 // Initial State
 const initialState = { data: {} };
@@ -10,6 +10,13 @@ const UserReducer = (state = initialState, action) => {
       return {
         data: [action.post, ...state.data],
       };
+
+    case AUTHENTICATE_USER:
+      if (localStorage && !localStorage.getItem('token') && action.user != null) {
+        localStorage.setItem('token', action.user._id);
+      }
+
+      return action.user;
 
     case GET_USER:
     case UPDATE_USER:

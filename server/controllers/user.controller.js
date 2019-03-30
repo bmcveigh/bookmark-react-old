@@ -30,14 +30,26 @@ export function addUser(req, res) {
   });
 }
 
+export function authenticateUser(req, res) {
+  const username = req.body.username;
+  const pass = req.body.pass;
+
+  User.findOne({ username, pass }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}
+
 /**
  * Save a post
  * @param req
  * @param res
  * @returns void
  */
-export function loadUserByUsername(req, res) {
-  User.findOne({ username: req.params.username }).exec((err, user) => {
+export function loadUserById(req, res) {
+  User.findOne({ _id: req.params.id }).exec((err, user) => {
     if (err) {
       res.status(500).send(err);
     }
