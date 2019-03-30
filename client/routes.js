@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
 import RegistrationPage from './modules/User/pages/RegistrationPage/RegistrationPage';
+import UserProfilePage from './modules/Bookmark/pages/UserProfilePage/UserProfilePage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -47,6 +48,10 @@ export default (
           cb(null, require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage').default);
         });
       }}
+    />
+    <Route
+      path="/user/profile"
+      component={UserProfilePage}
     />
     <Route
       path="/user/register"

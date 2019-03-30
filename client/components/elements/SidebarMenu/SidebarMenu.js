@@ -4,6 +4,7 @@ import classes from './SidebarMenu.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router';
 
 function SidebarMenu() {
   // https://codepen.io/Kamilica/pen/XRbvaL
@@ -12,9 +13,9 @@ function SidebarMenu() {
       <div className={`${classes.sidebar}`}>
         <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['first-menu']}`}>
           <li className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}>
-            <a href="#">
+            <Link to="/user/profile">
               <FontAwesomeIcon icon={faUser} />
-            </a>
+            </Link>
             <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes.submenu}`}>
               <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
                 <a href="#" className="">My Profile</a>
