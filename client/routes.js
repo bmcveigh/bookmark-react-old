@@ -33,7 +33,8 @@ export default (
           if (isUserLoggedIn) {
             cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
           }
-          else {
+          // Fix ESLint issue.
+          if (!isUserLoggedIn) {
             cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
           }
         });

@@ -58,8 +58,10 @@ export function loadUserById(req, res) {
 }
 
 export function updateUser(req, res) {
-  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedUser) => {
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err) => {
     if (err) return res.status(500).send(err);
     res.json({ user: req.body });
+
+    return false;
   });
 }

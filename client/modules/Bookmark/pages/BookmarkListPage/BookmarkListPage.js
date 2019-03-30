@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
 import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
+import SidebarMenu from '../../../../components/elements/SidebarMenu/SidebarMenu';
 
 function BookmarkListPage(props) {
   let addForm;
@@ -14,6 +15,7 @@ function BookmarkListPage(props) {
 
   return (
     <div>
+      <SidebarMenu />
       <BookmarkList user={props.user} />
       {addForm}
     </div>
@@ -21,8 +23,9 @@ function BookmarkListPage(props) {
 }
 
 BookmarkListPage.propTypes = {
-  user: PropTypes.any.isRequired,
+  bookmarks: PropTypes.object,
   dispatch: PropTypes.func.isRequired,
+  user: PropTypes.any.isRequired,
   shouldDisplayBookmark: PropTypes.bool,
 };
 

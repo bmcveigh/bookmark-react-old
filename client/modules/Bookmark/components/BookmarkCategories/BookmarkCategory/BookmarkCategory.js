@@ -26,9 +26,9 @@ class BookmarkCategory extends React.Component {
 
       case 'delete':
         if (confirm('Are you sure you want to delete?')) {
-          let user = props.user;
+          const user = props.user;
 
-          user.bookmarkSpaces[0][0].bookmarkCategories.forEach(function (c, index) {
+          user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
             if (c.categoryId === category.categoryId) {
               // todo: check by an id instead.
               user.bookmarkSpaces[0][0].bookmarkCategories.splice(index);
@@ -36,6 +36,9 @@ class BookmarkCategory extends React.Component {
             }
           });
         }
+        break;
+
+      default:
         break;
     }
   }
@@ -64,12 +67,13 @@ class BookmarkCategory extends React.Component {
     );
 
     if (this.state.toggleEditForm) {
-      output = <BookmarkEditCategoryForm category={category}/>;
+      output = <BookmarkEditCategoryForm category={category} />;
     }
 
     return (
       <div
-        className={`${styles['col-md-2']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}>
+        className={`${styles['col-md-2']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}
+      >
         {output}
         <div className={classes.BookmarkCategoryActions}>
           <a href="#" onClick={(e) => this.handleClick(e, 'edit', category, this.props)}>Edit</a>
