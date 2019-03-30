@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
 import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
-import SidebarMenu from '../../../../components/elements/SidebarMenu/SidebarMenu';
+import MenuSidebarPage from '../MenuSidebarPage/MenuSidebarPage';
 
 function BookmarkListPage(props) {
   let addForm;
@@ -14,11 +14,10 @@ function BookmarkListPage(props) {
   }
 
   return (
-    <div>
-      <SidebarMenu />
+    <MenuSidebarPage>
       <BookmarkList user={props.user} />
       {addForm}
-    </div>
+    </MenuSidebarPage>
   );
 }
 

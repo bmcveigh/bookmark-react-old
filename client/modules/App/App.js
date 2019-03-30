@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 // Import Components
 import Helmet from 'react-helmet';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 
 // Import Actions
 import { toggleAddPost } from '../../store/actions/AppActions';
@@ -59,7 +58,6 @@ export class App extends Component {
           <div>
             {this.props.children}
           </div>
-          <Footer />
         </div>
       </div>
     );

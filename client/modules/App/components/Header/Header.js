@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
 // Import Style
@@ -18,11 +17,6 @@ export function Header(props) {
           <li><FormattedMessage id="switchLanguage" /></li>
           {languageNodes}
         </ul>
-      </div>
-      <div className={styles.content}>
-        <h1 className={styles['site-title']}>
-          <Link to="/" ><FormattedMessage id="siteTitle" /></Link>
-        </h1>
       </div>
     </div>
   );

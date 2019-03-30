@@ -490,7 +490,7 @@ button:focus, a:focus {
   background-color: #292a2c;
   height: 100vw;
   width: 75px;
-  top: 60px;
+  top: 55px;
   overflow: hidden;
   transition: width .5s;
 }
