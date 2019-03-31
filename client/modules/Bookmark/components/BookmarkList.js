@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 
-import classes from './BookmarkList.css';
-
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
     return '';
   }
 
   return (
-    <div className={classes.BookmarkCategoryList}>
+    <div>
       <BookmarkAddCategoryButton />
       {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
