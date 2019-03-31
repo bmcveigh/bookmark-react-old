@@ -18,7 +18,7 @@ class BookmarkEditCategoryForm extends Component {
 
     switch (type) {
       case 'add_bookmark':
-        user.bookmarkSpaces[0][0].bookmarkCategories.forEach(function (c, index) {
+        user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
           if (c.categoryId === category.categoryId) {
             // todo: check by an id instead.
             user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.push({
@@ -39,7 +39,6 @@ class BookmarkEditCategoryForm extends Component {
   render() {
     const category = this.props.category;
     const globalStyles = this.props.styles.data;
-    const messages = this.props.intl.messages;
 
     return (
       <form>

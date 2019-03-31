@@ -17,7 +17,7 @@ class BookmarkFormWidget extends Component {
 
     switch (type) {
       case 'add_bookmark':
-        user.bookmarkSpaces[0][0].bookmarkCategories.forEach(function (c, index) {
+        user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
           if (c.categoryId === category.categoryId) {
             // todo: check by an id instead.
             user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.push({
@@ -46,10 +46,11 @@ class BookmarkFormWidget extends Component {
       user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
         if (c.categoryId === category.categoryId) {
           // todo: check by an id instead.
-          user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b, key) => {
+          user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b) => {
             if (b.bookmarkId === bookmark.bookmarkId) {
-              b.label = refs[`label--${b.bookmarkId}`].value;
-              b.href = refs[`href--${b.bookmarkId}`].value;
+              const bk = b;
+              bk.label = refs[`label--${b.bookmarkId}`].value;
+              bk.href = refs[`href--${b.bookmarkId}`].value;
             }
           });
           props.dispatch(updateUserById(user._id, user));
@@ -66,10 +67,11 @@ class BookmarkFormWidget extends Component {
     user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
       if (c.categoryId === category.categoryId) {
         // todo: check by an id instead.
-        user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b, key) => {
+        user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b) => {
           if (b.bookmarkId === bookmark.bookmarkId) {
-            b.label = refs[`label--${b.bookmarkId}`].value;
-            b.href = refs[`href--${b.bookmarkId}`].value;
+            const bk = b;
+            bk.label = refs[`label--${b.bookmarkId}`].value;
+            bk.href = refs[`href--${b.bookmarkId}`].value;
           }
         });
         props.dispatch(updateUserById(user._id, user));

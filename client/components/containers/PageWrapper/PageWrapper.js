@@ -9,12 +9,12 @@ import { connect } from 'react-redux';
 
 import { Router, browserHistory } from 'react-router';
 
-import styles from '../dist/sierra.css';
-import { setGlobalStyles } from '../store/actions/globalStylesActions';
+import styles from '../../../dist/sierra.css';
+import { setGlobalStyles } from '../../../store/actions/globalStylesActions';
 
 // Import Routes
-import routes from '../routes';
-import { fetchUserFromSession } from '../store/actions/UserActions';
+import routes from '../../../routes';
+import { fetchUserFromSession } from '../../../store/actions/UserActions';
 
 class PageWrapper extends React.Component {
 

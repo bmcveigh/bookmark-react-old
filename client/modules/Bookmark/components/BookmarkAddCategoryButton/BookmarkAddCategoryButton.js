@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { toggleBookmarkCategoryForm } from '../../../../store/actions/BookmarkActions';
 
@@ -26,5 +27,9 @@ function mapDispatchToProps(dispatch) {
     dispatch,
   };
 }
+
+BookmarkAddCategoryButton.propTypes = {
+  dispatch: PropTypes.func,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryButton);

@@ -45,11 +45,10 @@ RegistrationPage.propTypes = {
 };
 
 // Retrieve data from store as props
-function mapStateToProps(state, props) {
+function mapStateToProps() {
   return {
     user: [],
   };
 }
 
 export default connect(mapStateToProps)(injectIntl(RegistrationPage));
-

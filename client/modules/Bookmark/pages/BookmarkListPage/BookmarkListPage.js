@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // Import Components
 import BookmarkList from '../../components/BookmarkList';
 import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
+import MenuSidebarContainer from '../../../../components/containers/MenuSidebarContainer/MenuSidebarContainer';
 
 function BookmarkListPage(props) {
   let addForm;
@@ -13,16 +14,17 @@ function BookmarkListPage(props) {
   }
 
   return (
-    <div>
+    <MenuSidebarContainer>
       <BookmarkList user={props.user} />
       {addForm}
-    </div>
+    </MenuSidebarContainer>
   );
 }
 
 BookmarkListPage.propTypes = {
-  user: PropTypes.any.isRequired,
+  bookmarks: PropTypes.object,
   dispatch: PropTypes.func.isRequired,
+  user: PropTypes.any.isRequired,
   shouldDisplayBookmark: PropTypes.bool,
 };
 

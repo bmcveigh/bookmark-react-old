@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import IntlWrapper from './modules/Intl/IntlWrapper';
 
 // Import Routes
-import PageWrapper from './PageWrapper/PageWrapper';
+import PageWrapper from './components/containers/PageWrapper/PageWrapper';
 
 // Base stylesheet
 require('./dist/sierra.css');

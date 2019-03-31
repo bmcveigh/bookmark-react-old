@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { updateUserById } from '../../../store/actions/UserActions';
 
@@ -8,7 +10,7 @@ class BookmarkAddCategoryForm extends React.Component {
   handleClick(e) {
     e.preventDefault();
 
-    let user = this.props.user;
+    const user = this.props.user;
 
     // todo: fine tune this.
     user.bookmarkSpaces[0][0].bookmarkCategories.push({
@@ -36,9 +38,16 @@ class BookmarkAddCategoryForm extends React.Component {
 
 }
 
+BookmarkAddCategoryForm.propTypes = {
+  user: PropTypes.object,
+  dispatch: PropTypes.func,
+};
+
 // Retrieve data from store as props
 function mapStateToProps(state) {
-  return state;
+  return {
+    user: state.user,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
