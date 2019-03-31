@@ -44,28 +44,32 @@ function SidebarMenu() {
         <Link to={link.href}>
           <FontAwesomeIcon icon={link.faIcon} />
         </Link>
-        <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes.submenu}`}>
-          {
-            link.submenuItems.map((submenuItem) => {
-              return (
-                <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
-                  <Link to={submenuItem.href}>{submenuItem.label}</Link>
-                  <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['sub-submenu']}`}>
-                    {
-                      submenuItem.subSubmenuItems.map((subSubmenuItem) => {
-                        return (
-                          <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
-                            <Link to={subSubmenuItem.href}>{subSubmenuItem.label}</Link>
-                          </li>
-                        );
-                      })
-                    }
-                  </ul>
-                </li>
-              );
-            })
-          }
-        </ul>
+        {
+          link.submenuItems.length ? (
+            <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes.submenu}`}>
+              {
+                link.submenuItems.map((submenuItem) => {
+                  return (
+                    <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
+                      <Link to={submenuItem.href}>{submenuItem.label}</Link>
+                      <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['sub-submenu']}`}>
+                        {
+                          submenuItem.subSubmenuItems.map((subSubmenuItem) => {
+                            return (
+                              <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
+                                <Link to={subSubmenuItem.href}>{subSubmenuItem.label}</Link>
+                              </li>
+                            );
+                          })
+                        }
+                      </ul>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          ) : null
+        }
       </li>
     );
   });
