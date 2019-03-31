@@ -1,13 +1,14 @@
 import React from 'react';
-import MenuSidebarPage from '../../../../modules/Bookmark/pages/MenuSidebarPage/MenuSidebarPage';
+
 import UserThemeSettingsForm from '../../../forms/UserThemeSettingsForm/UserThemeSettingsForm';
+import MenuSidebarContainer from '../../../containers/MenuSidebarContainer/MenuSidebarContainer';
 
 function UserThemeSettingsPage() {
   return (
     <div>
-      <MenuSidebarPage>
+      <MenuSidebarContainer>
         <UserThemeSettingsForm />
-      </MenuSidebarPage>
+      </MenuSidebarContainer>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SidebarMenu from '../../../../components/elements/SidebarMenu/SidebarMenu';
+import SidebarMenu from '../../../components/elements/SidebarMenu/SidebarMenu';
 
-import classes from './MenuSidebarPage.css';
+import classes from './MenuSidebarContainer.css';
 
-function MenuSidebarPage(props) {
+function MenuSidebarContainer(props) {
   return (
     <div>
       <SidebarMenu />
@@ -15,8 +15,8 @@ function MenuSidebarPage(props) {
   );
 }
 
-MenuSidebarPage.propTypes = {
+MenuSidebarContainer.propTypes = {
   children: PropTypes.any,
 };
 
-export default MenuSidebarPage;
+export default MenuSidebarContainer;
