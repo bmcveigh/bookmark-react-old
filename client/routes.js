@@ -2,7 +2,9 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
-import RegistrationPage from './modules/Login/pages/RegistrationPage/RegistrationPage';
+import RegistrationPage from './modules/User/pages/RegistrationPage/RegistrationPage';
+import UserProfilePage from './modules/Bookmark/pages/UserProfilePage/UserProfilePage';
+import UserThemeSettingsPage from './components/pages/user/UserThemeSettingsPage/UserThemeSettingsPage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -33,8 +35,9 @@ export default (
           if (isUserLoggedIn) {
             cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
           }
-          else {
-            cb(null, require('./modules/Login/pages/LoginPage/LoginPage').default);
+          // Fix ESLint issue.
+          if (!isUserLoggedIn) {
+            cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
           }
         });
       }}
@@ -46,6 +49,14 @@ export default (
           cb(null, require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage').default);
         });
       }}
+    />
+    <Route
+      path="/user/profile"
+      component={UserProfilePage}
+    />
+    <Route
+      path="/user/profile/appearance"
+      component={UserThemeSettingsPage}
     />
     <Route
       path="/user/register"

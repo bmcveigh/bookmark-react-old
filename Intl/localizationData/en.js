@@ -2,7 +2,9 @@ export default {
   locale: 'en',
   messages: {
     siteTitle: 'Bookmark Guru',
+    addBookmark: 'Add bookmark',
     addPost: 'Add Category',
+    cancel: 'Cancel',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
@@ -14,6 +16,7 @@ export default {
     postTitle: 'Post Title',
     postContent: 'Post Content',
     submit: 'Submit',
+    update: 'Update',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
     	  =1 {has # comment}

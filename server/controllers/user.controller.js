@@ -18,11 +18,50 @@ export function addUser(req, res) {
   newEmail.username = sanitizeHtml(newEmail.username);
   newEmail.pass = sanitizeHtml(newEmail.pass);
   newEmail.email = sanitizeHtml(newEmail.email);
+  newEmail.created = sanitizeHtml(newEmail.created);
+  newEmail.lastLogin = sanitizeHtml(newEmail.lastLogin);
+  newEmail.isAdmin = sanitizeHtml(newEmail.lastLogin);
 
   newEmail.save((err, saved) => {
     if (err) {
       res.status(500).send(err);
     }
     res.json({ post: saved });
+  });
+}
+
+export function authenticateUser(req, res) {
+  const username = req.body.username;
+  const pass = req.body.pass;
+
+  User.findOne({ username, pass }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}
+
+/**
+ * Save a post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function loadUserById(req, res) {
+  User.findOne({ _id: req.params.id }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}
+
+export function updateUser(req, res) {
+  User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err) => {
+    if (err) return res.status(500).send(err);
+    res.json({ user: req.body });
+
+    return false;
   });
 }
