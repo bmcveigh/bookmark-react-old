@@ -14,6 +14,11 @@ const themes = [
     name: 'Dark',
     colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
   },
+  {
+    machineName: 'custom',
+    name: 'Custom',
+    colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
+  },
 ];
 
 function UserThemeSettingsForm(props) {
@@ -43,21 +48,10 @@ function UserThemeSettingsForm(props) {
             );
           })
         }
-        <div className={globalStyles['col-sm-2']}>
-          <div className={globalStyles.radio}>
-            <input
-              type="radio"
-              name="themes"
-              value="custom"
-              id="custom"
-            />
-            <label className="label" htmlFor="custom">Custom</label>
-          </div>
-        </div>
       </div>
       <label className="label" htmlFor="colors">Colors</label>
       <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-        <input id="colors" placeholder="Input" type="text"/>
+        <input id="colors" placeholder="Input" type="text" />
       </div>
     </form>
   );
