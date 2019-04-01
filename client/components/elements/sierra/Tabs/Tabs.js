@@ -9,12 +9,16 @@ function Tabs(props) {
   const t = gs.tabs;
   const tItem = gs['tabs-item'];
 
+  if (!props.data) {
+    return <div></div>;
+  }
+
   return (
     <div className={t}>
       {
         props.data.map((item, key) => (
           <Link
-            to={item.href} className={`${tItem} ${item.isSelected ? gs['is-selected'] : ''}`}
+            to={item.href} className={`${tItem} ${window.location.pathname === item.href ? gs['is-selected'] : ''}`}
             key={key}
           >
             {item.label}

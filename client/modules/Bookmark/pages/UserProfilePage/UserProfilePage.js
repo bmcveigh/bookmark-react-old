@@ -4,25 +4,14 @@ import { connect } from 'react-redux';
 
 import MenuSidebarContainer from '../../../../components/containers/MenuSidebarContainer/MenuSidebarContainer';
 import Tabs from '../../../../components/elements/sierra/Tabs/Tabs';
-
-const tabData = [
-  {
-    href: '/user/profile',
-    label: 'My Profile',
-    isSelected: true,
-  },
-  {
-    href: '/user/profile/appearance',
-    label: 'Customize Appearance',
-    isSelected: false,
-  },
-];
+import { getTabData } from '../../../../store/actions/tabDataActions';
 
 function UserProfilePage(props) {
   const user = props.user;
+
   return (
     <MenuSidebarContainer>
-      <Tabs data={tabData} />
+      <Tabs data={props.tabData.data.userProfile} />
       <div>
         <div>{user.username}</div>
         <div>{user.email}</div>
@@ -32,6 +21,8 @@ function UserProfilePage(props) {
 }
 
 UserProfilePage.propTypes = {
+  dispatch: PropTypes.func,
+  tabData: PropTypes.object,
   user: PropTypes.any.isRequired,
   shouldDisplayBookmark: PropTypes.bool,
 };
@@ -41,4 +32,11 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(UserProfilePage);
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    getTabData,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfilePage);

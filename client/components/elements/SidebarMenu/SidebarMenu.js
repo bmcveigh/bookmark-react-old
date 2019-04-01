@@ -19,22 +19,7 @@ function SidebarMenu() {
       label: '',
       href: '/user/profile',
       faIcon: faUser,
-      submenuItems: [
-        {
-          label: 'My Profile',
-          href: '/user/profile',
-          subSubmenuItems: [
-            {
-              label: 'My Account',
-              href: '/user/profile',
-            },
-            {
-              label: 'Theme Settings',
-              href: '/user/profile/appearance',
-            },
-          ],
-        },
-      ],
+      submenuItems: [],
     },
   ];
 
