@@ -38,9 +38,12 @@ function SidebarMenu() {
     },
   ];
 
-  const output = links.map((link) => {
+  const output = links.map((link, lKey) => {
     return (
-      <li className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}>
+      <li
+        key={lKey}
+        className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
+      >
         <Link to={link.href}>
           <FontAwesomeIcon icon={link.faIcon} />
         </Link>
@@ -48,15 +51,21 @@ function SidebarMenu() {
           link.submenuItems.length ? (
             <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes.submenu}`}>
               {
-                link.submenuItems.map((submenuItem) => {
+                link.submenuItems.map((submenuItem, smKey) => {
                   return (
-                    <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
+                    <li
+                      key={smKey}
+                      className={`${classes['list-group-item']} ${classes['pl-4']}`}
+                    >
                       <Link to={submenuItem.href}>{submenuItem.label}</Link>
                       <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['sub-submenu']}`}>
                         {
-                          submenuItem.subSubmenuItems.map((subSubmenuItem) => {
+                          submenuItem.subSubmenuItems.map((subSubmenuItem, ssmKey) => {
                             return (
-                              <li className={`${classes['list-group-item']} ${classes['pl-4']}`}>
+                              <li
+                                key={ssmKey}
+                                className={`${classes['list-group-item']} ${classes['pl-4']}`}
+                              >
                                 <Link to={subSubmenuItem.href}>{subSubmenuItem.label}</Link>
                               </li>
                             );
