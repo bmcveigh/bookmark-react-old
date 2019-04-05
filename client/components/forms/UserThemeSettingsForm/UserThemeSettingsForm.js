@@ -40,6 +40,10 @@ function UserThemeSettingsForm(props) {
   const preferences = user.preferences || {};
   const themeSettings = preferences.themeSettings || {};
 
+  if (props.user.data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <form>
       <h3>Theme Settings</h3>
