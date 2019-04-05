@@ -11,6 +11,7 @@ const userSchema = new Schema({
   status: { type: 'Number', required: true },
   membershipType: { type: 'String', required: true },
   paymentMethodType: { type: 'String', required: true },
+  preferences: { type: 'Object', required: true },
   bookmarkSpaces: { type: 'Array', required: true },
 });
 

@@ -25,12 +25,11 @@ function SidebarMenu() {
 
   const output = links.map((link, lKey) => {
     return (
-      <Link to={link.href}>
+      <Link key={lKey} to={link.href}>
         <li
-          key={lKey}
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
         >
-          <FontAwesomeIcon icon={link.faIcon}/>
+          <FontAwesomeIcon icon={link.faIcon} />
           {
             link.submenuItems.length ? (
               <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes.submenu}`}>

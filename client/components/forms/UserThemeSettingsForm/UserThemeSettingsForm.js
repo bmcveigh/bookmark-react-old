@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { updateUserById } from '../../../store/actions/UserActions';
+
 const themes = [
   {
     machineName: 'light',
@@ -21,8 +23,22 @@ const themes = [
   },
 ];
 
+const handleClick = (theme, user, dispatch) => {
+  const u = user;
+
+  if (!user.preferences) {
+    u.preferences = {};
+  }
+
+  u.preferences.themeSettings = theme;
+  dispatch(updateUserById(u._id, u));
+};
+
 function UserThemeSettingsForm(props) {
   const globalStyles = props.styles.data;
+  const user = props.user;
+  const preferences = user.preferences || {};
+  const themeSettings = preferences.themeSettings || {};
 
   return (
     <form>
@@ -41,6 +57,8 @@ function UserThemeSettingsForm(props) {
                     name="themes"
                     value={theme.machineName}
                     id={theme.machineName}
+                    onClick={() => handleClick(theme, props.user, props.dispatch)}
+                    defaultChecked={theme.machineName === themeSettings.machineName}
                   />
                   <label className="label" htmlFor={theme.machineName}>{theme.name}</label>
                 </div>
@@ -51,13 +69,19 @@ function UserThemeSettingsForm(props) {
       </div>
       <label className="label" htmlFor="colors">Colors</label>
       <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-        <input id="colors" placeholder="Input" type="text" />
+        <input
+          type="text"
+          id="colors"
+          placeholder="Input"
+          defaultValue={themeSettings.colors}
+        />
       </div>
     </form>
   );
 }
 
 UserThemeSettingsForm.propTypes = {
+  dispatch: PropTypes.func,
   styles: PropTypes.object,
 };
 
@@ -65,4 +89,11 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(UserThemeSettingsForm);
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    updateUserById,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserThemeSettingsForm);
