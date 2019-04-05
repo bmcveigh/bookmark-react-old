@@ -24,7 +24,9 @@ export function getUserPreferenceStyles(user) {
 
     const colors = {
       backgroundColor: colorsRaw[0],
+      cardBackgroundColor: colorsRaw[3],
       cardTextColor: colorsRaw[0],
+      hoverColor: colorsRaw[4],
       textColor: colorsRaw[5],
       buttonColor: colorsRaw[1],
       highlightColor: colorsRaw[2],
@@ -44,6 +46,7 @@ export function getUserPreferenceStyles(user) {
           background: colors.buttonColor,
         },
         card: {
+          background: colors.cardBackgroundColor,
           color: colors.cardTextColor,
         },
         cardLink: {
@@ -51,7 +54,7 @@ export function getUserPreferenceStyles(user) {
         },
         highlightColor: {
           ':hover': {
-            background: colors.highlightColor,
+            background: colors.hoverColor,
           },
         },
         tabs: {

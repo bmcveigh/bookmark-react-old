@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import radium from 'radium';
 
 import classes from './SidebarMenu.css';
 
@@ -28,10 +29,15 @@ function SidebarMenu(props) {
 
   const output = links.map((link, lKey) => {
     return (
-      <Link key={lKey} to={link.href}>
+      <Link
+        key={lKey}
+        to={link.href}
+        style={props.userPreferenceStyles.highlightColor}
+      >
         <li
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
-          style={props.userPreferenceStyles ? props.userPreferenceStyles.highlightColor : null}
+          key={`li-${lKey}`}
+          style={props.userPreferenceStyles.highlightColor}
         >
           <FontAwesomeIcon icon={link.faIcon} />
           {
@@ -92,4 +98,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SidebarMenu);
+export default connect(mapStateToProps)(radium(SidebarMenu));
