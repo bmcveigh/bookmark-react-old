@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import radium from 'radium';
+import radium, { Style } from 'radium';
 
 import SidebarMenu from '../../../components/elements/SidebarMenu/SidebarMenu';
 
@@ -27,6 +27,7 @@ class MenuSidebarContainer extends Component {
           <div className={classes.PageContents}>
             {this.props.children}
           </div>
+          <Style scopeSelector="body" rules={this.props.userPreferenceStyles.body} />
         </div>
       );
     }

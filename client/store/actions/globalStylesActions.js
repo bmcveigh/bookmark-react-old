@@ -20,20 +20,40 @@ export function getUserPreferenceStyles(user) {
       return;
     }
 
-    const colors = themeSettings.colors.split(/,/g);
+    const colorsRaw = themeSettings.colors.split(/,/g);
+
+    const colors = {
+      backgroundColor: colorsRaw[0],
+      textColor: colorsRaw[5],
+      buttonColor: colorsRaw[1],
+      highlightColor: colorsRaw[2],
+      tabColor: colorsRaw[1],
+    };
 
     dispatch({
       type: GET_USER_PREFERENCE_STYLES,
       data: {
         background: {
-          background: colors[0],
+          background: colors.backgroundColor,
+        },
+        body: {
+          color: colors.textColor,
         },
         button: {
-          background: colors[1],
+          background: colors.buttonColor,
         },
         highlightColor: {
           ':hover': {
-            background: colors[2],
+            background: colors.highlightColor,
+          },
+        },
+        tabs: {
+          notSelected: {
+            color: colors.tabColor,
+          },
+          selected: {
+            borderBottom: `3px solid ${colors.tabColor}`,
+            color: colors.tabColor,
           },
         },
       },

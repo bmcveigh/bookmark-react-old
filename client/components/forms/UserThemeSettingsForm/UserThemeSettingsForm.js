@@ -9,14 +9,9 @@ import { getUserPreferenceStyles } from '../../../store/actions/globalStylesActi
 
 const themes = [
   {
-    machineName: 'light',
-    name: 'Light',
-    colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
-  },
-  {
-    machineName: 'dark',
-    name: 'Dark',
-    colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
+    machineName: '360channel',
+    name: '360 Channel',
+    colors: '#323232,#E60A00,#E60A00,#FFFFFF,#505050,#F5F5F5,#E64600,#E60A00',
   },
   {
     machineName: 'javascript',
