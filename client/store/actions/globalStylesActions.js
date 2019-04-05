@@ -25,12 +25,13 @@ export function getUserPreferenceStyles(user) {
     const colors = {
       backgroundColor: colorsRaw[0],
       cardBackgroundColor: colorsRaw[3],
-      cardTextColor: colorsRaw[0],
+      cardLinkColor: colorsRaw[5],
+      cardTextColor: colorsRaw[2],
       hoverColor: colorsRaw[4],
       textColor: colorsRaw[5],
-      buttonColor: colorsRaw[1],
+      buttonColor: colorsRaw[3],
       highlightColor: colorsRaw[2],
-      tabColor: colorsRaw[1],
+      tabColor: colorsRaw[5],
     };
 
     dispatch({
@@ -44,13 +45,18 @@ export function getUserPreferenceStyles(user) {
         },
         button: {
           background: colors.buttonColor,
+          color: colors.cardTextColor,
         },
         card: {
           background: colors.cardBackgroundColor,
           color: colors.cardTextColor,
         },
         cardLink: {
-          color: colors.buttonColor,
+          color: colors.cardLinkColor,
+          textDecoration: 'underline',
+          ':hover': {
+            background: colors.hoverColor,
+          },
         },
         highlightColor: {
           ':hover': {

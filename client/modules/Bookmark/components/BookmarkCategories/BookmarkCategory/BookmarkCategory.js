@@ -55,9 +55,10 @@ class BookmarkCategory extends React.Component {
         <ul>
           {
             category.bookmarks.map((bookmark, key) => (
-              <li key={key}>
+              <li key={key} style={prefStyles.cardLink}>
                 <a
                   href={bookmark.href}
+                  key={`a-${key}`}
                   target="_blank"
                   style={prefStyles.cardLink}
                 >{bookmark.label}</a>

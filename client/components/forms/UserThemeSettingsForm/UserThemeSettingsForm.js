@@ -14,9 +14,24 @@ const themes = [
     colors: '#323232,#E60A00,#E60A00,#FFFFFF,#505050,#F5F5F5,#E64600,#E60A00',
   },
   {
+    machineName: 'github',
+    name: 'GitHub',
+    colors: '#ffffff,#24292e,#e9f0f7,#1d4880,#ffefc6,#666666,#28a745,#92979b',
+  },
+  {
+    machineName: 'kill_bill',
+    name: 'Kill Bill',
+    colors: '#FDE13A,#FDE13A,#000000,#E72D25,#FFF09E,#000000,#E72D25,#E72D25',
+  },
+  {
     machineName: 'javascript',
     name: 'JavaScript',
     colors: '#F0DB4F,#F0DB4F,#323330,#FFFFFF,#e6cd2c,#323330,#323330,#323330',
+  },
+  {
+    machineName: 'osticket',
+    name: 'OSTicket',
+    colors: '#F68D29,#F99A3F,#F99A3F,#FFFFFF,#ED8624,#FFFFFF,#FFFFFF,#F9A55A',
   },
   {
     machineName: 'custom',
