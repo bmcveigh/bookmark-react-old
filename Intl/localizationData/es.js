@@ -5,6 +5,7 @@ export default {
     addBookmark: 'Añadir marcador',
     addPost: 'Ajouter Poster',
     cancel: 'Cancelar',
+    colors: 'Colores',
     switchLanguage: 'Cambiar idioma',
     twitterMessage: 'Somos en Twitter',
     by: 'Par',

@@ -72,7 +72,9 @@ function UserThemeSettingsForm(props) {
           })
         }
       </div>
-      <label className="label" htmlFor="colors">Colors</label>
+      <label className="label" htmlFor="colors">
+        <FormattedMessage id="colors" />
+      </label>
       <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
         <input
           type="text"

@@ -5,6 +5,7 @@ export default {
     addBookmark: 'Add bookmark',
     addPost: 'Add Category',
     cancel: 'Cancel',
+    colors: 'Colors',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
