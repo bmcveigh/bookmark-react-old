@@ -1,12 +1,15 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import classes from './SidebarMenu.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router';
 
-function SidebarMenu() {
+function SidebarMenu(props) {
   // https://codepen.io/Kamilica/pen/XRbvaL
   const links = [
     {
@@ -28,6 +31,7 @@ function SidebarMenu() {
       <Link key={lKey} to={link.href}>
         <li
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
+          style={props.userPreferenceStyles.highlightColor}
         >
           <FontAwesomeIcon icon={link.faIcon} />
           {
@@ -78,4 +82,14 @@ function SidebarMenu() {
   );
 }
 
-export default SidebarMenu;
+SidebarMenu.propTypes = {
+  userPreferenceStyles: PropTypes.object,
+};
+
+function mapStateToProps(state) {
+  return {
+    userPreferenceStyles: state.styles.userPreferenceStyles,
+  };
+}
+
+export default connect(mapStateToProps)(SidebarMenu);

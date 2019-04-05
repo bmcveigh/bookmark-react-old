@@ -31,6 +31,11 @@ export function getUserPreferenceStyles(user) {
         button: {
           background: colors[1],
         },
+        highlightColor: {
+          ':hover': {
+            background: colors[2],
+          },
+        },
       },
     });
   };
