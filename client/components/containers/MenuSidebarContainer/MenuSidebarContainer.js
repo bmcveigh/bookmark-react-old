@@ -14,8 +14,8 @@ class MenuSidebarContainer extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.props.dispatch(getTabData());
-    this.props.dispatch(getUserPreferenceStyles(props.user));
+    props.dispatch(getTabData());
+    props.dispatch(getUserPreferenceStyles(props.user));
   }
 
   render() {

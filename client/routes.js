@@ -3,8 +3,6 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
 import RegistrationPage from './modules/User/pages/RegistrationPage/RegistrationPage';
-import UserProfilePage from './modules/Bookmark/pages/UserProfilePage/UserProfilePage';
-import UserThemeSettingsPage from './components/pages/user/UserThemeSettingsPage/UserThemeSettingsPage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -52,11 +50,19 @@ export default (
     />
     <Route
       path="/user/profile"
-      component={UserProfilePage}
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Bookmark/pages/UserProfilePage/UserProfilePage').default);
+        });
+      }}
     />
     <Route
       path="/user/profile/appearance"
-      component={UserThemeSettingsPage}
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./components/pages/user/UserThemeSettingsPage/UserThemeSettingsPage').default);
+        });
+      }}
     />
     <Route
       path="/user/register"
