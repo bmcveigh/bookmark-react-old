@@ -4,6 +4,7 @@ export default {
     siteTitle: 'MERN blog de démarrage',
     addBookmark: 'Ajouter un marque-page',
     addPost: 'Ajouter Poster',
+    addSpace: 'Ajouter de l\'espace',
     cancel: 'Annuler',
     colors: 'Couleurs',
     switchLanguage: 'Changer de langue',

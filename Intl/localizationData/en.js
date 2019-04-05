@@ -4,6 +4,7 @@ export default {
     siteTitle: 'Bookmark Guru',
     addBookmark: 'Add bookmark',
     addPost: 'Add Category',
+    addSpace: 'Add Space',
     cancel: 'Cancel',
     colors: 'Colors',
     switchLanguage: 'Switch Language',

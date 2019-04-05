@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
-import Tabs from '../../../components/elements/sierra/Tabs/Tabs';
-import { Link } from 'react-router';
+import Tabs from '../../../components/elements/Tabs/Tabs';
 import { connect } from 'react-redux';
 
-function BookmarkList(props) {
-  const globalStyles = props.globalStyles;
+import ButtonLink from '../../../components/elements/ButtonLink/ButtonLink';
 
+function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
     return '';
   }
@@ -23,10 +22,10 @@ function BookmarkList(props) {
   return (
     <div>
       <BookmarkAddCategoryButton />
-      <Link
+      <ButtonLink
+        labelId="addSpace"
         to="/space/add"
-        className={`${globalStyles.button} ${globalStyles['button--small']}`}
-      >Add space</Link>
+      />
       <Tabs data={bkSpaceTabsData} />
       {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {

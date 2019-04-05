@@ -4,6 +4,7 @@ export default {
     siteTitle: 'Marcador Gurú',
     addBookmark: 'Añadir marcador',
     addPost: 'Ajouter Poster',
+    addSpace: 'Agregar Espacio',
     cancel: 'Cancelar',
     colors: 'Colores',
     switchLanguage: 'Cambiar idioma',
