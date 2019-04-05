@@ -3,7 +3,7 @@ export default {
   messages: {
     siteTitle: 'MERN blog de démarrage',
     addBookmark: 'Ajouter un marque-page',
-    addPost: 'Ajouter Poster',
+    addCategory: 'Ajouter une catégorie',
     addSpace: 'Ajouter de l\'espace',
     cancel: 'Annuler',
     colors: 'Couleurs',

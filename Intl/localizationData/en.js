@@ -3,7 +3,7 @@ export default {
   messages: {
     siteTitle: 'Bookmark Guru',
     addBookmark: 'Add bookmark',
-    addPost: 'Add Category',
+    addCategory: 'Add Category',
     addSpace: 'Add Space',
     cancel: 'Cancel',
     colors: 'Colors',

@@ -9,7 +9,7 @@ import Button from '../../../../components/elements/Button/Button';
 function BookmarkAddCategoryButton(props) {
   return (
     <Button
-      labelId="addPost"
+      labelId="addCategory"
       click={() => props.dispatch(toggleBookmarkCategoryForm(true))}
     />
   );

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { updateUserById } from '../../../store/actions/UserActions';
+import Button from '../../elements/Button/Button';
+import Card from '../../elements/Card/Card';
 
 class BookmarkAddCategoryForm extends React.Component {
 
@@ -25,14 +27,16 @@ class BookmarkAddCategoryForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <div><label htmlFor="name">Category Name</label></div>
-        <div><input type="text" id="name" ref="name" /></div>
+      <Card>
+        <form>
+          <div><label htmlFor="name">Category Name</label></div>
+          <div><input type="text" id="name" ref="name" /></div>
 
-        <div><label htmlFor="description">Description</label></div>
-        <div><input type="text" id="description" ref="description" /></div>
-        <div><button onClick={(e) => this.handleClick(e)}>Done</button></div>
-      </form>
+          <div><label htmlFor="description">Description</label></div>
+          <div><input type="text" id="description" ref="description" /></div>
+          <div><Button labelId="addCategory" click={(e) => this.handleClick(e)} /></div>
+        </form>
+      </Card>
     );
   }
 

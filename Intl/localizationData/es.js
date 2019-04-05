@@ -3,7 +3,7 @@ export default {
   messages: {
     siteTitle: 'Marcador Gurú',
     addBookmark: 'Añadir marcador',
-    addPost: 'Ajouter Poster',
+    addCategory: 'Añadir Categoría',
     addSpace: 'Agregar Espacio',
     cancel: 'Cancelar',
     colors: 'Colores',
