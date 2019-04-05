@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,9 @@ function BookmarkAddCategoryButton(props) {
     <button
       className={`${styles.button} ${styles['button--small']}`}
       onClick={() => props.dispatch(toggleBookmarkCategoryForm(true))}
-    >Add category</button>
+    >
+      <FormattedMessage id="addPost" />
+    </button>
   );
 }
 
