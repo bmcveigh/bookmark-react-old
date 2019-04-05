@@ -31,7 +31,7 @@ function SidebarMenu(props) {
       <Link key={lKey} to={link.href}>
         <li
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
-          style={props.userPreferenceStyles.highlightColor}
+          style={props.userPreferenceStyles ? props.userPreferenceStyles.highlightColor : null}
         >
           <FontAwesomeIcon icon={link.faIcon} />
           {
