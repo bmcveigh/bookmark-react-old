@@ -1,21 +1,17 @@
 import React from 'react';
 
-import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { toggleBookmarkCategoryForm } from '../../../../store/actions/BookmarkActions';
+import Button from '../../../../components/elements/Button/Button';
 
 function BookmarkAddCategoryButton(props) {
-  const styles = props.styles || {};
-
   return (
-    <button
-      className={`${styles.button} ${styles['button--small']}`}
-      onClick={() => props.dispatch(toggleBookmarkCategoryForm(true))}
-    >
-      <FormattedMessage id="addPost" />
-    </button>
+    <Button
+      labelId="addPost"
+      click={() => props.dispatch(toggleBookmarkCategoryForm(true))}
+    />
   );
 }
 

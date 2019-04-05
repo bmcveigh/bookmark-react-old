@@ -13,15 +13,23 @@ export function setGlobalStyles(styles) {
 
 export function getUserPreferenceStyles(user) {
   return (dispatch) => {
-    const preferences = user.preferences;
-    const themeSettings = preferences.themeSettings;
+    const preferences = user.preferences || {};
+    const themeSettings = preferences.themeSettings || false;
+
+    if (!themeSettings) {
+      return;
+    }
+
     const colors = themeSettings.colors.split(/,/g);
 
-    return dispatch({
+    dispatch({
       type: GET_USER_PREFERENCE_STYLES,
       data: {
         background: {
           background: colors[0],
+        },
+        button: {
+          background: colors[1],
         },
       },
     });
