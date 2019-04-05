@@ -34,6 +34,11 @@ const themes = [
     colors: '#F68D29,#F99A3F,#F99A3F,#FFFFFF,#ED8624,#FFFFFF,#FFFFFF,#F9A55A',
   },
   {
+    machineName: 'playstation',
+    name: 'PlayStation',
+    colors: '#173f85,#0072CE,#0072ce,#FFFFFF,#0072CE,#FFFFFF,#FFDA00,#FFDA00',
+  },
+  {
     machineName: 'custom',
     name: 'Custom',
     colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
