@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { updateUserById } from '../../../store/actions/UserActions';
+import { FormattedMessage } from 'react-intl';
 
 const themes = [
   {
@@ -46,7 +47,7 @@ function UserThemeSettingsForm(props) {
 
   return (
     <form>
-      <h3>Theme Settings</h3>
+      <h3><FormattedMessage id="themeSettings" /></h3>
       <div className={globalStyles.row}>
         {
           themes.map((theme, key) => {

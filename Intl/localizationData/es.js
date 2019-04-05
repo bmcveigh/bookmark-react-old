@@ -16,6 +16,7 @@ export default {
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',
     submit: 'Soumettre',
+    themeSettings: 'Configuración de temas',
     update: 'Actualizar',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
