@@ -1,4 +1,8 @@
+.PageContentsWrapper {
+  height: 100vw;
+}
+
 .PageContents {
   margin-left: 100px;
-  margin-top: 25px;
+  padding-top: 25px;
 }
