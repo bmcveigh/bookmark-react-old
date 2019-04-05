@@ -18,7 +18,6 @@ if (typeof require.ensure !== 'function') {
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
   require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage');
-  require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage');
 }
 
 // react-router setup with code-splitting
@@ -37,14 +36,6 @@ export default (
           if (!isUserLoggedIn) {
             cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
           }
-        });
-      }}
-    />
-    <Route
-      path="/posts/:slug-:cuid"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/Bookmark/pages/BookmarkDetailPage/BookmarkDetailPage').default);
         });
       }}
     />
