@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { authenticateUser } from '../../../store/actions/UserActions';
+import { Link } from 'react-router';
 
 class UserLoginForm extends Component {
   handleLoginClick = () => {
@@ -26,7 +27,7 @@ class UserLoginForm extends Component {
           <input id="pass" placeholder={messages.pass} type="password" ref="pass" />
         </div>
         <div>
-          <a href="/user/register">Create an account</a>
+          <Link to="/user/register">Create an account</Link>
           <a className={styles.button} href="#" onClick={this.handleLoginClick}><FormattedMessage id="submit" /></a>
         </div>
       </form>
