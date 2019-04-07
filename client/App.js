@@ -9,6 +9,8 @@ import IntlWrapper from './modules/Intl/IntlWrapper';
 // Import Routes
 import PageWrapper from './components/containers/PageWrapper/PageWrapper';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // Base stylesheet
 require('./dist/sierra.css');
 
