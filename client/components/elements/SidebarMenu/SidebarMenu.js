@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router';
 
-function SidebarMenu(props) {
+function SidebarMenu() {
   // https://codepen.io/Kamilica/pen/XRbvaL
   const links = [
     {
@@ -32,12 +32,10 @@ function SidebarMenu(props) {
       <Link
         key={lKey}
         to={link.href}
-        style={props.userPreferenceStyles.highlightColor}
       >
         <li
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
           key={`li-${lKey}`}
-          style={props.userPreferenceStyles.highlightColor}
         >
           <FontAwesomeIcon icon={link.faIcon} />
           {

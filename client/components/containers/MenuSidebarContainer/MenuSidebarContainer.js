@@ -12,10 +12,13 @@ import { getTabData } from '../../../store/actions/tabDataActions';
 
 class MenuSidebarContainer extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     props.dispatch(getTabData());
-    props.dispatch(getUserPreferenceStyles(props.user));
+
+    if (props.user) {
+      props.dispatch(getUserPreferenceStyles(props.user));
+    }
   }
 
   render() {
