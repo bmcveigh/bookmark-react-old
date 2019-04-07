@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+import CustomButton from '../../elements/Button/Button';
+
 import classes from './AppModal.css';
 
 class AppModal extends React.Component {
@@ -25,7 +27,10 @@ class AppModal extends React.Component {
   render() {
     return (
       <span>
-        <Button onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <CustomButton
+          labelId="addSpace"
+          click={this.toggle}
+        />
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader
             className={classes.ModalHeader}
