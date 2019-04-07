@@ -5,7 +5,11 @@ import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
 import { connect } from 'react-redux';
 
+import AppModal from '../../../components/containers/AppModal/AppModal';
 import ButtonLink from '../../../components/elements/ButtonLink/ButtonLink';
+import Form from 'reactstrap/es/Form';
+import Input from 'reactstrap/es/Input';
+import FormGroup from 'reactstrap/es/FormGroup';
 
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
@@ -22,10 +26,19 @@ function BookmarkList(props) {
   return (
     <div>
       <BookmarkAddCategoryButton />
-      <ButtonLink
-        labelId="addSpace"
-        to="/space/add"
-      />
+      <AppModal
+        buttonLabel="Add Space"
+        title="Add Space"
+      >
+        <Form>
+          <FormGroup>
+            <Input type="text" placeholder="Space Name" />
+          </FormGroup>
+          <FormGroup>
+            <Input type="text" placeholder="Space Description" />
+          </FormGroup>
+        </Form>
+      </AppModal>
       <Tabs data={bkSpaceTabsData} />
       {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
