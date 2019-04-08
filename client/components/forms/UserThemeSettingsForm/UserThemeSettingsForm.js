@@ -14,6 +14,21 @@ const themes = [
     colors: '#323232,#E60A00,#E60A00,#FFFFFF,#505050,#F5F5F5,#E64600,#E60A00',
   },
   {
+    machineName: 'ancestry',
+    name: 'Ancestry',
+    colors: '#534d46,#706b63,#7a9c0f,#FFFFFF,#648200,#FFFFFF,#9cbe30,#f3b670',
+  },
+  {
+    machineName: 'Autumn',
+    name: 'Autumn',
+    colors: '#194234,#9c2e33,#E7C12e,#194234,#9c2e33,#FFFFFF,#ee6030,#9C2E33',
+  },
+  {
+    machineName: 'Atom One Dark',
+    name: 'Atom One Dark',
+    colors: '#121417,#2F343D,#2F343D,#ABB2BF,#2F343D,#ABB2BF,#98C379,#98C379',
+  },
+  {
     machineName: 'github',
     name: 'GitHub',
     colors: '#ffffff,#24292e,#e9f0f7,#1d4880,#ffefc6,#666666,#28a745,#92979b',

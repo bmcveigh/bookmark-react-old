@@ -29,7 +29,8 @@ export function getUserPreferenceStyles(user) {
       cardTextColor: colorsRaw[2],
       hoverColor: colorsRaw[4],
       textColor: colorsRaw[5],
-      buttonColor: colorsRaw[3],
+      buttonColor: colorsRaw[1],
+      buttonTextColor: colorsRaw[5],
       highlightColor: colorsRaw[2],
       tabColor: colorsRaw[5],
     };
@@ -45,7 +46,7 @@ export function getUserPreferenceStyles(user) {
         },
         button: {
           background: colors.buttonColor,
-          color: colors.cardTextColor,
+          color: colors.buttonTextColor,
         },
         card: {
           background: colors.cardBackgroundColor,
