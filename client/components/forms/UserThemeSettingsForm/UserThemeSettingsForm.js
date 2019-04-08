@@ -79,6 +79,11 @@ const themes = [
     colors: '#173f85,#0072CE,#0072ce,#FFFFFF,#0072CE,#FFFFFF,#FFDA00,#FFDA00',
   },
   {
+    machineName: 'php',
+    name: 'PHP',
+    colors: '#8892BF,#4F5B93,#4F5B93,#FFFFFF,#CBCCD4,#FFFFFF,#4F5B93,#F15340',
+  },
+  {
     machineName: 'root_beer',
     name: 'Root Beer',
     colors: '#471B12,#FF2501,#FF2501,#FFFFFF,#C1836E,#FFFFFA,#54E258,#FF2501',
