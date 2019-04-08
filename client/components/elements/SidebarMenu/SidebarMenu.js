@@ -36,7 +36,7 @@ function SidebarMenu(props) {
         <li
           className={`${classes['list-group-item']} ${classes['pl-3']} ${classes['py-2']}`}
           key={`li-${lKey}`}
-          style={props.userPreferenceStyles.menuSidebar}
+          style={props.userPreferenceStyles.menuSidebarItem}
         >
           <FontAwesomeIcon icon={link.faIcon} />
           {
@@ -79,7 +79,10 @@ function SidebarMenu(props) {
   return (
     <div data-component={'sidebar'}>
       <div className={`${classes.sidebar}`}>
-        <ul className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['first-menu']}`}>
+        <ul
+          className={`${classes['list-group']} ${classes['flex-column']} ${classes['d-inline-block']} ${classes['first-menu']}`}
+          style={props.userPreferenceStyles.menuSidebar}
+        >
           {output}
         </ul>
       </div>

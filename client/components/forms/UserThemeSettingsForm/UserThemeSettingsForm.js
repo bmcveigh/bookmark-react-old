@@ -94,6 +94,11 @@ const themes = [
     colors: '#1A1919,#1A1919,#EDEBE6,#7DBA4A,#4F4D4D,#FFFFFF,#7DBA4A,#7DBA4A',
   },
   {
+    machineName: 'Slack',
+    name: 'Slack.com',
+    colors: '#573D82,#453068,#3FBA91,#FFFFFF,#453068,#FFFFFF,#3FBA91,#FF3E88',
+  },
+  {
     machineName: 'starbucks',
     name: 'Starbucks',
     colors: '#0A6242,#0A6242,#3D3935,#BC7E3B,#BC7E3B,#F7F7F7,#3D3935,#3D3935',
@@ -107,6 +112,21 @@ const themes = [
     machineName: 'waze',
     name: 'Waze',
     colors: '#93C4D3,#FFFFFF,#93C4D3,#FFFFFF,#FFFFFF,#173C4C,#66CC33,#173C4C',
+  },
+  {
+    machineName: 'windowsXP',
+    name: 'Windows XP',
+    colors: '#F0EDE0,#0054E3,#0054E3,#FFFFFF,#0054E3,#000000,#ED6D3A,#ED6D3A',
+  },
+  {
+    machineName: 'yeoman',
+    name: 'Yeoman',
+    colors: '#5AADBB,#076570,#F5D087,#FFFFFF,#D37C71,#262222,#DD002A,#F15340',
+  },
+  {
+    machineName: 'youtube',
+    name: 'YouTube',
+    colors: '#FFFFFF,#CC181E,#CC181E,#FFFFFF,#444444,#0D0D0D,#CC181E,#E04A4D',
   },
   {
     machineName: 'zillow',

@@ -60,8 +60,13 @@ export function getUserPreferenceStyles(user) {
           },
         },
         menuSidebar: {
+          background: colors.cardBackgroundColor,
+        },
+        menuSidebarItem: {
+          color: colors.cardTextColor,
           ':hover': {
-            background: colors.highlightColor,
+            background: colors.cardTextColor,
+            color: colors.backgroundColor === colors.cardTextColor ? colors.textColor : colors.backgroundColor,
           },
         },
         tabs: {
