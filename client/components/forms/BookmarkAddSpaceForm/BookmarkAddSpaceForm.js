@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import { Form, FormGroup } from 'reactstrap';
 import AppModal from '../../containers/AppModal/AppModal';
+import { updateUserById } from '../../../store/actions/UserActions';
 
 
 class BookmarkAddSpaceForm extends Component {
   confirmHandler() {
-    // todo: add a space when user clicks "Done" button.
+    // Add a space when user clicks "Done" button.
+    const updatedUser = this.props.user;
+    updatedUser.bookmarkSpaces[0].push({
+      bookmarkCategories: [],
+      description: this.refs.spaceDescription.value,
+      name: this.refs.spaceName.value,
+    });
+
+    this.props.dispatch(updateUserById(updatedUser._id, updatedUser));
   }
 
   render() {
@@ -39,4 +51,22 @@ class BookmarkAddSpaceForm extends Component {
   }
 }
 
-export default BookmarkAddSpaceForm;
+BookmarkAddSpaceForm.propTypes = {
+  dispatch: PropTypes.func,
+  user: PropTypes.object,
+};
+
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    updateUserById,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddSpaceForm);
