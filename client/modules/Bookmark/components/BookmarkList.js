@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
 import BookmarkAddSpaceForm from '../../../components/forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
@@ -31,12 +31,16 @@ function BookmarkList(props) {
           return (
             <div key={key}>
               <Row className="float-right">
-                <AppModal
-                  labelId="deleteThisSpace"
-                  confirmHandler={null}
+                <Col
+                  md={12}
                 >
-                  <span>Are you sure you would like to delete this space?</span>
-                </AppModal>
+                  <AppModal
+                    labelId="deleteThisSpace"
+                    confirmHandler={null}
+                  >
+                    <span>Are you sure you would like to delete this space?</span>
+                  </AppModal>
+                </Col>
               </Row>
               <BookmarkCategories space={bookmarkSpace[index]} />
             </div>
