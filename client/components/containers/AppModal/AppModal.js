@@ -18,10 +18,14 @@ class AppModal extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  toggle(event, isConfirmed = false) {
     this.setState(prevState => ({
       modal: !prevState.modal,
     }));
+
+    if (isConfirmed) {
+      this.props.confirmHandler();
+    }
   }
 
   render() {
@@ -41,7 +45,7 @@ class AppModal extends React.Component {
             {this.props.children}
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Done</Button>{' '}
+            <Button color="primary" onClick={(event) => this.toggle(event, true)}>Done</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
@@ -54,6 +58,7 @@ AppModal.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
   children: PropTypes.any,
   className: PropTypes.string,
+  confirmHandler: PropTypes.func.isRequired,
   title: PropTypes.string,
 };
 

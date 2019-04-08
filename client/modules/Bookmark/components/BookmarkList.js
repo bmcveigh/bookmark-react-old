@@ -21,11 +21,16 @@ function BookmarkList(props) {
     };
   });
 
+  const confirmHandler = () => {
+    // todo: add a space.
+  };
+
   return (
     <div>
       <BookmarkAddCategoryButton />
       <AppModal
         buttonLabel="Add Space"
+        confirmHandler={confirmHandler}
         title="Add Space"
       >
         <Form>
