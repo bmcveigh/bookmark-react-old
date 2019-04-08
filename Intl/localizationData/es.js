@@ -7,6 +7,7 @@ export default {
     addSpace: 'Agregar Espacio',
     cancel: 'Cancelar',
     colors: 'Colores',
+    deleteThisSpace: 'Delete this space',
     switchLanguage: 'Cambiar idioma',
     twitterMessage: 'Somos en Twitter',
     by: 'Par',

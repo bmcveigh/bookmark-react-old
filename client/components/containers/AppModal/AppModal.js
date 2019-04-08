@@ -32,7 +32,7 @@ class AppModal extends React.Component {
     return (
       <span>
         <CustomButton
-          labelId="addSpace"
+          labelId={this.props.labelId}
           click={this.toggle}
         />
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -55,7 +55,7 @@ class AppModal extends React.Component {
 }
 
 AppModal.propTypes = {
-  buttonLabel: PropTypes.string.isRequired,
+  labelId: PropTypes.string.isRequired,
   children: PropTypes.any,
   className: PropTypes.string,
   confirmHandler: PropTypes.func.isRequired,

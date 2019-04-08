@@ -24,7 +24,7 @@ class BookmarkAddSpaceForm extends Component {
   render() {
     return (
       <AppModal
-        buttonLabel="Add Space"
+        labelId="addSpace"
         confirmHandler={() => this.confirmHandler(this.refs)}
         title="Add Space"
       >
