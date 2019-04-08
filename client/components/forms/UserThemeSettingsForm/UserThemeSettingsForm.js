@@ -69,6 +69,16 @@ const themes = [
     colors: '#222222,#2F2F2F,#F92772,#FFFFFF,#A6E22D,#FFFFFF,#66D9EF,#BE84F2',
   },
   {
+    machineName: 'n64',
+    name: 'N64',
+    colors: '#319b44,#0047b3,#db3236,#ffff00,#0047B3,#FFFFFF,#FFFF00,#db3236',
+  },
+  {
+    machineName: 'netflix',
+    name: 'Netflix',
+    colors: '#1F1C18,#8E0E00,#8E0E00,#FFFFFF,#A1A09F,#FFFFFF,#B01D0C,#8E0E00',
+  },
+  {
     machineName: 'osticket',
     name: 'OSTicket',
     colors: '#F68D29,#F99A3F,#F99A3F,#FFFFFF,#ED8624,#FFFFFF,#FFFFFF,#F9A55A',
