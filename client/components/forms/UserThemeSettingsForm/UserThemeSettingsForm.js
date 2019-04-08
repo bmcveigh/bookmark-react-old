@@ -49,6 +49,16 @@ const themes = [
     colors: '#F0DB4F,#F0DB4F,#323330,#FFFFFF,#e6cd2c,#323330,#323330,#323330',
   },
   {
+    machineName: 'Linux Mint Y Dark',
+    name: 'Linux Mint Y Dark',
+    colors: '#353535,#2f2f2f,#8fa876,#ffffff,#8fa876,#ffffff,#818181,#8fa876',
+  },
+  {
+    machineName: 'Monokai',
+    name: 'Monokai',
+    colors: '#222222,#2F2F2F,#F92772,#FFFFFF,#A6E22D,#FFFFFF,#66D9EF,#BE84F2',
+  },
+  {
     machineName: 'osticket',
     name: 'OSTicket',
     colors: '#F68D29,#F99A3F,#F99A3F,#FFFFFF,#ED8624,#FFFFFF,#FFFFFF,#F9A55A',
@@ -57,6 +67,36 @@ const themes = [
     machineName: 'playstation',
     name: 'PlayStation',
     colors: '#173f85,#0072CE,#0072ce,#FFFFFF,#0072CE,#FFFFFF,#FFDA00,#FFDA00',
+  },
+  {
+    machineName: 'saiku_analytics',
+    name: 'Saiku Analytics',
+    colors: '#AE1817,#AE1817,#232323,#FFFFFF,#999999,#FFFFFF,#333333,#232323',
+  },
+  {
+    machineName: 'spotify',
+    name: 'Spotify',
+    colors: '#1A1919,#1A1919,#EDEBE6,#7DBA4A,#4F4D4D,#FFFFFF,#7DBA4A,#7DBA4A',
+  },
+  {
+    machineName: 'starbucks',
+    name: 'Starbucks',
+    colors: '#0A6242,#0A6242,#3D3935,#BC7E3B,#BC7E3B,#F7F7F7,#3D3935,#3D3935',
+  },
+  {
+    machineName: 'trulia',
+    name: 'Trulia',
+    colors: '#37B449,#2D9A48,#1B5E48,#FFFFFF,#2D9A48,#FFFFFF,#1B5E48,#EB4D5C',
+  },
+  {
+    machineName: 'waze',
+    name: 'Waze',
+    colors: '#93C4D3,#FFFFFF,#93C4D3,#FFFFFF,#FFFFFF,#173C4C,#66CC33,#173C4C',
+  },
+  {
+    machineName: 'zillow',
+    name: 'Zillow',
+    colors: '#235ce2,#6BB700,#6BB700,#FFFFFF,#262626,#FFFFFF,#6BB700,#EB4D5C',
   },
   {
     machineName: 'custom',
