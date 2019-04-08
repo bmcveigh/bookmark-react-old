@@ -34,6 +34,11 @@ const themes = [
     colors: '#ffffff,#24292e,#e9f0f7,#1d4880,#ffefc6,#666666,#28a745,#92979b',
   },
   {
+    machineName: 'halloween',
+    name: 'Halloween',
+    colors: '#ff8800,#000000,#ffffff,#000000,#4a5664,#000000,#000000,#736e65',
+  },
+  {
     machineName: 'kill_bill',
     name: 'Kill Bill',
     colors: '#FDE13A,#FDE13A,#000000,#E72D25,#FFF09E,#000000,#E72D25,#E72D25',
