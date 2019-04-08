@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+
+import BookmarkAddSpaceForm from '../../../components/forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
-
-import { connect } from 'react-redux';
-import { Form, FormGroup, Input } from 'reactstrap';
-
-import AppModal from '../../../components/containers/AppModal/AppModal';
 
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
@@ -21,27 +20,10 @@ function BookmarkList(props) {
     };
   });
 
-  const confirmHandler = () => {
-    // todo: add a space.
-  };
-
   return (
     <div>
       <BookmarkAddCategoryButton />
-      <AppModal
-        buttonLabel="Add Space"
-        confirmHandler={confirmHandler}
-        title="Add Space"
-      >
-        <Form>
-          <FormGroup>
-            <Input type="text" placeholder="Space Name" />
-          </FormGroup>
-          <FormGroup>
-            <Input type="text" placeholder="Space Description" />
-          </FormGroup>
-        </Form>
-      </AppModal>
+      <BookmarkAddSpaceForm />
       <Tabs data={bkSpaceTabsData} />
       {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
