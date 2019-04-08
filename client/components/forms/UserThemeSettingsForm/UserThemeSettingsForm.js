@@ -74,6 +74,11 @@ const themes = [
     colors: '#173f85,#0072CE,#0072ce,#FFFFFF,#0072CE,#FFFFFF,#FFDA00,#FFDA00',
   },
   {
+    machineName: 'root_beer',
+    name: 'Root Beer',
+    colors: '#471B12,#FF2501,#FF2501,#FFFFFF,#C1836E,#FFFFFA,#54E258,#FF2501',
+  },
+  {
     machineName: 'saiku_analytics',
     name: 'Saiku Analytics',
     colors: '#AE1817,#AE1817,#232323,#FFFFFF,#999999,#FFFFFF,#333333,#232323',
