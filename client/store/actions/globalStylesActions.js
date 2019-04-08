@@ -24,14 +24,14 @@ export function getUserPreferenceStyles(user) {
 
     const colors = {
       backgroundColor: colorsRaw[0],
-      cardBackgroundColor: colorsRaw[3],
-      cardLinkColor: colorsRaw[5],
-      cardTextColor: colorsRaw[2],
+      cardBackgroundColor: colorsRaw[2],
+      cardLinkColor: colorsRaw[3],
+      cardTextColor: colorsRaw[3],
       hoverColor: colorsRaw[4],
       textColor: colorsRaw[5],
       buttonColor: colorsRaw[7],
       buttonTextColor: '#FFFFFF',
-      highlightColor: colorsRaw[2],
+      highlightColor: colorsRaw[6],
       tabColor: colorsRaw[5],
     };
 
@@ -57,6 +57,11 @@ export function getUserPreferenceStyles(user) {
           textDecoration: 'underline',
           ':hover': {
             background: 'transparent',
+          },
+        },
+        menuSidebar: {
+          ':hover': {
+            background: colors.highlightColor,
           },
         },
         tabs: {
