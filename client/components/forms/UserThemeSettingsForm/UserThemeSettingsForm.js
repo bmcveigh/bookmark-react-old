@@ -29,6 +29,11 @@ const themes = [
     colors: '#121417,#2F343D,#2F343D,#ABB2BF,#2F343D,#ABB2BF,#98C379,#98C379',
   },
   {
+    machineName: 'Facebook',
+    name: 'Facebook',
+    colors: '#4E69A2,#38528B,#38528B,#FFFFFF,#38528B,#FFFFFF,#1FAD38,#CD2323',
+  },
+  {
     machineName: 'github',
     name: 'GitHub',
     colors: '#ffffff,#24292e,#e9f0f7,#1d4880,#ffefc6,#666666,#28a745,#92979b',
