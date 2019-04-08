@@ -24,7 +24,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  cardWidth: 2,
+  cardWidth: 3,
 };
 
 function mapStateToProps(state) {
