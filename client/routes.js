@@ -40,6 +40,22 @@ export default (
       }}
     />
     <Route
+      path="/space/:id"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
+
+          if (isUserLoggedIn) {
+            cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
+          }
+          // Fix ESLint issue.
+          if (!isUserLoggedIn) {
+            cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
+          }
+        });
+      }}
+    />
+    <Route
       path="/user/profile"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {

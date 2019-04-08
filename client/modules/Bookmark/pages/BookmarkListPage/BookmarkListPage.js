@@ -10,12 +10,12 @@ function BookmarkListPage(props) {
   let addForm;
 
   if (props.bookmarks.shouldDisplayBookmark) {
-    addForm = <BookmarkAddCategoryForm />;
+    addForm = <BookmarkAddCategoryForm params={props.params} />;
   }
 
   return (
     <MenuSidebarContainer>
-      <BookmarkList />
+      <BookmarkList params={props.params} />
       {addForm}
     </MenuSidebarContainer>
   );

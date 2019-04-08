@@ -9,16 +9,15 @@ import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
 
 function BookmarkList(props) {
-  if (!props.user.bookmarkSpaces) {
-    return '';
-  }
-
-  const bkSpaceTabsData = props.user.bookmarkSpaces[0].map((space) => {
+  const bkSpaceTabsData = props.user.bookmarkSpaces[0].map((space, index) => {
     return {
       label: space.name,
-      href: window.location.pathname,
+      href: index ? `/space/${index}` : '/',
     };
   });
+
+  const params = props.params || {};
+  const index = params.id || 0;
 
   return (
     <div>
@@ -29,7 +28,7 @@ function BookmarkList(props) {
         props.user.bookmarkSpaces.map((bookmarkSpace, key) => {
           return (
             <div key={key}>
-              <BookmarkCategories space={bookmarkSpace[0]} />
+              <BookmarkCategories space={bookmarkSpace[index]} />
             </div>
           );
         })

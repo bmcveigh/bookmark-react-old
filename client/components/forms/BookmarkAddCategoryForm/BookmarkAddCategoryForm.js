@@ -14,8 +14,11 @@ class BookmarkAddCategoryForm extends React.Component {
 
     const user = this.props.user;
 
+    const params = this.props.params || {};
+    const index = params.id || 0;
+
     // todo: fine tune this.
-    user.bookmarkSpaces[0][0].bookmarkCategories.push({
+    user.bookmarkSpaces[0][index].bookmarkCategories.push({
       name: this.refs.name.value,
       description: this.refs.description.value,
       bookmarks: [],
@@ -43,6 +46,7 @@ class BookmarkAddCategoryForm extends React.Component {
 }
 
 BookmarkAddCategoryForm.propTypes = {
+  params: PropTypes.object,
   user: PropTypes.object,
   dispatch: PropTypes.func,
 };
