@@ -52,15 +52,10 @@ export function getUserPreferenceStyles(user) {
           color: colors.cardTextColor,
         },
         cardLink: {
-          color: colors.cardLinkColor,
+          color: '#007bff',
           textDecoration: 'underline',
           ':hover': {
-            background: colors.hoverColor,
-          },
-        },
-        highlightColor: {
-          ':hover': {
-            background: colors.hoverColor,
+            background: 'transparent',
           },
         },
         tabs: {
