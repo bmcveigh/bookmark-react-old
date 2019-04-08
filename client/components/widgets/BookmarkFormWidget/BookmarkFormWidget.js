@@ -8,19 +8,25 @@ import { injectIntl } from 'react-intl';
 
 class BookmarkFormWidget extends Component {
 
+  constructor(props) {
+    super(props);
+    this.index = this.props.routeParams && this.props.routeParams.id ? this.props.routeParams.id : 0;
+  }
+
   handleClick(e, type) {
     e.preventDefault();
 
     const user = this.props.user;
     const category = this.props.category;
     const props = this.props;
+    const spIndex = this.index;
 
     switch (type) {
       case 'add_bookmark':
-        user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+        user.bookmarkSpaces[0][spIndex].bookmarkCategories.forEach((c, index) => {
           if (c.categoryId === category.categoryId) {
             // todo: check by an id instead.
-            user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.push({
+            user.bookmarkSpaces[0][spIndex].bookmarkCategories[index].bookmarks.push({
               label: '',
               href: '',
               bookmarkId: Math.random()
@@ -41,12 +47,13 @@ class BookmarkFormWidget extends Component {
     const user = props.user;
     const category = props.category;
     const refs = this.refs;
+    const spIndex = this.index;
 
     if (event.which === 9 || event.which === 13) {
-      user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+      user.bookmarkSpaces[0][spIndex].bookmarkCategories.forEach((c, index) => {
         if (c.categoryId === category.categoryId) {
           // todo: check by an id instead.
-          user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b) => {
+          user.bookmarkSpaces[0][spIndex].bookmarkCategories[index].bookmarks.forEach((b) => {
             if (b.bookmarkId === bookmark.bookmarkId) {
               const bk = b;
               bk.label = refs[`label--${b.bookmarkId}`].value;
@@ -63,11 +70,12 @@ class BookmarkFormWidget extends Component {
     const user = props.user;
     const category = props.category;
     const refs = this.refs;
+    const spIndex = this.index;
 
-    user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+    user.bookmarkSpaces[0][spIndex].bookmarkCategories.forEach((c, index) => {
       if (c.categoryId === category.categoryId) {
         // todo: check by an id instead.
-        user.bookmarkSpaces[0][0].bookmarkCategories[index].bookmarks.forEach((b) => {
+        user.bookmarkSpaces[0][spIndex].bookmarkCategories[index].bookmarks.forEach((b) => {
           if (b.bookmarkId === bookmark.bookmarkId) {
             const bk = b;
             bk.label = refs[`label--${b.bookmarkId}`].value;
@@ -132,6 +140,7 @@ BookmarkFormWidget.propTypes = {
   category: PropTypes.object.isRequired,
   dispatch: PropTypes.func,
   intl: PropTypes.object,
+  routeParams: PropTypes.object,
   user: PropTypes.object,
   styles: PropTypes.object,
 };

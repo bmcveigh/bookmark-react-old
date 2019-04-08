@@ -7,6 +7,7 @@ import { combineReducers } from 'redux';
 import app from './reducers/AppReducer';
 import bookmarks from './reducers/BookmarkReducer';
 import intl from './reducers/IntlReducer';
+import routeParams from './reducers/routeParamsReducer';
 import styles from './reducers/globalStylesReducer';
 import tabData from './reducers/tabDataReducer';
 import user from './reducers/UserReducer';
@@ -16,6 +17,7 @@ export default combineReducers({
   app,
   bookmarks,
   intl,
+  routeParams,
   styles,
   tabData,
   user,
