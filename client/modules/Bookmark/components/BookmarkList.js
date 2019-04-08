@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
+
 import { connect } from 'react-redux';
+import { Form, FormGroup, Input } from 'reactstrap';
 
 import AppModal from '../../../components/containers/AppModal/AppModal';
-import ButtonLink from '../../../components/elements/ButtonLink/ButtonLink';
-import Form from 'reactstrap/es/Form';
-import Input from 'reactstrap/es/Input';
-import FormGroup from 'reactstrap/es/FormGroup';
 
 function BookmarkList(props) {
   if (!props.user.bookmarkSpaces) {
@@ -55,12 +53,13 @@ function BookmarkList(props) {
 
 BookmarkList.propTypes = {
   globalStyles: PropTypes.object,
-  user: PropTypes.any.isRequired, // .isRequired,
+  user: PropTypes.any, // .isRequired,
 };
 
 function mapStateToProps(state) {
   return {
     globalStyles: state.styles.data,
+    user: state.user,
   };
 }
 

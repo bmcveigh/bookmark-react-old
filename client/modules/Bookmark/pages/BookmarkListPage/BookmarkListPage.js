@@ -15,7 +15,7 @@ function BookmarkListPage(props) {
 
   return (
     <MenuSidebarContainer>
-      <BookmarkList user={props.user} />
+      <BookmarkList />
       {addForm}
     </MenuSidebarContainer>
   );
