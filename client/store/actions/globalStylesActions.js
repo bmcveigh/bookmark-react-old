@@ -29,8 +29,8 @@ export function getUserPreferenceStyles(user) {
       cardTextColor: colorsRaw[2],
       hoverColor: colorsRaw[4],
       textColor: colorsRaw[5],
-      buttonColor: colorsRaw[1],
-      buttonTextColor: colorsRaw[5],
+      buttonColor: colorsRaw[7],
+      buttonTextColor: '#FFFFFF',
       highlightColor: colorsRaw[2],
       tabColor: colorsRaw[5],
     };

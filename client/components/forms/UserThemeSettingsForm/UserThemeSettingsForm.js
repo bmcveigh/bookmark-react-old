@@ -39,6 +39,11 @@ const themes = [
     colors: '#FDE13A,#FDE13A,#000000,#E72D25,#FFF09E,#000000,#E72D25,#E72D25',
   },
   {
+    machineName: 'retro_monochrome_terminal',
+    name: 'Retro Monochrome Terminal',
+    colors: '#000000,#000000,#006600,#00ff00,#00ff00,#00ff00,#ff0000,#ff0000',
+  },
+  {
     machineName: 'javascript',
     name: 'JavaScript',
     colors: '#F0DB4F,#F0DB4F,#323330,#FFFFFF,#e6cd2c,#323330,#323330,#323330',
