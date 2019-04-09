@@ -30,7 +30,7 @@ class BookmarkAddCategoryForm extends React.Component {
 
   render() {
     return (
-      <Card>
+      <Card cardHeading="Add category">
         <form>
           <div><label htmlFor="name">Category Name</label></div>
           <div><input type="text" id="name" ref="name" /></div>

@@ -50,8 +50,6 @@ class BookmarkCategory extends React.Component {
 
     let output = (
       <div>
-        <div>{category.name}</div>
-        <div>{category.description}</div>
         <ul>
           {
             category.bookmarks.map((bookmark, key) => (
@@ -74,7 +72,7 @@ class BookmarkCategory extends React.Component {
     }
 
     return (
-      <Card>
+      <Card cardHeading={category.name}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
           <a

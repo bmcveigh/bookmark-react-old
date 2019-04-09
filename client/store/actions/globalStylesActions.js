@@ -52,6 +52,10 @@ export function getUserPreferenceStyles(user) {
           background: colors.cardBackgroundColor,
           color: colors.cardTextColor,
         },
+        cardHeading: {
+          background: colors.buttonColor,
+          color: colors.buttonTextColor,
+        },
         cardLink: {
           color: '#007bff',
           textDecoration: 'underline',

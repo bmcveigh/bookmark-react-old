@@ -1,0 +1,18 @@
+.Card {
+  position: relative;
+  height: 150px;
+}
+
+.CardHeading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.CardBody {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+}
