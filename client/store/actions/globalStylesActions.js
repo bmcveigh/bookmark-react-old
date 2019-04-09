@@ -49,7 +49,7 @@ export function getUserPreferenceStyles(user) {
           color: colors.buttonTextColor,
         },
         card: {
-          background: colors.cardBackgroundColor,
+          background: '#ffffff',
           color: colors.cardTextColor,
         },
         cardHeading: {
