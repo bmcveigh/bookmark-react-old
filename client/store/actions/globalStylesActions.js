@@ -69,8 +69,8 @@ export function getUserPreferenceStyles(user) {
         menuSidebarItem: {
           color: colors.cardTextColor,
           ':hover': {
-            background: colors.cardTextColor,
-            color: colors.backgroundColor === colors.cardTextColor ? colors.textColor : colors.backgroundColor,
+            background: colors.highlightColor === colors.cardBackgroundColor ? colors.backgroundColor : colors.highlightColor,
+            color: colors.highlightColor === colors.cardBackgroundColor ? colors.cardBackgroundColor : colors.backgroundColor,
           },
         },
         tabs: {
