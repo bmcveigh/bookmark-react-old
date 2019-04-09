@@ -5,7 +5,14 @@ import PropTypes from 'prop-types';
 import { SortableContainer as sc, SortableElement as se } from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
-const SortableItem = se(({ value }) => <li>{value}</li>);
+const SortableItem = se(({ value }) => (
+  <a
+    href={value.href}
+    target="_blank"
+  >
+    <li>{value.label}</li>
+  </a>
+));
 
 const SortableList = sc(({ items }) => {
   return (
@@ -21,9 +28,7 @@ class BookmarkList extends Component {
   constructor(props) {
     super(props);
 
-    const items = props.bookmarks.map(bookmark => {
-      return <a href={bookmark.href} target="_blank">{bookmark.label}</a>;
-    });
+    const items = props.bookmarks;
 
     this.state = {
       items,
