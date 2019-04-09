@@ -1,6 +1,5 @@
 .Card {
   position: relative;
-  height: 150px;
 }
 
 .CardHeading {
@@ -13,6 +12,9 @@
 
 .CardBody {
   position: absolute;
+  background: blue;
+  padding: 0 10px 0 10px;
   width: 100%;
-  top: 40px;
+  left: 0;
+  top: 28px;
 }

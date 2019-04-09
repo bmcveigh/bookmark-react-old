@@ -19,7 +19,10 @@ function Card(props) {
       >
         {props.cardHeading}
       </h4>
-      <div className={classes.CardBody}>
+      <div
+        className={classes.CardBody}
+        style={props.userPreferenceStyles.card}
+      >
         {props.children}
       </div>
     </div>
