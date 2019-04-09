@@ -60,7 +60,8 @@ export function getUserPreferenceStyles(user) {
           color: '#007bff',
           textDecoration: 'underline',
           ':hover': {
-            background: 'transparent',
+            background: colors.highlightColor === colors.cardBackgroundColor ? colors.backgroundColor : colors.highlightColor,
+            color: colors.highlightColor === colors.cardBackgroundColor ? colors.cardBackgroundColor : colors.backgroundColor,
           },
         },
         menuSidebar: {
