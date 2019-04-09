@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 
+import AppModal from '../../../components/containers/AppModal/AppModal';
+
 import BookmarkAddSpaceForm from '../../../components/forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
 import BookmarkAddCategoryButton from './BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
-import AppModal from '../../../components/containers/AppModal/AppModal';
 import { updateUserById } from '../../../store/actions/UserActions';
+import MakeDefaultSpaceButton from './buttons/MakeDefaultSpaceButton/MakeDefaultSpaceButton';
 
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
@@ -44,6 +46,7 @@ class BookmarkCategoriesContainer extends Component {
               <Col
                 md={12}
               >
+                <MakeDefaultSpaceButton spaceIndex={index} />
                 <AppModal
                   labelId="deleteThisSpace"
                   confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}

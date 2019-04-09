@@ -8,6 +8,7 @@ export default {
     cancel: 'Cancel',
     colors: 'Colors',
     deleteThisSpace: 'Delete this space',
+    makeDefaultSpace: 'Make default space',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
