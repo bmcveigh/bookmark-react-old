@@ -37,10 +37,6 @@ class BookmarkList extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ items: nextProps.bookmarks });
-  }
-
   onSortEnd = ({ oldIndex, newIndex }) => {
     this.setState(({ items }) => ({
       items: arrayMove(items, oldIndex, newIndex),
@@ -48,7 +44,7 @@ class BookmarkList extends Component {
   };
 
   render() {
-    return <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />;
+    return <SortableList items={this.props.bookmarks} onSortEnd={this.onSortEnd} />;
   }
 }
 
