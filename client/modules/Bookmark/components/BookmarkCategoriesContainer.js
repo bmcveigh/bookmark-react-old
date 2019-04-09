@@ -19,7 +19,7 @@ const confirmHandler = (props, bookmarkSpaces, index) => {
   props.dispatch(updateUserById(user._id, user));
 };
 
-function BookmarkList(props) {
+function BookmarkCategoriesContainer(props) {
   const bkSpaceTabsData = props.user.bookmarkSpaces[0].map((space, index) => {
     return {
       label: space.name,
@@ -58,7 +58,7 @@ function BookmarkList(props) {
   );
 }
 
-BookmarkList.propTypes = {
+BookmarkCategoriesContainer.propTypes = {
   dispatch: PropTypes.func,
   globalStyles: PropTypes.object,
   params: PropTypes.object,
@@ -79,4 +79,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkList);
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarkCategoriesContainer);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import Components
-import BookmarkList from '../../components/BookmarkList';
+import BookmarkCategoriesContainer from '../../components/BookmarkCategoriesContainer';
 import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
 import MenuSidebarContainer from '../../../../components/containers/MenuSidebarContainer/MenuSidebarContainer';
 import { setParams } from '../../../../store/actions/routeParamsActions';
@@ -22,7 +22,7 @@ class BookmarkListPage extends Component {
 
     return (
       <MenuSidebarContainer>
-        <BookmarkList params={this.props.params}/>
+        <BookmarkCategoriesContainer params={this.props.params}/>
         {addForm}
       </MenuSidebarContainer>
     );

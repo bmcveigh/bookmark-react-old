@@ -7,6 +7,7 @@ import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
 import BookmarkEditCategoryForm from '../../../../../components/forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 import Card from '../../../../../components/elements/Card/Card';
+import BookmarkList from './BookmarkList/BookmarkList';
 
 class BookmarkCategory extends React.Component {
 
@@ -46,24 +47,10 @@ class BookmarkCategory extends React.Component {
 
   render() {
     const category = this.props.category;
-    const prefStyles = this.props.userPreferenceStyles;
 
     let output = (
       <div>
-        <ul>
-          {
-            category.bookmarks.map((bookmark, key) => (
-              <li key={key} style={prefStyles.cardLink}>
-                <a
-                  href={bookmark.href}
-                  key={`a-${key}`}
-                  target="_blank"
-                  style={prefStyles.cardLink}
-                >{bookmark.label}</a>
-              </li>
-            ))
-          }
-        </ul>
+        <BookmarkList bookmarks={category.bookmarks} />
       </div>
     );
 
