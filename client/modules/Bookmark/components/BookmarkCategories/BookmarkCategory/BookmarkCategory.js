@@ -47,7 +47,6 @@ class BookmarkCategory extends React.Component {
 
   render() {
     const category = this.props.category;
-
     let output = (
       <div>
         <BookmarkList bookmarks={category.bookmarks} />

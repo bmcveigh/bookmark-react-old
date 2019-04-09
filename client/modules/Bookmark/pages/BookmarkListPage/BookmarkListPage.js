@@ -13,16 +13,20 @@ class BookmarkListPage extends Component {
     props.dispatch(setParams(props.params));
   }
 
+  componentWillUpdate(nextProps) {
+    this.props.dispatch(setParams(nextProps.params));
+  }
+
   render() {
     let addForm;
 
     if (this.props.bookmarks.shouldDisplayBookmark) {
-      addForm = <BookmarkAddCategoryForm params={this.props.params}/>;
+      addForm = <BookmarkAddCategoryForm params={this.props.params} />;
     }
 
     return (
       <MenuSidebarContainer>
-        <BookmarkCategoriesContainer params={this.props.params}/>
+        <BookmarkCategoriesContainer params={this.props.params} />
         {addForm}
       </MenuSidebarContainer>
     );
@@ -49,6 +53,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
+    setParams,
   };
 }
 

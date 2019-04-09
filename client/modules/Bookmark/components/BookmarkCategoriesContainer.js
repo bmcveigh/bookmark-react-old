@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
@@ -19,55 +19,59 @@ const confirmHandler = (props, bookmarkSpaces, index) => {
   props.dispatch(updateUserById(user._id, user));
 };
 
-function BookmarkCategoriesContainer(props) {
-  const bkSpaceTabsData = props.user.bookmarkSpaces[0].map((space, index) => {
-    return {
-      label: space.name,
-      href: index ? `/space/${index}` : '/',
-    };
-  });
+class BookmarkCategoriesContainer extends Component {
+  render() {
+    const bkSpaceTabsData = this.props.user.bookmarkSpaces[0].map((space, index) => {
+      return {
+        label: space.name,
+        href: index ? `/space/${index}` : '/',
+      };
+    });
 
-  const params = props.params || {};
-  const index = params.id || 0;
-  const user = props.user || false;
-  const bookmarkSpaces = user.bookmarkSpaces[0];
+    const params = this.props.routeParams || {};
+    const index = params.id || 0;
+    const user = this.props.user || false;
+    const bookmarkSpaces = user.bookmarkSpaces[0];
 
-  return (
-    <div>
-      <BookmarkAddCategoryButton />
-      <BookmarkAddSpaceForm />
-      <Tabs data={bkSpaceTabsData} />
-      {
-        index > 0 ? (
-          <Row className="float-right">
-            <Col
-              md={12}
-            >
-              <AppModal
-                labelId="deleteThisSpace"
-                confirmHandler={() => confirmHandler(props, bookmarkSpaces, index)}
+    return (
+      <div>
+        <BookmarkAddCategoryButton />
+        <BookmarkAddSpaceForm />
+        <Tabs data={bkSpaceTabsData} />
+        {
+          index > 0 ? (
+            <Row className="float-right">
+              <Col
+                md={12}
               >
-                <span>Are you sure you would like to delete this space?</span>
-              </AppModal>
-            </Col>
-          </Row>
-        ) : null
-      }
-      <BookmarkCategories space={bookmarkSpaces[index]} />
-    </div>
-  );
+                <AppModal
+                  labelId="deleteThisSpace"
+                  confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+                >
+                  <span>Are you sure you would like to delete this space?</span>
+                </AppModal>
+              </Col>
+            </Row>
+          ) : null
+        }
+        <BookmarkCategories space={bookmarkSpaces[index]} />
+      </div>
+    );
+  }
 }
 
 BookmarkCategoriesContainer.propTypes = {
   dispatch: PropTypes.func,
   globalStyles: PropTypes.object,
   params: PropTypes.object,
+  routeParams: PropTypes.object,
   user: PropTypes.any, // .isRequired,
 };
 
 function mapStateToProps(state) {
   return {
     globalStyles: state.styles.data,
+    routeParams: state.routeParams,
     user: state.user,
   };
 }

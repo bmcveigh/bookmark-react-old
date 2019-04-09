@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 
 import { SortableContainer as sc, SortableElement as se } from 'react-sortable-hoc';
@@ -35,6 +37,10 @@ class BookmarkList extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ items: nextProps.bookmarks });
+  }
+
   onSortEnd = ({ oldIndex, newIndex }) => {
     this.setState(({ items }) => ({
       items: arrayMove(items, oldIndex, newIndex),
@@ -50,4 +56,4 @@ BookmarkList.propTypes = {
   bookmarks: PropTypes.array,
 };
 
-export default BookmarkList;
+export default connect()(BookmarkList);
