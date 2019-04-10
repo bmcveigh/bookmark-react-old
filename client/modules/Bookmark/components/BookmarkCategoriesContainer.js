@@ -67,8 +67,7 @@ class BookmarkCategoriesContainer extends Component {
           }
           <BookmarkCategories space={bookmarkSpaces[index]} />
         </div>
-        </div>
-
+      </div>
     );
   }
 }
@@ -79,6 +78,7 @@ BookmarkCategoriesContainer.propTypes = {
   params: PropTypes.object,
   routeParams: PropTypes.object,
   user: PropTypes.any, // .isRequired,
+  userPreferenceStyles: PropTypes.object,
 };
 
 function mapStateToProps(state) {
