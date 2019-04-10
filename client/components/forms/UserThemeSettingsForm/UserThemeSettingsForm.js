@@ -29,6 +29,11 @@ const themes = [
     colors: '#121417,#2F343D,#2F343D,#ABB2BF,#2F343D,#ABB2BF,#98C379,#98C379',
   },
   {
+    machineName: 'emberjs',
+    name: 'Ember.js',
+    colors: '#faf4f1,#faf4f1,#E77562,#ffffff,#E5DBD6,#717171,#E46651,#E46651',
+  },
+  {
     machineName: 'Facebook',
     name: 'Facebook',
     colors: '#4E69A2,#38528B,#38528B,#FFFFFF,#38528B,#FFFFFF,#1FAD38,#CD2323',
@@ -47,6 +52,11 @@ const themes = [
     machineName: 'kill_bill',
     name: 'Kill Bill',
     colors: '#FDE13A,#FDE13A,#000000,#E72D25,#FFF09E,#000000,#E72D25,#E72D25',
+  },
+  {
+    machineName: 'macOS',
+    name: 'macOS',
+    colors: '#F1F3F5,#DAD8DA,#D3DFE3,#303030,#C2E2ED,#303030,#1682FB,#34C749',
   },
   {
     machineName: 'retro_monochrome_terminal',
@@ -117,6 +127,11 @@ const themes = [
     machineName: 'starbucks',
     name: 'Starbucks',
     colors: '#0A6242,#0A6242,#3D3935,#BC7E3B,#BC7E3B,#F7F7F7,#3D3935,#3D3935',
+  },
+  {
+    machineName: 'symfony',
+    name: 'Symfony',
+    colors: '#000000,#000000,#7aba20,#FFFFFF,#000000,#FFFFFF,#7aba20,#0088cc',
   },
   {
     machineName: 'trulia',
