@@ -13,6 +13,8 @@ import Tabs from '../../../components/elements/Tabs/Tabs';
 import { updateUserById } from '../../../store/actions/UserActions';
 import MakeDefaultSpaceButton from './buttons/MakeDefaultSpaceButton/MakeDefaultSpaceButton';
 
+import classes from './BookmarkCategoriesContainer.css';
+
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
 
@@ -37,8 +39,13 @@ class BookmarkCategoriesContainer extends Component {
 
     return (
       <div>
-        <BookmarkAddCategoryButton />
-        <BookmarkAddSpaceForm />
+        <div
+          className={classes.ContainerHeader}
+          style={this.props.userPreferenceStyles.spaceHeader}
+        >
+          <BookmarkAddCategoryButton />
+          <BookmarkAddSpaceForm />
+        </div>
         <Tabs data={bkSpaceTabsData} />
         {
           index > 0 ? (
@@ -76,6 +83,7 @@ function mapStateToProps(state) {
     globalStyles: state.styles.data,
     routeParams: state.routeParams,
     user: state.user,
+    userPreferenceStyles: state.styles.userPreferenceStyles,
   };
 }
 

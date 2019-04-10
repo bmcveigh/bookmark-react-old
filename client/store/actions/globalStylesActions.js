@@ -32,6 +32,7 @@ export function getUserPreferenceStyles(user) {
       buttonColor: colorsRaw[7],
       buttonTextColor: '#FFFFFF',
       highlightColor: colorsRaw[6],
+      spaceHeaderBackgroundColor: colorsRaw[1],
       tabColor: colorsRaw[5],
     };
 
@@ -73,6 +74,9 @@ export function getUserPreferenceStyles(user) {
             background: colors.highlightColor === colors.cardBackgroundColor ? colors.backgroundColor : colors.highlightColor,
             color: colors.highlightColor === colors.cardBackgroundColor ? colors.cardBackgroundColor : colors.backgroundColor,
           },
+        },
+        spaceHeader: {
+          background: colors.spaceHeaderBackgroundColor,
         },
         tabs: {
           notSelected: {
