@@ -3,12 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import { Form } from 'reactstrap';
 
 import { updateUserById } from '../../../../../store/actions/UserActions';
 import Button from '../../../../../components/elements/Button/Button';
 import Card from '../../../../../components/elements/Card/Card';
-
-
 
 class BookmarkAddCategoryForm extends React.Component {
 
@@ -34,14 +33,28 @@ class BookmarkAddCategoryForm extends React.Component {
   render() {
     return (
       <Card cardHeading="Add category">
-        <form>
+        <Form>
           <div><label htmlFor="name">Category Name</label></div>
-          <div><input type="text" id="name" ref="name" /></div>
+          <div>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              ref="name"
+            />
+          </div>
 
           <div><label htmlFor="description">Description</label></div>
-          <div><input type="text" id="description" ref="description" /></div>
+          <div>
+            <input
+              type="text"
+              className="form-control"
+              id="description"
+              ref="description"
+            />
+          </div>
           <div><Button labelId="addCategory" click={(e) => this.handleClick(e)} /></div>
-        </form>
+        </Form>
       </Card>
     );
   }
