@@ -7,5 +7,15 @@
 }
 
 .CardBody {
-  padding: 0 10px 0 10px;
+  margin: 0;
+}
+.CardBody li {
+  padding-left: 5px;
+}
+
+.CardBody ul > a {
+  padding: 0;
+}
+.CardBody a {
+  padding-left: 5px;
 }
