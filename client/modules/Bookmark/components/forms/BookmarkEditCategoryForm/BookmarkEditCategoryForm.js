@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { updateUserById } from '../../../store/actions/UserActions';
 import { injectIntl } from 'react-intl';
-import BookmarkFormWidget from '../../widgets/BookmarkFormWidget/BookmarkFormWidget';
+
+import BookmarkFormWidget from '../../../../../components/widgets/BookmarkFormWidget/BookmarkFormWidget';
+import { updateUserById } from '../../../../../store/actions/UserActions';
+
 
 class BookmarkEditCategoryForm extends Component {
 

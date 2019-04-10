@@ -3,9 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { updateUserById } from '../../../store/actions/UserActions';
-import Button from '../../elements/Button/Button';
-import Card from '../../elements/Card/Card';
+
+import { updateUserById } from '../../../../../store/actions/UserActions';
+import Button from '../../../../../components/elements/Button/Button';
+import Card from '../../../../../components/elements/Card/Card';
+
+
 
 class BookmarkAddCategoryForm extends React.Component {
 

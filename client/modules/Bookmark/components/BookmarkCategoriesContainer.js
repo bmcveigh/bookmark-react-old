@@ -6,7 +6,7 @@ import { Col, Row } from 'reactstrap';
 
 import AppModal from '../../../components/containers/AppModal/AppModal';
 
-import BookmarkAddSpaceForm from '../../../components/forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
+import BookmarkAddSpaceForm from './forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
 import BookmarkAddCategoryButton from './buttons/BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
-import BookmarkEditCategoryForm from '../../../../../components/forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
+import BookmarkEditCategoryForm from '../../forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 import Card from '../../../../../components/elements/Card/Card';
 import BookmarkList from './BookmarkList/BookmarkList';
 
