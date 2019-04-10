@@ -83,6 +83,7 @@ class BookmarkCategory extends React.Component {
 BookmarkCategory.propTypes = {
   category: PropTypes.object.isRequired,
   dispatch: PropTypes.func,
+  routeParams: PropTypes.object,
   styles: PropTypes.object,
   user: PropTypes.object,
   userPreferenceStyles: PropTypes.object,
