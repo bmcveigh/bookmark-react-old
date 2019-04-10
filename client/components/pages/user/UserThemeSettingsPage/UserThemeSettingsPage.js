@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import UserThemeSettingsForm from '../../../forms/UserThemeSettingsForm/UserThemeSettingsForm';
 import MenuSidebarContainer from '../../../containers/MenuSidebarContainer/MenuSidebarContainer';
-import Tabs from '../../../elements/sierra/Tabs/Tabs';
+import Tabs from '../../../elements/Tabs/Tabs';
 
 function UserThemeSettingsPage(props) {
   return (

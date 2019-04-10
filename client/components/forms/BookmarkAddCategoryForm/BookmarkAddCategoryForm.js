@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { updateUserById } from '../../../store/actions/UserActions';
+import Button from '../../elements/Button/Button';
+import Card from '../../elements/Card/Card';
 
 class BookmarkAddCategoryForm extends React.Component {
 
@@ -12,8 +14,11 @@ class BookmarkAddCategoryForm extends React.Component {
 
     const user = this.props.user;
 
+    const params = this.props.params || {};
+    const index = params.id || 0;
+
     // todo: fine tune this.
-    user.bookmarkSpaces[0][0].bookmarkCategories.push({
+    user.bookmarkSpaces[0][index].bookmarkCategories.push({
       name: this.refs.name.value,
       description: this.refs.description.value,
       bookmarks: [],
@@ -25,20 +30,23 @@ class BookmarkAddCategoryForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <div><label htmlFor="name">Category Name</label></div>
-        <div><input type="text" id="name" ref="name" /></div>
+      <Card cardHeading="Add category">
+        <form>
+          <div><label htmlFor="name">Category Name</label></div>
+          <div><input type="text" id="name" ref="name" /></div>
 
-        <div><label htmlFor="description">Description</label></div>
-        <div><input type="text" id="description" ref="description" /></div>
-        <div><button onClick={(e) => this.handleClick(e)}>Done</button></div>
-      </form>
+          <div><label htmlFor="description">Description</label></div>
+          <div><input type="text" id="description" ref="description" /></div>
+          <div><Button labelId="addCategory" click={(e) => this.handleClick(e)} /></div>
+        </form>
+      </Card>
     );
   }
 
 }
 
 BookmarkAddCategoryForm.propTypes = {
+  params: PropTypes.object,
   user: PropTypes.object,
   dispatch: PropTypes.func,
 };

@@ -135,7 +135,7 @@ Modules are the way of organising different domain-specific modules in the proje
     ├── __tests__                    // all the tests for this module goes here
     |   ├── components               // Sub components of this module
     |   |   ├── Post.spec.js
-    |   |   ├── BookmarkList.spec.js
+    |   |   ├── BookmarkCategoriesContainer.spec.js
     |   |   ├── PostItem.spec.js
     |   |   └── PostImage.spec.js
     |   ├── pages
@@ -145,7 +145,7 @@ Modules are the way of organising different domain-specific modules in the proje
     |   └── PostActions.spec.js
     ├── components                   // Sub components of this module
     |   ├── Post.js
-    |   ├── BookmarkList.jst.js
+    |   ├── BookmarkCategoriesContainer.jst.js
     |   ├── PostItem.js
     |   └── PostImage.js
     ├── pages                        // React Router Pages from this module

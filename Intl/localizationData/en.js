@@ -3,8 +3,12 @@ export default {
   messages: {
     siteTitle: 'Bookmark Guru',
     addBookmark: 'Add bookmark',
-    addPost: 'Add Category',
+    addCategory: 'Add Category',
+    addSpace: 'Add Space',
     cancel: 'Cancel',
+    colors: 'Colors',
+    deleteThisSpace: 'Delete this space',
+    makeDefaultSpace: 'Make default space',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
@@ -16,6 +20,7 @@ export default {
     postTitle: 'Post Title',
     postContent: 'Post Content',
     submit: 'Submit',
+    themeSettings: 'Theme Settings',
     update: 'Update',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}

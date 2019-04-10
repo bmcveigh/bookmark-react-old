@@ -3,8 +3,12 @@ export default {
   messages: {
     siteTitle: 'MERN blog de démarrage',
     addBookmark: 'Ajouter un marque-page',
-    addPost: 'Ajouter Poster',
+    addCategory: 'Ajouter une catégorie',
+    addSpace: 'Ajouter de l\'espace',
     cancel: 'Annuler',
+    colors: 'Couleurs',
+    deleteThisSpace: 'Delete this space',
+    makeDefaultSpace: 'Make default space',
     switchLanguage: 'Changer de langue',
     twitterMessage: 'Nous sommes sur Twitter',
     by: 'Par',
@@ -16,6 +20,7 @@ export default {
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',
     submit: 'Soumettre',
+    themeSettings: 'Réglage des thèmes',
     update: 'Mettre à jour',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}

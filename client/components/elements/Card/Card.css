@@ -1,0 +1,11 @@
+.Card {
+  padding: 0;
+}
+
+.CardHeading {
+  text-align: center;
+}
+
+.CardBody {
+  padding: 0 10px 0 10px;
+}

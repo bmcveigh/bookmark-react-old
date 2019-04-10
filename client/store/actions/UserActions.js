@@ -18,6 +18,13 @@ export function addUserRegistration(user) {
       status: 1,
       membershipType: 'free_trial',
       paymentMethodType: 'paypal',
+      preferences: {
+        themeSettings: {
+          machineName: 'light',
+          name: 'Light',
+          colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
+        },
+      },
       bookmarkSpaces: [
         {
           name: 'Main',

@@ -16,14 +16,19 @@ function Tabs(props) {
   return (
     <div className={t}>
       {
-        props.data.map((item, key) => (
-          <Link
-            to={item.href} className={`${tItem} ${window.location.pathname === item.href ? gs['is-selected'] : ''}`}
-            key={key}
-          >
-            {item.label}
-          </Link>
-        ))
+        props.data.map((item, key) => {
+          const isSelected = window.location.pathname === item.href;
+
+          return (
+            <Link
+              to={item.href} className={`${tItem} ${isSelected ? gs['is-selected'] : ''}`}
+              key={key}
+              style={isSelected ? props.userPreferenceStyles.tabs.selected : props.userPreferenceStyles.tabs.notSelected}
+            >
+              {item.label}
+            </Link>
+          );
+        })
       }
     </div>
   );
@@ -32,11 +37,13 @@ function Tabs(props) {
 Tabs.propTypes = {
   globalStyles: PropTypes.object,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  userPreferenceStyles: PropTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
     globalStyles: state.styles.data,
+    userPreferenceStyles: state.styles.userPreferenceStyles,
   };
 }
 

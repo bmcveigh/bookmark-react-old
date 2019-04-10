@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import MenuSidebarContainer from '../../../../components/containers/MenuSidebarContainer/MenuSidebarContainer';
-import Tabs from '../../../../components/elements/sierra/Tabs/Tabs';
+import Tabs from '../../../../components/elements/Tabs/Tabs';
 import { getTabData } from '../../../../store/actions/tabDataActions';
 
 function UserProfilePage(props) {

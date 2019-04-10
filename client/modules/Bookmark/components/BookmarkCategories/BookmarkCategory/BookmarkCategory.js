@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
 import BookmarkEditCategoryForm from '../../../../../components/forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
+import Card from '../../../../../components/elements/Card/Card';
+import BookmarkList from './BookmarkList/BookmarkList';
 
 class BookmarkCategory extends React.Component {
 
@@ -45,24 +47,9 @@ class BookmarkCategory extends React.Component {
 
   render() {
     const category = this.props.category;
-    const styles = this.props.styles;
-
     let output = (
       <div>
-        <div>{category.name}</div>
-        <div>{category.description}</div>
-        <ul>
-          {
-            category.bookmarks.map((bookmark, key) => (
-              <li key={key}>
-                <a
-                  href={bookmark.href}
-                  target="_blank"
-                >{bookmark.label}</a>
-              </li>
-            ))
-          }
-        </ul>
+        <BookmarkList bookmarks={category.bookmarks} />
       </div>
     );
 
@@ -71,15 +58,21 @@ class BookmarkCategory extends React.Component {
     }
 
     return (
-      <div
-        className={`${styles['col-md-2']} ${styles['bg-gray-light']} ${styles['m-medium']} ${styles['p-medium']} `}
-      >
+      <Card cardHeading={category.name}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
-          <a href="#" onClick={(e) => this.handleClick(e, 'edit', category, this.props)}>Edit</a>
-          <a href="#" onClick={(e) => this.handleClick(e, 'delete', category, this.props)}>Delete</a>
+          <a
+            href="#"
+            onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+          >{this.state.toggleEditForm ? 'Done' : 'Edit'}</a>
+          <a
+            href="#"
+            onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
+          >
+            Delete
+          </a>
         </div>
-      </div>
+      </Card>
     );
   }
 
@@ -90,6 +83,7 @@ BookmarkCategory.propTypes = {
   dispatch: PropTypes.func,
   styles: PropTypes.object,
   user: PropTypes.object,
+  userPreferenceStyles: PropTypes.object,
 };
 
 // Retrieve data from store as props
@@ -97,6 +91,7 @@ function mapStateToProps(state) {
   return {
     styles: state.styles.data,
     user: state.user,
+    userPreferenceStyles: state.styles.userPreferenceStyles,
   };
 }
 

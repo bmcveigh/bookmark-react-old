@@ -3,8 +3,12 @@ export default {
   messages: {
     siteTitle: 'Marcador Gurú',
     addBookmark: 'Añadir marcador',
-    addPost: 'Ajouter Poster',
+    addCategory: 'Añadir Categoría',
+    addSpace: 'Agregar Espacio',
     cancel: 'Cancelar',
+    colors: 'Colores',
+    deleteThisSpace: 'Delete this space',
+    makeDefaultSpace: 'Make default space',
     switchLanguage: 'Cambiar idioma',
     twitterMessage: 'Somos en Twitter',
     by: 'Par',
@@ -16,6 +20,7 @@ export default {
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',
     submit: 'Soumettre',
+    themeSettings: 'Configuración de temas',
     update: 'Actualizar',
     comment: `user {name} {value, plural,
     	  =0 {does not have any comments}
