@@ -14,7 +14,7 @@ class MakeDefaultSpaceButton extends Component {
 
     const spaces = [space];
     user.bookmarkSpaces[0].forEach((s, index) => {
-      if (index) {
+      if (s.name !== space.name) {
         spaces.push(s);
       }
     });
