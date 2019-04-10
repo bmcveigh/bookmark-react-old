@@ -1,6 +1,10 @@
-.header {
+.Header {
   background-size: cover;
+  background: #ffffff;
   border-bottom: 1px solid #ccc;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .content {
