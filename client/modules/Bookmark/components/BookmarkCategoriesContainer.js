@@ -25,7 +25,7 @@ class BookmarkCategoriesContainer extends Component {
   render() {
     const bkSpaceTabsData = this.props.user.bookmarkSpaces[0].map((space, index) => {
       return {
-        label: space.name,
+        label: index ? space.name : `${space.name} (default space)`,
         href: index ? `/space/${index}` : '/',
       };
     });
