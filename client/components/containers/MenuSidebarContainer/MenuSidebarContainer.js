@@ -9,15 +9,21 @@ import SidebarMenu from '../../../components/elements/SidebarMenu/SidebarMenu';
 import classes from './MenuSidebarContainer.css';
 import { getUserPreferenceStyles } from '../../../store/actions/globalStylesActions';
 import { getTabData } from '../../../store/actions/tabDataActions';
+import { fetchUserFromSession } from '../../../store/actions/UserActions';
 
 class MenuSidebarContainer extends Component {
 
   constructor(props) {
     super(props);
+
     props.dispatch(getTabData());
 
-    if (props.user) {
-      props.dispatch(getUserPreferenceStyles(props.user));
+    if (!this.props.user) {
+      props.dispatch(fetchUserFromSession());
+    }
+
+    if (this.props.user) {
+      props.dispatch(getUserPreferenceStyles(this.props.user));
     }
   }
 
@@ -60,12 +66,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    getUserPreferenceStyles,
-    getTabData,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(radium(MenuSidebarContainer));
+export default connect(mapStateToProps)(radium(MenuSidebarContainer));

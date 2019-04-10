@@ -58,7 +58,7 @@ class BookmarkCategory extends React.Component {
     }
 
     return (
-      <Card cardHeading={category.name}>
+      <Card cardHeading={category.name} helpText={category.description || ''}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
           <a
