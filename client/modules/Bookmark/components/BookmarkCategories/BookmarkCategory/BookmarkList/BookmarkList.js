@@ -9,15 +9,16 @@ import { SortableContainer as sc, SortableElement as se } from 'react-sortable-h
 import arrayMove from 'array-move';
 
 const SortableItem = se(radium(({ index, value, userPreferenceStyles }) => (
-  <a
-    href={value.href}
-    key={index}
-    target="_blank"
-  >
-    <li style={userPreferenceStyles.cardLink}>
+  <li style={userPreferenceStyles.cardLink}>
+    <a
+      href={value.href}
+      key={index}
+      target="_blank"
+      style={userPreferenceStyles.cardLink}
+    >
       {value.label}
-    </li>
-  </a>
+    </a>
+  </li>
 )));
 
 const SortableList = sc(({ items, userPreferenceStyles }) => {
@@ -47,12 +48,21 @@ class BookmarkList extends Component {
     }));
   };
 
+  shouldCancelStart(e) {
+    // Cancel sorting if the event target is an anchor tag (`a`)
+    if (e.target.tagName.toLowerCase() === 'a') {
+      return true; // Return true to cancel sorting
+    }
+    return false;
+  }
+
   render() {
     return (
       <SortableList
         items={this.props.bookmarks}
         onSortEnd={this.onSortEnd}
         userPreferenceStyles={this.props.userPreferenceStyles}
+        shouldCancelStart={this.shouldCancelStart}
         style={this.props.userPreferenceStyles}
       />
     );

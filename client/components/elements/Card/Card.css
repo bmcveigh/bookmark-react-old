@@ -13,7 +13,7 @@
   padding-left: 5px;
 }
 
-.CardBody ul > a {
+.CardBody ul li > a {
   padding: 0;
 }
 .CardBody a {
