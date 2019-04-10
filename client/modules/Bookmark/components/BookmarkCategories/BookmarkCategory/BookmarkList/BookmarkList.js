@@ -52,6 +52,7 @@ const SortableItem = se(
         href="#"
         className={`${classes.DeleteBookmark} float-right`}
         onClick={(e) => handleDeleteBookmarkClick(e, value, props)}
+        style={{ color: props.userPreferenceStyles.button.background }}
       >
         <FontAwesomeIcon icon={faWindowClose} />
       </a>
