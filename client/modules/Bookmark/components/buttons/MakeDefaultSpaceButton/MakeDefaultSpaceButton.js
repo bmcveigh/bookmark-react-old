@@ -11,11 +11,12 @@ class MakeDefaultSpaceButton extends Component {
     const user = this.props.user;
     const spaceIndex = this.props.spaceIndex;
     const space = user.bookmarkSpaces[0][spaceIndex];
-    user.bookmarkSpaces[0].splice(spaceIndex);
 
     const spaces = [space];
-    user.bookmarkSpaces[0].forEach(s => {
-      spaces.push(s);
+    user.bookmarkSpaces[0].forEach((s, index) => {
+      if (index) {
+        spaces.push(s);
+      }
     });
     user.bookmarkSpaces[0] = spaces;
 
