@@ -3,7 +3,12 @@
   height: 75px;
   margin: 0;
   width: 100vw;
-  position: relative;
-  top: -29px;
-  left: -25px;
+  position: fixed;
+  top: 55px;
+  left: 75px;
+  z-index: 1;
+}
+
+.Content {
+  margin-top: 40px;
 }

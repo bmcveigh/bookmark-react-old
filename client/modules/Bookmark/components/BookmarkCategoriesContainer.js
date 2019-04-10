@@ -46,26 +46,29 @@ class BookmarkCategoriesContainer extends Component {
           <BookmarkAddCategoryButton />
           <BookmarkAddSpaceForm />
         </div>
-        <Tabs data={bkSpaceTabsData} />
-        {
-          index > 0 ? (
-            <Row className="float-right">
-              <Col
-                md={12}
-              >
-                <MakeDefaultSpaceButton spaceIndex={index} />
-                <AppModal
-                  labelId="deleteThisSpace"
-                  confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+        <div className={classes.Content}>
+          <Tabs data={bkSpaceTabsData} />
+          {
+            index > 0 ? (
+              <Row className="float-right">
+                <Col
+                  md={12}
                 >
-                  <span>Are you sure you would like to delete this space?</span>
-                </AppModal>
-              </Col>
-            </Row>
-          ) : null
-        }
-        <BookmarkCategories space={bookmarkSpaces[index]} />
-      </div>
+                  <MakeDefaultSpaceButton spaceIndex={index} />
+                  <AppModal
+                    labelId="deleteThisSpace"
+                    confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+                  >
+                    <span>Are you sure you would like to delete this space?</span>
+                  </AppModal>
+                </Col>
+              </Row>
+            ) : null
+          }
+          <BookmarkCategories space={bookmarkSpaces[index]} />
+        </div>
+        </div>
+
     );
   }
 }
