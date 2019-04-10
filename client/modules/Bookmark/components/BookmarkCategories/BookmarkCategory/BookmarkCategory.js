@@ -30,10 +30,12 @@ class BookmarkCategory extends React.Component {
         if (confirm('Are you sure you want to delete?')) {
           const user = props.user;
 
-          user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+          const spaceIndex = props.routeParams.id ? this.props.routeParams.id : 0;
+
+          user.bookmarkSpaces[0][spaceIndex].bookmarkCategories.forEach((c, index) => {
             if (c.categoryId === category.categoryId) {
               // todo: check by an id instead.
-              user.bookmarkSpaces[0][0].bookmarkCategories.splice(index);
+              user.bookmarkSpaces[0][spaceIndex].bookmarkCategories.splice(index);
               props.dispatch(updateUserById(user._id, user));
             }
           });
@@ -89,17 +91,11 @@ BookmarkCategory.propTypes = {
 // Retrieve data from store as props
 function mapStateToProps(state) {
   return {
+    routeParams: state.routeParams,
     styles: state.styles.data,
     user: state.user,
     userPreferenceStyles: state.styles.userPreferenceStyles,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    updateUserById,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkCategory);
+export default connect(mapStateToProps)(BookmarkCategory);
