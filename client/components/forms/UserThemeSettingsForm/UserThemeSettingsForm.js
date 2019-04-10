@@ -29,6 +29,11 @@ const themes = [
     colors: '#121417,#2F343D,#2F343D,#ABB2BF,#2F343D,#ABB2BF,#98C379,#98C379',
   },
   {
+    machineName: 'codeMash',
+    name: 'Code Mash',
+    colors: '#0c84a9,#f67f01,#94C53C,#FFFFFF,#16A1C8,#FFFFFF,#FFFFFF,#94C53C',
+  },
+  {
     machineName: 'emberjs',
     name: 'Ember.js',
     colors: '#faf4f1,#faf4f1,#E77562,#ffffff,#E5DBD6,#717171,#E46651,#E46651',
@@ -44,6 +49,11 @@ const themes = [
     colors: '#ffffff,#24292e,#e9f0f7,#1d4880,#ffefc6,#666666,#28a745,#92979b',
   },
   {
+    machineName: 'gotham',
+    name: 'Gotham',
+    colors: '#0A0F14,#10151B,#265360,#D4EBE9,#D26939,#9BD1CE,#EDB54B,#C33027',
+  },
+  {
     machineName: 'halloween',
     name: 'Halloween',
     colors: '#ff8800,#000000,#ffffff,#000000,#4a5664,#000000,#000000,#736e65',
@@ -57,6 +67,16 @@ const themes = [
     machineName: 'macOS',
     name: 'macOS',
     colors: '#F1F3F5,#DAD8DA,#D3DFE3,#303030,#C2E2ED,#303030,#1682FB,#34C749',
+  },
+  {
+    machineName: 'mint',
+    name: 'Mint',
+    colors: '#212420,#333632,#87CF3E,#FFFFFF,#393d39,#FFFFFF,#87CF3E,#68a030',
+  },
+  {
+    machineName: 'python',
+    name: 'Python',
+    colors: '#306998,#FFD43B,#FFD43B,#7F7F7F,#5A9FD4,#F4F4F4,#FFE873,#FFD43B',
   },
   {
     machineName: 'retro_monochrome_terminal',
