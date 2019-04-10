@@ -36,7 +36,10 @@ const handleDeleteBookmarkClick = (e, bookmark, props) => {
 
 const SortableItem = se(
   radium(({ index, value, props }) => (
-    <li style={props.userPreferenceStyles.cardLink}>
+    <li
+      className={classes.Bookmark}
+      style={props.userPreferenceStyles.cardLink}
+    >
       <a
         href={value.href}
         key={index}
