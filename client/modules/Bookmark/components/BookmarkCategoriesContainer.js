@@ -7,13 +7,13 @@ import { Col, Row } from 'reactstrap';
 import AppModal from '../../../components/containers/AppModal/AppModal';
 
 import BookmarkAddSpaceForm from './forms/BookmarkAddSpaceForm/BookmarkAddSpaceForm';
-import BookmarkAddCategoryButton from './buttons/BookmarkAddCategoryButton/BookmarkAddCategoryButton';
 import BookmarkCategories from './BookmarkCategories/BookmarkCategories';
 import Tabs from '../../../components/elements/Tabs/Tabs';
 import { updateUserById } from '../../../store/actions/UserActions';
 import MakeDefaultSpaceButton from './buttons/MakeDefaultSpaceButton/MakeDefaultSpaceButton';
 
 import classes from './BookmarkCategoriesContainer.css';
+import BookmarkAddCategoryModalForm from './forms/BookmarkAddCategoryModalForm/BookmarkAddCategoryModalForm';
 
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
@@ -43,7 +43,7 @@ class BookmarkCategoriesContainer extends Component {
           className={classes.ContainerHeader}
           style={this.props.userPreferenceStyles.spaceHeader}
         >
-          <BookmarkAddCategoryButton />
+          <BookmarkAddCategoryModalForm params={params} />
           <BookmarkAddSpaceForm />
         </div>
         <div className={classes.Content}>
