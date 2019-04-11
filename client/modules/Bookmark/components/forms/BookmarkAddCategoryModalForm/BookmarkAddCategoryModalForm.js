@@ -6,14 +6,11 @@ import { connect } from 'react-redux';
 import { Form } from 'reactstrap';
 
 import { updateUserById } from '../../../../../store/actions/UserActions';
-import Button from '../../../../../components/elements/Button/Button';
-import Card from '../../../../../components/elements/Card/Card';
+import AppModal from '../../../../../components/containers/AppModal/AppModal';
 
-class BookmarkAddCategoryForm extends React.Component {
+class BookmarkAddCategoryModalForm extends React.Component {
 
-  handleClick(e) {
-    e.preventDefault();
-
+  handleClick() {
     const user = this.props.user;
 
     const params = this.props.params || {};
@@ -32,7 +29,10 @@ class BookmarkAddCategoryForm extends React.Component {
 
   render() {
     return (
-      <Card cardHeading="Add category">
+      <AppModal
+        labelId="addCategory"
+        confirmHandler={() => this.handleClick()}
+      >
         <Form>
           <div><label htmlFor="name">Category Name</label></div>
           <div>
@@ -53,15 +53,14 @@ class BookmarkAddCategoryForm extends React.Component {
               ref="description"
             />
           </div>
-          <div><Button labelId="addCategory" click={(e) => this.handleClick(e)} /></div>
         </Form>
-      </Card>
+      </AppModal>
     );
   }
 
 }
 
-BookmarkAddCategoryForm.propTypes = {
+BookmarkAddCategoryModalForm.propTypes = {
   params: PropTypes.object,
   user: PropTypes.object,
   dispatch: PropTypes.func,
@@ -81,4 +80,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryModalForm);
