@@ -39,32 +39,37 @@ class BookmarkCategoriesContainer extends Component {
 
     return (
       <div>
-        <div
+        <Row
           className={classes.ContainerHeader}
           style={this.props.userPreferenceStyles.spaceHeader}
         >
-          <BookmarkAddCategoryModalForm params={params} />
-          <BookmarkAddSpaceForm />
-        </div>
+          <Col md={8}>
+            <BookmarkAddCategoryModalForm params={params} />
+            <BookmarkAddSpaceForm />
+          </Col>
+          <Col md={4}>
+            <a href="#">Switch to table view</a>
+          </Col>
+        </Row>
         <div className={classes.Content}>
           <Tabs data={bkSpaceTabsData} />
-          {
-            index > 0 ? (
-              <Row className="float-right">
-                <Col
-                  md={12}
-                >
-                  <MakeDefaultSpaceButton spaceIndex={index} />
-                  <AppModal
-                    labelId="deleteThisSpace"
-                    confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
-                  >
-                    <span>Are you sure you would like to delete this space?</span>
-                  </AppModal>
-                </Col>
-              </Row>
-            ) : null
-          }
+          <Row className="float-right">
+            <Col md={12}>
+              {
+                index > 0 ? (
+                  <div>
+                    <MakeDefaultSpaceButton spaceIndex={index} />
+                    <AppModal
+                      labelId="deleteThisSpace"
+                      confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+                    >
+                      <span>Are you sure you would like to delete this space?</span>
+                    </AppModal>
+                  </div>
+                ) : null
+              }
+            </Col>
+          </Row>
           <BookmarkCategories space={bookmarkSpaces[index]} />
         </div>
       </div>
