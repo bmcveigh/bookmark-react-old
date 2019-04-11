@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt, faPlus, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
@@ -65,13 +67,23 @@ class BookmarkCategory extends React.Component {
         <div className={classes.BookmarkCategoryActions}>
           <a
             href="#"
-            onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
-          >{this.state.toggleEditForm ? 'Done' : 'Edit'}</a>
+            className="text-success"
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </a>
           <a
             href="#"
+            className="text-warning"
+            onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+          >
+            <FontAwesomeIcon icon={faPencilAlt} />
+          </a>
+          <a
+            href="#"
+            className="text-danger"
             onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
           >
-            Delete
+            <FontAwesomeIcon icon={faWindowClose} />
           </a>
         </div>
       </Card>
