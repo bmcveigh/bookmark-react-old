@@ -2,15 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt, faPlus, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
 import BookmarkEditCategoryForm from '../../forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 import Card from '../../../../../components/elements/Card/Card';
 import BookmarkList from './BookmarkList/BookmarkList';
-import HoverTooltip from '../../../../../components/elements/HoverTooltip/HoverTooltip';
+import CrudButtons from '../../../../../components/widgets/CrudButtons/CrudButtons';
 
 class BookmarkCategory extends React.Component {
 
@@ -66,44 +64,16 @@ class BookmarkCategory extends React.Component {
       <Card cardHeading={category.name} helpText={category.description || ''}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
-          <HoverTooltip
-            helpText="Add bookmark"
-            placement="right"
-            tooltipId={`add-bookmark-${category.categoryId}`}
-          >
-            <a
-              href="#"
-              className="text-success"
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </a>
-          </HoverTooltip>
-          <HoverTooltip
-            helpText="Edit category"
-            placement="right"
-            tooltipId={`edit-category-${category.categoryId}`}
-          >
-            <a
-              href="#"
-              className="text-warning"
-              onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
-            >
-              <FontAwesomeIcon icon={faPencilAlt} />
-            </a>
-          </HoverTooltip>
-          <HoverTooltip
-            helpText="Delete category"
-            placement="right"
-            tooltipId={`delete-category-${category.categoryId}`}
-          >
-            <a
-              href="#"
-              className="text-danger"
-              onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
-            >
-              <FontAwesomeIcon icon={faWindowClose} />
-            </a>
-          </HoverTooltip>
+          <CrudButtons
+            addButtonLabel="Add bookmark"
+            addButtonId={`add-bookmark-${category.categoryId}`}
+            editButtonLabel="Edit category"
+            editButtonId={`edit-category-${category.categoryId}`}
+            editButtonClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+            deleteButtonLabel="Delete category"
+            deleteButtonId={`delete-category-${category.categoryId}`}
+            deleteButtonClick={(e) => this.handleClick(e, 'delete', category, this.props)}
+          />
         </div>
       </Card>
     );
