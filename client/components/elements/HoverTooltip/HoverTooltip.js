@@ -16,18 +16,18 @@ class HoverTooltip extends Component {
 
   toggle() {
     this.setState({
-      tooltipOpen: !this.state.tooltipOpen
+      tooltipOpen: !this.state.tooltipOpen,
     });
   }
 
   render() {
     return (
-      <div>
+      <span>
         <span id={this.props.tooltipId}>{this.props.children}</span>
-        <Tooltip placement="top" isOpen={this.state.tooltipOpen} target={this.props.tooltipId} toggle={this.toggle}>
+        <Tooltip placement={this.props.placement} isOpen={this.state.tooltipOpen} target={this.props.tooltipId} toggle={this.toggle}>
           {this.props.helpText}
         </Tooltip>
-      </div>
+      </span>
     );
   }
 }
@@ -35,7 +35,12 @@ class HoverTooltip extends Component {
 HoverTooltip.propTypes = {
   children: PropTypes.any.isRequired,
   helpText: PropTypes.string.isRequired,
+  placement: PropTypes.string,
   tooltipId: PropTypes.string.isRequired,
+};
+
+HoverTooltip.defaultProps = {
+  placement: 'top',
 };
 
 export default HoverTooltip;

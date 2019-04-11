@@ -10,6 +10,7 @@ import { updateUserById } from '../../../../../store/actions/UserActions';
 import BookmarkEditCategoryForm from '../../forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 import Card from '../../../../../components/elements/Card/Card';
 import BookmarkList from './BookmarkList/BookmarkList';
+import HoverTooltip from '../../../../../components/elements/HoverTooltip/HoverTooltip';
 
 class BookmarkCategory extends React.Component {
 
@@ -65,26 +66,44 @@ class BookmarkCategory extends React.Component {
       <Card cardHeading={category.name} helpText={category.description || ''}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
-          <a
-            href="#"
-            className="text-success"
+          <HoverTooltip
+            helpText="Add bookmark"
+            placement="right"
+            tooltipId={`add-bookmark-${category.categoryId}`}
           >
-            <FontAwesomeIcon icon={faPlus} />
-          </a>
-          <a
-            href="#"
-            className="text-warning"
-            onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+            <a
+              href="#"
+              className="text-success"
+            >
+              <FontAwesomeIcon icon={faPlus} />
+            </a>
+          </HoverTooltip>
+          <HoverTooltip
+            helpText="Edit category"
+            placement="right"
+            tooltipId={`edit-category-${category.categoryId}`}
           >
-            <FontAwesomeIcon icon={faPencilAlt} />
-          </a>
-          <a
-            href="#"
-            className="text-danger"
-            onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
+            <a
+              href="#"
+              className="text-warning"
+              onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+            >
+              <FontAwesomeIcon icon={faPencilAlt} />
+            </a>
+          </HoverTooltip>
+          <HoverTooltip
+            helpText="Delete category"
+            placement="right"
+            tooltipId={`delete-category-${category.categoryId}`}
           >
-            <FontAwesomeIcon icon={faWindowClose} />
-          </a>
+            <a
+              href="#"
+              className="text-danger"
+              onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
+            >
+              <FontAwesomeIcon icon={faWindowClose} />
+            </a>
+          </HoverTooltip>
         </div>
       </Card>
     );
