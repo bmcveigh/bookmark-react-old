@@ -32,6 +32,7 @@ class BookmarkAddCategoryModalForm extends React.Component {
       <AppModal
         labelId="addCategory"
         confirmHandler={() => this.handleClick()}
+        title="Add category"
       >
         <Form>
           <div><label htmlFor="name">Category Name</label></div>
@@ -73,11 +74,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    updateUserById,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkAddCategoryModalForm);
+export default connect(mapStateToProps)(BookmarkAddCategoryModalForm);
