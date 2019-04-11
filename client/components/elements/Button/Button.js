@@ -5,12 +5,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import radium from 'radium';
 
+import classes from './Button.css';
+
 function Button(props) {
   const globalStyles = props.globalStyles || {};
 
   return (
     <button
-      className={`${globalStyles.button} ${globalStyles['button--small']}`}
+      className={`${globalStyles.button} ${globalStyles['button--small']} ${classes.Button}`}
       onClick={props.click}
       style={props.userPreferenceStyles.button}
     >
