@@ -63,7 +63,7 @@ class BookmarkCategory extends React.Component {
     return (
       <Card
         cardHeading={category.name}
-        cardWidth={this.state.toggleEditForm ? 4 : 3}
+        cardWidth={this.state.toggleEditForm ? 6 : 3}
         className={classes.BookmarkCategory}
         helpText={category.description || ''}
       >

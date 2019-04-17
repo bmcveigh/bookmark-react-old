@@ -128,6 +128,7 @@ class BookmarkFormWidget extends Component {
 
     return (
       <div className={classes.BookmarkFormWidget}>
+        <h3 className={classes.BookmarkFormLabel}>Bookmarks</h3>
         <div>
           {output}
         </div>

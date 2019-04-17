@@ -7,6 +7,9 @@ import { injectIntl } from 'react-intl';
 
 import BookmarkFormWidget from '../../../../../components/widgets/BookmarkFormWidget/BookmarkFormWidget';
 import { updateUserById } from '../../../../../store/actions/UserActions';
+import { Label } from 'reactstrap';
+
+import classes from './BookmarkEditCategoryForm.css';
 
 
 class BookmarkEditCategoryForm extends Component {
@@ -43,8 +46,10 @@ class BookmarkEditCategoryForm extends Component {
     const globalStyles = this.props.styles.data;
 
     return (
-      <form>
-        <div><label htmlFor="name">Category Name</label></div>
+      <form className={classes.BookmarkEditCategoryForm}>
+        <div>
+          <Label htmlFor="name">Category Name</Label>
+        </div>
         <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
           <input
             type="text"
@@ -55,7 +60,7 @@ class BookmarkEditCategoryForm extends Component {
           />
         </div>
         <div>
-          <label htmlFor="description">Category Description</label>
+          <Label htmlFor="description">Category Description</Label>
         </div>
         <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
           <input
