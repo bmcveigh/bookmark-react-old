@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Form, FormGroup } from 'reactstrap';
-import AppModal from '../../containers/AppModal/AppModal';
-import { updateUserById } from '../../../store/actions/UserActions';
+import { updateUserById } from '../../../../../store/actions/UserActions';
+import AppModal from '../../../../../components/containers/AppModal/AppModal';
+
 
 
 class BookmarkAddSpaceForm extends Component {

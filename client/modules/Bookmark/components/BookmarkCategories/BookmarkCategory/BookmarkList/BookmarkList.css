@@ -1,0 +1,13 @@
+.Bookmark .DeleteBookmark {
+  background: #ffffff;
+  display: none;
+  color: red;
+  cursor: pointer;
+  padding: 0 5px 0 3px;
+  margin-left: -5px;
+  margin-right: 0;
+}
+
+.Bookmark:hover .DeleteBookmark {
+  display: block;
+}

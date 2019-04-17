@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // Import Components
 import BookmarkCategoriesContainer from '../../components/BookmarkCategoriesContainer';
-import BookmarkAddCategoryForm from '../../../../components/forms/BookmarkAddCategoryForm/BookmarkAddCategoryForm';
 import MenuSidebarContainer from '../../../../components/containers/MenuSidebarContainer/MenuSidebarContainer';
 import { setParams } from '../../../../store/actions/routeParamsActions';
 
@@ -18,16 +17,9 @@ class BookmarkListPage extends Component {
   }
 
   render() {
-    let addForm;
-
-    if (this.props.bookmarks.shouldDisplayBookmark) {
-      addForm = <BookmarkAddCategoryForm params={this.props.params} />;
-    }
-
     return (
       <MenuSidebarContainer>
         <BookmarkCategoriesContainer params={this.props.params} />
-        {addForm}
       </MenuSidebarContainer>
     );
   }

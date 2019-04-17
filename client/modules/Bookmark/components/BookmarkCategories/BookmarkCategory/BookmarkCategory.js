@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 
 import classes from './BookmarkCategory.css';
 import { updateUserById } from '../../../../../store/actions/UserActions';
-import BookmarkEditCategoryForm from '../../../../../components/forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
+import BookmarkEditCategoryForm from '../../forms/BookmarkEditCategoryForm/BookmarkEditCategoryForm';
 import Card from '../../../../../components/elements/Card/Card';
 import BookmarkList from './BookmarkList/BookmarkList';
+import CrudButtons from '../../../../../components/widgets/CrudButtons/CrudButtons';
 
 class BookmarkCategory extends React.Component {
 
@@ -30,10 +31,12 @@ class BookmarkCategory extends React.Component {
         if (confirm('Are you sure you want to delete?')) {
           const user = props.user;
 
-          user.bookmarkSpaces[0][0].bookmarkCategories.forEach((c, index) => {
+          const spaceIndex = props.routeParams.id ? this.props.routeParams.id : 0;
+
+          user.bookmarkSpaces[0][spaceIndex].bookmarkCategories.forEach((c, index) => {
             if (c.categoryId === category.categoryId) {
               // todo: check by an id instead.
-              user.bookmarkSpaces[0][0].bookmarkCategories.splice(index);
+              user.bookmarkSpaces[0][spaceIndex].bookmarkCategories.splice(index);
               props.dispatch(updateUserById(user._id, user));
             }
           });
@@ -58,19 +61,19 @@ class BookmarkCategory extends React.Component {
     }
 
     return (
-      <Card cardHeading={category.name}>
+      <Card cardHeading={category.name} helpText={category.description || ''}>
         {output}
         <div className={classes.BookmarkCategoryActions}>
-          <a
-            href="#"
-            onClick={(e) => this.handleClick(e, 'edit', category, this.props)}
-          >{this.state.toggleEditForm ? 'Done' : 'Edit'}</a>
-          <a
-            href="#"
-            onClick={(e) => this.handleClick(e, 'delete', category, this.props)}
-          >
-            Delete
-          </a>
+          <CrudButtons
+            addButtonLabel="Add bookmark"
+            addButtonId={`add-bookmark-${category.categoryId}`}
+            editButtonLabel="Edit category"
+            editButtonId={`edit-category-${category.categoryId}`}
+            editButtonClick={(e) => this.handleClick(e, 'edit', category, this.props)}
+            deleteButtonLabel="Delete category"
+            deleteButtonId={`delete-category-${category.categoryId}`}
+            deleteButtonClick={(e) => this.handleClick(e, 'delete', category, this.props)}
+          />
         </div>
       </Card>
     );
@@ -81,6 +84,7 @@ class BookmarkCategory extends React.Component {
 BookmarkCategory.propTypes = {
   category: PropTypes.object.isRequired,
   dispatch: PropTypes.func,
+  routeParams: PropTypes.object,
   styles: PropTypes.object,
   user: PropTypes.object,
   userPreferenceStyles: PropTypes.object,
@@ -89,17 +93,11 @@ BookmarkCategory.propTypes = {
 // Retrieve data from store as props
 function mapStateToProps(state) {
   return {
+    routeParams: state.routeParams,
     styles: state.styles.data,
     user: state.user,
     userPreferenceStyles: state.styles.userPreferenceStyles,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    updateUserById,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkCategory);
+export default connect(mapStateToProps)(BookmarkCategory);

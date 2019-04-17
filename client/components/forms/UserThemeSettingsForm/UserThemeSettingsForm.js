@@ -154,6 +154,11 @@ const themes = [
     colors: '#000000,#000000,#7aba20,#FFFFFF,#000000,#FFFFFF,#7aba20,#0088cc',
   },
   {
+    machineName: 'trello',
+    name: 'Trello',
+    colors: '#0079BF,#026AA7,#5BA4CF,#FFFFFF,#026AA7,#FFFFFF,#61BD4F,#EB5A46',
+  },
+  {
     machineName: 'trulia',
     name: 'Trulia',
     colors: '#37B449,#2D9A48,#1B5E48,#FFFFFF,#2D9A48,#FFFFFF,#1B5E48,#EB4D5C',
@@ -162,6 +167,11 @@ const themes = [
     machineName: 'waze',
     name: 'Waze',
     colors: '#93C4D3,#FFFFFF,#93C4D3,#FFFFFF,#FFFFFF,#173C4C,#66CC33,#173C4C',
+  },
+  {
+    machineName: 'we_are_la_tech',
+    name: 'WeAreLATech',
+    colors: '#2b2b2b,#f02109,#f9fc00,#2b2b2b,#2b2b2b,#FFFFFF,#66ed00,#ec34ff',
   },
   {
     machineName: 'windowsXP',

@@ -3,8 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { toggleBookmarkCategoryForm } from '../../../../store/actions/BookmarkActions';
-import Button from '../../../../components/elements/Button/Button';
+import { toggleBookmarkCategoryForm } from '../../../../../store/actions/BookmarkActions';
+import Button from '../../../../../components/elements/Button/Button';
 
 function BookmarkAddCategoryButton(props) {
   return (

@@ -1,35 +1,42 @@
-[
-  {
-    "username": "jdoe",
-    "pass": "pass",
-    "email": "example@example.com",
-    "created": 0,
-    "lastLogin": 0,
-    "isAdmin": 0,
-    "status": 1,
-    "membershipType": "free_trial",
-    "paymentMethodType": "paypal",
-    "bookmarkSpaces" : [
+{
+  "_id" : "5caa2146ac96f80022aa45e4",
+  "username" : "bmcveigh",
+  "email" : "bcmcveigh@gmail.com",
+  "pass" : "pass",
+  "created" : 0,
+  "lastLogin" : 0,
+  "isAdmin" : 0,
+  "status" : 1,
+  "membershipType" : "free_trial",
+  "paymentMethodType" : "paypal",
+  "preferences" : {
+    "themeSettings" : {
+      "colors" : "#4E69A2,#38528B,#38528B,#FFFFFF,#38528B,#FFFFFF,#1FAD38,#CD2323",
+      "name" : "Facebook",
+      "machineName" : "Facebook"
+    }
+  },
+  "bookmarkSpaces" : [
+    [
       {
-        "name": "Main",
-        "description": "This is the main space.",
-        "bookmarkCategories": [
+        "name" : "Forum One",
+        "description" : "",
+        "bookmarkCategories" : [
           {
-            "name": "Sports",
-            "description": "Contains links about sports.",
-            "bookmarks": [
+            "categoryId" : "8eeomi",
+            "bookmarks" : [
               {
-                "href": "http://www.espn.com",
-                "label": "ESPN"
-              },
-              {
-                "href": "http://www.nfl.com",
-                "label": "NFL"
+                "bookmarkId" : "6wostf",
+                "href" : "https://www.openair.com/index.pl",
+                "label" : "OpenAir"
               }
-            ]
+            ],
+            "description" : "",
+            "name" : "HR"
           }
         ]
       }
     ]
-  }
-]
+  ],
+  "__v" : 0
+}
