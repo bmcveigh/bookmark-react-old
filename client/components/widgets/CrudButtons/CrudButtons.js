@@ -11,18 +11,6 @@ function CrudButtons(props) {
   return (
     <span>
       <HoverTooltip
-        helpText={props.addButtonLabel}
-        placement="right"
-        tooltipId={props.addButtonId}
-      >
-        <a
-          href="#"
-          className="text-success"
-        >
-          <FontAwesomeIcon icon={faPlus} />
-        </a>
-      </HoverTooltip>
-      <HoverTooltip
         helpText={props.editButtonLabel}
         placement="right"
         tooltipId={props.editButtonId}
