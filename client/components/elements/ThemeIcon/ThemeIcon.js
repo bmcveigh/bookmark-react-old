@@ -24,8 +24,8 @@ function ThemeIcon(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-0.5 -0.5 502 493"
-      width={150}
-      height={150}
+      width={125}
+      height={125}
       style={{
         background: colors.backgroundColor,
         borderRadius: '4px',
