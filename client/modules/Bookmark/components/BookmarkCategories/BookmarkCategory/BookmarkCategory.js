@@ -61,7 +61,11 @@ class BookmarkCategory extends React.Component {
     }
 
     return (
-      <Card cardHeading={category.name} helpText={category.description || ''}>
+      <Card
+        cardHeading={category.name}
+        cardWidth={this.state.toggleEditForm ? 4 : 3}
+        helpText={category.description || ''}
+      >
         {output}
         <div className={classes.BookmarkCategoryActions}>
           <CrudButtons

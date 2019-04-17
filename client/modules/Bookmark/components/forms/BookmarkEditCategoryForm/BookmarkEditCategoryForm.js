@@ -51,6 +51,7 @@ class BookmarkEditCategoryForm extends Component {
             id="name"
             ref="name"
             defaultValue={category.name}
+            placeholder="Enter category name"
           />
         </div>
         <div>
@@ -62,6 +63,7 @@ class BookmarkEditCategoryForm extends Component {
             id="description"
             ref="description"
             defaultValue={category.description}
+            placeholder="Enter category description"
           />
         </div>
         <BookmarkFormWidget category={category} />
