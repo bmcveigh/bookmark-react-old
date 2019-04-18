@@ -266,7 +266,7 @@ class UserThemeSettingsForm extends Component {
               return (
                 <div
                   key={key}
-                  className={`col-md-1 ${classes.ThemeChoiceWrapper}`}
+                  className={`col-md-2 ${classes.ThemeChoiceWrapper}`}
                 >
                   <div>
                     <ThemeIcon theme={theme} />
