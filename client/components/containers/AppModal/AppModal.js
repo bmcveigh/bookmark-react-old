@@ -47,12 +47,12 @@ class AppModal extends React.Component {
         }
         <Modal
           isOpen={this.state.modal}
-          toggle={this.toggle}
+          toggle={() => this.toggle()}
           className={this.props.className}
         >
           <ModalHeader
             className={classes.ModalHeader}
-            toggle={this.toggle}
+            toggle={() => this.toggle()}
           >
             {this.props.title}</ModalHeader>
           <ModalBody className={classes.ModalBody}>
