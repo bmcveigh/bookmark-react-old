@@ -7,9 +7,6 @@ import { updateUserById } from '../../../store/actions/UserActions';
 import { injectIntl } from 'react-intl';
 import { Col, Row } from 'reactstrap';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
-
 import classes from './BookmarkFormWidget.css';
 import BookmarkMetadataModalForm from '../../../modules/Bookmark/components/forms/BookmarkMetadataModalForm/BookmarkMetadataModalForm';
 

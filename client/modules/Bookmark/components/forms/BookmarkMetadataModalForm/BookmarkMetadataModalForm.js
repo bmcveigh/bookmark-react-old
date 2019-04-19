@@ -42,7 +42,7 @@ class BookmarkMetadataModalForm extends Component {
           />
         </a>
         <AppModal
-          confirmHandler={this.handleClick}
+          confirmHandler={(e) => this.handleClick(e)}
           includeButton={false}
           isOpen={this.state.modal}
           title={`Notes for ${this.props.bookmark.label || 'Untitled Bookmark'}`}

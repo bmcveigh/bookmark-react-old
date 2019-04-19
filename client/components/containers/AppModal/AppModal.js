@@ -60,7 +60,7 @@ class AppModal extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={(event) => this.toggle(event, true)}>Done</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="secondary" onClick={() => this.toggle(event, false)}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </span>
