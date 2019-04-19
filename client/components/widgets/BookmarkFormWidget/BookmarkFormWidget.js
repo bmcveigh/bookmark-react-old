@@ -7,7 +7,11 @@ import { updateUserById } from '../../../store/actions/UserActions';
 import { injectIntl } from 'react-intl';
 import { Col, Row } from 'reactstrap';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
+
 import classes from './BookmarkFormWidget.css';
+import BookmarkMetadataModalForm from '../../../modules/Bookmark/components/forms/BookmarkMetadataModalForm/BookmarkMetadataModalForm';
 
 class BookmarkFormWidget extends Component {
 
@@ -98,7 +102,7 @@ class BookmarkFormWidget extends Component {
 
     const output = bookmarks.map((bookmark, key) => {
       return (
-        <Row key={key}>
+        <Row key={key} className={classes.BookmarkRow}>
           <Col md={4}>
             <span className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
               <input
@@ -110,7 +114,7 @@ class BookmarkFormWidget extends Component {
               />
             </span>
           </Col>
-          <Col md={8}>
+          <Col md={6}>
             <span className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
               <input
                 type="text"
@@ -121,6 +125,9 @@ class BookmarkFormWidget extends Component {
                 ref={`href--${bookmark.bookmarkId}`}
               />
             </span>
+          </Col>
+          <Col md={2}>
+            <BookmarkMetadataModalForm />
           </Col>
         </Row>
       );
