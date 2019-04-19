@@ -28,14 +28,28 @@ class AppModal extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.includeButton === false) {
+      this.setState({ modal: nextProps.isOpen });
+    }
+  }
+
   render() {
     return (
       <span>
-        <CustomButton
-          labelId={this.props.labelId}
-          click={this.toggle}
-        />
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        {
+          this.props.includeButton === true ? (
+            <CustomButton
+              labelId={this.props.labelId}
+              click={this.toggle}
+            />
+          ) : null
+        }
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}
+        >
           <ModalHeader
             className={classes.ModalHeader}
             toggle={this.toggle}
@@ -55,11 +69,18 @@ class AppModal extends React.Component {
 }
 
 AppModal.propTypes = {
-  labelId: PropTypes.string.isRequired,
+  labelId: PropTypes.string,
   children: PropTypes.any,
   className: PropTypes.string,
   confirmHandler: PropTypes.func.isRequired,
+  includeButton: PropTypes.bool,
+  isOpen: PropTypes.bool,
   title: PropTypes.string,
+};
+
+AppModal.defaultProps = {
+  includeButton: true,
+  isOpen: false,
 };
 
 export default AppModal;

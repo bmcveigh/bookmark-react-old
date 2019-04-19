@@ -127,7 +127,7 @@ class BookmarkFormWidget extends Component {
             </span>
           </Col>
           <Col md={2}>
-            <BookmarkMetadataModalForm />
+            <BookmarkMetadataModalForm bookmark={bookmark} />
           </Col>
         </Row>
       );
