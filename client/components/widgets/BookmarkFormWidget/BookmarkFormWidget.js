@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateUserById } from '../../../store/actions/UserActions';
 import { injectIntl } from 'react-intl';
+import { Col, Row } from 'reactstrap';
+
+import classes from './BookmarkFormWidget.css';
 
 class BookmarkFormWidget extends Component {
 
@@ -95,32 +98,37 @@ class BookmarkFormWidget extends Component {
 
     const output = bookmarks.map((bookmark, key) => {
       return (
-        <div key={key}>
-          <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-            <input
-              type="text"
-              placeholder="Label"
-              onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
-              defaultValue={bookmark.label}
-              ref={`label--${bookmark.bookmarkId}`}
-            />
-          </div>
-          <div className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
-            <input
-              type="text"
-              placeholder="URL"
-              onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
-              onMouseLeave={(e) => this.handleMouseLeave(e, bookmark, this.props)}
-              defaultValue={bookmark.href.length ? bookmark.href : 'http://'}
-              ref={`href--${bookmark.bookmarkId}`}
-            />
-          </div>
-        </div>
+        <Row key={key}>
+          <Col md={4}>
+            <span className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
+              <input
+                type="text"
+                placeholder="Label"
+                onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
+                defaultValue={bookmark.label}
+                ref={`label--${bookmark.bookmarkId}`}
+              />
+            </span>
+          </Col>
+          <Col md={8}>
+            <span className={`${globalStyles.input} ${globalStyles['input-fullWidth']}`}>
+              <input
+                type="text"
+                placeholder="URL"
+                onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
+                onMouseLeave={(e) => this.handleMouseLeave(e, bookmark, this.props)}
+                defaultValue={bookmark.href.length ? bookmark.href : 'http://'}
+                ref={`href--${bookmark.bookmarkId}`}
+              />
+            </span>
+          </Col>
+        </Row>
       );
     });
 
     return (
-      <div>
+      <div className={classes.BookmarkFormWidget}>
+        <h3 className={classes.BookmarkFormLabel}>Bookmarks</h3>
         <div>
           {output}
         </div>

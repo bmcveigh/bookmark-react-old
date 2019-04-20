@@ -7,7 +7,7 @@
 }
 
 .CardBody {
-  margin: 0;
+  padding: 0 10px 0 10px;
 }
 .CardBody li {
   padding-left: 5px;

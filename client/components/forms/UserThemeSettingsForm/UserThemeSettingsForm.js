@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import { updateUserById } from '../../../store/actions/UserActions';
 import { FormattedMessage } from 'react-intl';
 import { getUserPreferenceStyles } from '../../../store/actions/globalStylesActions';
+import ThemeIcon from '../../elements/ThemeIcon/ThemeIcon';
+
+import classes from './UserThemeSettingsForm.css';
 
 const themes = [
   {
@@ -255,7 +258,7 @@ class UserThemeSettingsForm extends Component {
     return (
       <form>
         <h3><FormattedMessage id="themeSettings" /></h3>
-        <div className={globalStyles.row}>
+        <div className="row">
           {
             themes.map((theme, key) => {
               const isChecked = theme.machineName === themeSettings.machineName;
@@ -263,8 +266,11 @@ class UserThemeSettingsForm extends Component {
               return (
                 <div
                   key={key}
-                  className={globalStyles['col-sm-2']}
+                  className={`col-md-2 ${classes.ThemeChoiceWrapper}`}
                 >
+                  <div>
+                    <ThemeIcon theme={theme} />
+                  </div>
                   <div className={globalStyles.radio}>
                     <input
                       type="radio"

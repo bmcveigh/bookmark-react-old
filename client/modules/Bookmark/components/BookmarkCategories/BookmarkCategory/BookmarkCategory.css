@@ -1,3 +1,7 @@
+.BookmarkCategory {
+  padding: 0 10px 0 10px;
+}
+
 .BookmarkCategoryActions > a {
   margin-right: 10px;
 }
