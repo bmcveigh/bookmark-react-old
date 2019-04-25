@@ -1,14 +1,20 @@
 import React from 'react';
+
 import { injectIntl, intlShape } from 'react-intl';
-import UserLoginForm from '../../../../components/forms/UserLoginForm/UserLoginForm';
+
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
+
+import UserLoginForm from '../../../../components/forms/UserLoginForm/UserLoginForm';
+
+import classes from './LoginPage.css';
 
 function LoginPage(props) {
   const styles = props.styles;
 
   return (
-    <div className={styles['col-sm-4']}>
+    <div className={`${classes.LoginFormWrapper} ${styles['col-sm-4']}`}>
       <UserLoginForm />
     </div>
   );
