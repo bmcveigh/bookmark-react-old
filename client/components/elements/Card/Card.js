@@ -54,7 +54,7 @@ Card.defaultProps = {
 function mapStateToProps(state) {
   return {
     globalStyles: state.styles.data,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 

@@ -13,6 +13,8 @@ function Tabs(props) {
     return <div></div>;
   }
 
+  const tabs = props.userPreferenceStyles.tabs || {};
+
   return (
     <div className={t}>
       {
@@ -23,7 +25,7 @@ function Tabs(props) {
             <Link
               to={item.href} className={`${tItem} ${isSelected ? gs['is-selected'] : ''}`}
               key={key}
-              style={isSelected ? props.userPreferenceStyles.tabs.selected : props.userPreferenceStyles.tabs.notSelected}
+              style={isSelected ? tabs.selected : tabs.notSelected}
             >
               {item.label}
             </Link>
@@ -43,7 +45,7 @@ Tabs.propTypes = {
 function mapStateToProps(state) {
   return {
     globalStyles: state.styles.data,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 

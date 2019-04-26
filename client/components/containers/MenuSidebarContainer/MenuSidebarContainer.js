@@ -7,9 +7,8 @@ import radium, { Style } from 'radium';
 import SidebarMenu from '../../../components/elements/SidebarMenu/SidebarMenu';
 
 import classes from './MenuSidebarContainer.css';
-import { getUserPreferenceStyles } from '../../../store/actions/globalStylesActions';
+import { getUserPreferenceStyles } from '../../../store/actions/userPreferenceStylesActions';
 import { getTabData } from '../../../store/actions/tabDataActions';
-import { fetchUserFromSession } from '../../../store/actions/UserActions';
 
 class MenuSidebarContainer extends Component {
 
@@ -17,13 +16,13 @@ class MenuSidebarContainer extends Component {
     super(props);
 
     props.dispatch(getTabData());
+  }
 
-    if (!this.props.user) {
-      props.dispatch(fetchUserFromSession());
-    }
-
-    if (this.props.user) {
-      props.dispatch(getUserPreferenceStyles(this.props.user));
+  componentWillReceiveProps() {
+    if (this.props.userPreferenceStyles.data) {
+      if (this.props.user._id) {
+        this.props.dispatch(getUserPreferenceStyles(this.props.user));
+      }
     }
   }
 
@@ -61,7 +60,7 @@ MenuSidebarContainer.propTypes = {
 function mapStateToProps(state) {
   return {
     user: state.user,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
     tabData: state.tabData.data,
   };
 }

@@ -96,7 +96,7 @@ SidebarMenu.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 

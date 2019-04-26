@@ -14,14 +14,15 @@ import { setGlobalStyles } from '../../../store/actions/globalStylesActions';
 
 // Import Routes
 import routes from '../../../routes';
+
 import { fetchUserFromSession } from '../../../store/actions/UserActions';
 
 class PageWrapper extends React.Component {
 
   constructor(props) {
     super(props);
-    props.dispatch(props.fetchUserFromSession());
-    props.dispatch(props.setGlobalStyles(styles));
+    props.dispatch(fetchUserFromSession());
+    props.dispatch(setGlobalStyles(styles));
   }
 
   render() {
@@ -40,18 +41,10 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    fetchUserFromSession,
-    setGlobalStyles,
-  };
-}
-
 PageWrapper.propTypes = {
   dispatch: PropTypes.func,
   fetchUserFromSession: PropTypes.func,
   setGlobalStyles: PropTypes.func,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageWrapper);
+export default connect(mapStateToProps)(PageWrapper);
