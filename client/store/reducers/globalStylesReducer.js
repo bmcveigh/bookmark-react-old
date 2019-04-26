@@ -1,5 +1,5 @@
 // Initial State
-import { SET_GLOBAL_STYLES, GET_USER_PREFERENCE_STYLES } from '../actions/globalStylesActions';
+import { SET_GLOBAL_STYLES } from '../actions/globalStylesActions';
 
 const initialState = { data: {} };
 
@@ -11,13 +11,6 @@ const globalStylesReducer = (state = initialState, action) => {
       return {
         ...state,
         data,
-      };
-    }
-
-    case GET_USER_PREFERENCE_STYLES: {
-      return {
-        ...state,
-        userPreferenceStyles: action.data,
       };
     }
 

@@ -1,7 +1,7 @@
 export default {
   locale: 'en',
   messages: {
-    siteTitle: 'Bookmark Guru',
+    siteTitle: 'Bookmark Buddy',
     addBookmark: 'Add bookmark',
     addCategory: 'Add Category',
     addSpace: 'Add Space',

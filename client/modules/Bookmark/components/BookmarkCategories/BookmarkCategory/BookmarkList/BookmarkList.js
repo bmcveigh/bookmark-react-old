@@ -52,7 +52,7 @@ const SortableItem = se(
         href="#"
         className={`${classes.DeleteBookmark} float-right`}
         onClick={(e) => handleDeleteBookmarkClick(e, value, props)}
-        style={{ color: props.userPreferenceStyles.button.background }}
+        style={{ color: props.userPreferenceStyles.button ? props.userPreferenceStyles.button.background : {} }}
       >
         <FontAwesomeIcon icon={faWindowClose} />
       </a>
@@ -110,13 +110,14 @@ class BookmarkList extends Component {
 
 BookmarkList.propTypes = {
   bookmarks: PropTypes.array,
+  userPreferenceStyles: PropTypes.object,
 };
 
 function mapStateToProps(state) {
   return {
     routeParams: state.routeParams,
     user: state.user,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 

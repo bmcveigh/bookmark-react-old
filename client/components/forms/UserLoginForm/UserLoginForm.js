@@ -13,6 +13,10 @@ class UserLoginForm extends Component {
   };
 
   render() {
+    if (this.props.user._id) {
+      window.location = '/';
+    }
+
     const styles = this.props.styles;
     const messages = this.props.intl.messages;
 
@@ -39,20 +43,15 @@ UserLoginForm.propTypes = {
   dispatch: PropTypes.func,
   intl: intlShape.isRequired,
   styles: PropTypes.object,
+  user: PropTypes.object,
 };
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
   return {
     styles: state.styles.data,
+    user: state.user,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    authenticateUser,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(injectIntl(UserLoginForm));
+export default connect(mapStateToProps)(injectIntl(UserLoginForm));

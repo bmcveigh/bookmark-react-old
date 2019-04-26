@@ -101,7 +101,7 @@ function mapStateToProps(state) {
     routeParams: state.routeParams,
     styles: state.styles.data,
     user: state.user,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 

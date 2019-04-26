@@ -4,18 +4,29 @@ import { FormattedMessage } from 'react-intl';
 
 // Import Style
 import styles from './Header.css';
+import { Link } from 'react-router';
 
-export function Header(props) {
-  const languageNodes = props.intl.enabledLanguages.map(
-    lang => <li key={lang} onClick={() => props.switchLanguage(lang)} className={lang === props.intl.locale ? styles.selected : ''}>{lang}</li>
+export function Header() {
+  const linkData = [
+    {
+      href: '/membership',
+      label: 'Membership',
+    },
+    {
+      href: '#',
+      label: 'Logout',
+    },
+  ];
+
+  const navItems = linkData.map(
+    (link, index) => <li key={index}><Link to={link.href}>{link.label}</Link></li>
   );
 
   return (
     <div className={styles.Header}>
       <div className={styles['language-switcher']}>
         <ul>
-          <li><FormattedMessage id="switchLanguage" /></li>
-          {languageNodes}
+          {navItems}
         </ul>
       </div>
     </div>

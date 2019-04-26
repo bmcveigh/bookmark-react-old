@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { updateUserById } from '../../../store/actions/UserActions';
 import { FormattedMessage } from 'react-intl';
-import { getUserPreferenceStyles } from '../../../store/actions/globalStylesActions';
+
+import { getUserPreferenceStyles } from '../../../store/actions/userPreferenceStylesActions';
+import { updateUserById } from '../../../store/actions/UserActions';
 import ThemeIcon from '../../elements/ThemeIcon/ThemeIcon';
 
 import classes from './UserThemeSettingsForm.css';
@@ -316,11 +317,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    updateUserById,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserThemeSettingsForm);
+export default connect(mapStateToProps)(UserThemeSettingsForm);

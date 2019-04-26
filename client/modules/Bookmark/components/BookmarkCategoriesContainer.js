@@ -25,6 +25,10 @@ const confirmHandler = (props, bookmarkSpaces, index) => {
 
 class BookmarkCategoriesContainer extends Component {
   render() {
+    if (!this.props.user || this.props.user.data) {
+      return <div>Loading...</div>;
+    }
+
     const bkSpaceTabsData = this.props.user.bookmarkSpaces[0].map((space, index) => {
       return {
         label: index ? space.name : `${space.name} (default space)`,
@@ -91,15 +95,8 @@ function mapStateToProps(state) {
     globalStyles: state.styles.data,
     routeParams: state.routeParams,
     user: state.user,
-    userPreferenceStyles: state.styles.userPreferenceStyles,
+    userPreferenceStyles: state.userPreferenceStyles,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-    updateUserById,
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookmarkCategoriesContainer);
+export default connect(mapStateToProps)(BookmarkCategoriesContainer);
