@@ -36,7 +36,7 @@ export class App extends Component {
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
         <div>
           <Helmet
-            title="Bookmark Guru"
+            title={this.props.intl.messages ? this.props.intl.messages.siteTitle : ''}
             titleTemplate="%s - Blog App"
             meta={[
               { charset: 'utf-8' },
