@@ -18,6 +18,7 @@ if (typeof require.ensure !== 'function') {
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
   require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage');
+  require('./modules/Homepage/containers/Homepage/Homepage');
 }
 
 // react-router setup with code-splitting
@@ -34,7 +35,7 @@ export default (
           }
           // Fix ESLint issue.
           if (!isUserLoggedIn) {
-            cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
+            cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
           }
         });
       }}
