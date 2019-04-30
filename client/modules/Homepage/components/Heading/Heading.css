@@ -1,8 +1,7 @@
 div.Heading {
   background-color: #000;
   border-radius: 0;
+  color: #fff;
   height: 100%;
 }
-div.Heading p {
-  color: #fff;
-}
+
