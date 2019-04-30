@@ -6,6 +6,17 @@ div.Pricing {
 }
 .Card {
   color: #000000;
-  height: 150px;
+  height: 250px;
   padding: 20px;
+}
+
+.Features {
+  color: #333;
+  margin-top: 5px;
+}
+
+.Feature {
+  border-bottom: 1px solid #d0d0d0;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
