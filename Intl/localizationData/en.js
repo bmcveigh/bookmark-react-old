@@ -21,6 +21,7 @@ export default {
     pass: 'Password',
     postTitle: 'Post Title',
     postContent: 'Post Content',
+    register: 'Register',
     submit: 'Submit',
     themeSettings: 'Theme Settings',
     update: 'Update',

@@ -50,7 +50,7 @@ export class RegistrationPage extends Component {
                 color="primary"
                 onClick={this.handleFormSubmit}
               >
-                Login
+                <FormattedMessage id="register" />
               </Button>
               <Link to="/" className={classes.CancelLink}>
                 <FormattedMessage id="cancel" />
