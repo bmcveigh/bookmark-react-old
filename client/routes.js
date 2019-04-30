@@ -82,7 +82,11 @@ export default (
     />
     <Route
       path="/user/register"
-      component={RegistrationPage}
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/User/pages/RegistrationPage/RegistrationPage').default);
+        });
+      }}
     />
       }}
     />

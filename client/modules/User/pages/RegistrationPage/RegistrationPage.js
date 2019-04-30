@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { injectIntl, intlShape } from 'react-intl';
 import { Link } from 'react-router';
 
-import styles from '../LoginPage/LoginPage.css';
 import { connect } from 'react-redux';
+
+import { FormattedMessage } from 'react-intl';
+
+import { Button, Col, Form, FormGroup, Row } from 'reactstrap';
+
 import { addUserRegistration } from '../../../../store/actions/UserActions';
+import classes from './RegistrationPage.css';
 
 
 export class RegistrationPage extends Component {
@@ -28,21 +32,37 @@ export class RegistrationPage extends Component {
 
   render() {
     return (
-      <div>
-        <input ref="username" className={styles['form-field']} placeholder={this.props.intl.messages.username} />
-        <input placeholder={"Email"} className={styles['form-field']} ref="email" />
-        <input type="password" placeholder={this.props.intl.messages.pass} ref="pass" className={styles['form-field']} />
-        <button className={styles['post-submit-button']} onClick={this.handleFormSubmit}>Submit</button>
-        <Link to="/">{this.props.intl.messages.cancel}</Link>
-      </div>
+      <Row>
+        <Col className={classes.RegistrationFormWrapper} md={4}>
+          <h3>Registration</h3>
+          <Form className={classes.RegistrationForm}>
+            <FormGroup>
+              <input ref="username" className="form-control" placeholder="Username" />
+            </FormGroup>
+            <FormGroup>
+              <input placeholder={"Email"} className="form-control" ref="email" />
+            </FormGroup>
+            <FormGroup>
+              <input type="password" placeholder="Password" ref="pass" className="form-control" />
+            </FormGroup>
+            <FormGroup>
+              <Button
+                color="primary"
+                onClick={this.handleFormSubmit}
+              >
+                Login
+              </Button>
+              <Link to="/" className={classes.CancelLink}>
+                <FormattedMessage id="cancel" />
+              </Link>
+            </FormGroup>
+          </Form>
+        </Col>
+      </Row>
     );
   }
 
 }
-
-RegistrationPage.propTypes = {
-  intl: intlShape.isRequired,
-};
 
 // Retrieve data from store as props
 function mapStateToProps() {
@@ -51,4 +71,4 @@ function mapStateToProps() {
   };
 }
 
-export default connect(mapStateToProps)(injectIntl(RegistrationPage));
+export default connect(mapStateToProps)(RegistrationPage);
