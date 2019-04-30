@@ -1,4 +1,11 @@
 div.Pricing {
-  background-color: yellow;
+  background-color: rgb(38, 83, 96);
+  border-radius: 0;
+  color: #fff;
   height: 100%;
+}
+.Card {
+  color: #000000;
+  height: 150px;
+  padding: 20px;
 }
