@@ -48,6 +48,7 @@ function Pricing() {
               <Card className={classes.Card}>
                 <h3>{plan.name}</h3>
                 <span>${plan.price} /month</span>
+                <span className={classes.FeaturesLabel}>Features Included</span>
                 <div className={classes.Features}>
                   {
                     Object.keys(plan.featuresIncluded).map((featureKey, fIndex) => (
