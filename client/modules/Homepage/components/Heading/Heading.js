@@ -14,7 +14,7 @@ function Heading() {
       <h1>Welcome to <FormattedMessage id="siteTitle" /></h1>
       <p><FormattedMessage id="siteSlogan" /></p>
       <hr />
-      <Link to="/membership" className="btn btn-danger">Get Started</Link>
+      <Link to="/user/register" className="btn btn-danger">Get Started</Link>
     </Jumbotron>
   );
 }
