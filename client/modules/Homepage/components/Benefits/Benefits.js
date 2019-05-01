@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, Col, Jumbotron, Row } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardText, Col, Jumbotron, Row } from 'reactstrap';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -24,15 +24,19 @@ function Benefits() {
 
   return (
     <Jumbotron className={classes.Benefits}>
-      <h1><FormattedMessage id="benefitsTitle" /></h1>
+      <h1><FormattedMessage id="benefitsTitle"/></h1>
       <div>
         {
           benefits.map((benefit, key) => (
             <Row key={key} className={classes.Benefit}>
               <Col md={3}>
                 <Card className={classes.Card}>
-                  <h3>{benefit.title}</h3>
-                  <p>{benefit.description}</p>
+                  <CardHeader>
+                    <h3>{benefit.title}</h3>
+                  </CardHeader>
+                  <CardBody>
+                    <CardText>{benefit.description}</CardText>
+                  </CardBody>
                 </Card>
               </Col>
             </Row>
