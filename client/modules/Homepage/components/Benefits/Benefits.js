@@ -18,7 +18,7 @@ function Benefits() {
     },
     {
       title: 'Customize the appearance',
-      description: 'Customize the theme of your bookmark spaces',
+      description: 'Customize the theme of your bookmark spaces.',
     },
   ];
 
