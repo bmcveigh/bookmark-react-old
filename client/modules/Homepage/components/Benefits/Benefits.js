@@ -9,8 +9,12 @@ import classes from './Benefits.css';
 function Benefits() {
   const benefits = [
     {
-      title: 'Organize your bookmarks into spaces.',
+      title: 'Organize your bookmarks into spaces',
       description: 'Group your bookmarks into what are called spaces. Each space has its own tab.',
+    },
+    {
+      title: 'Create categories for your bookmarks',
+      description: 'Group related bookmarks into what we call categories. This allows you to group your bookmarks.',
     },
     {
       title: 'Customize the appearance',
