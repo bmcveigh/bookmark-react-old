@@ -1,0 +1,18 @@
+div.Benefits {
+  background-color: #D26939;
+  border-radius: 0;
+  color: #fff;
+  height: 100%;
+}
+
+.Benefit {
+  color: #000;
+  margin: 20px;
+}
+
+.Card {
+  position: relative;
+  left: 168%;
+  height: 350px;
+  padding: 40px 20px 0 20px;
+}

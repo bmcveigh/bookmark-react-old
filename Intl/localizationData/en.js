@@ -6,6 +6,7 @@ export default {
     addBookmark: 'Add bookmark',
     addCategory: 'Add Category',
     addSpace: 'Add Space',
+    benefitsTitle: 'Benefits offered',
     cancel: 'Cancel',
     colors: 'Colors',
     deleteThisSpace: 'Delete this space',
