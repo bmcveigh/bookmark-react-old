@@ -3,6 +3,8 @@ div.Benefits {
   border-radius: 0;
   color: #000000;
   height: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .Benefit {
@@ -12,7 +14,7 @@ div.Benefits {
 
 .Card {
   position: relative;
-  left: 168%;
+  left: 260%;
   top: -62px;
   height: 350px;
 }
