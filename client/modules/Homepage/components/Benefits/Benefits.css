@@ -10,13 +10,22 @@ div.Benefits {
 .Benefit {
   color: #000;
   margin-bottom: 80px;
+  height: 600px;
+}
+
+.Picture {
+  border-radius: 4px;
+  margin: 20px 0 0 40px;
+  width: 100%;
+  height: 90%;
 }
 
 .Card {
   position: relative;
-  left: 260%;
+  left: 10%;
   top: -62px;
-  height: 350px;
+  height: 450px;
+  width: 116%;
 }
 
 .OrganizeBookmarks {
@@ -24,9 +33,9 @@ div.Benefits {
 }
 
 .CreateCategories {
-  background-color: blue;
+  background-color: #D26939;
 }
 
 .CustomizeAppearance {
-  background-color: yellow;
+  background-color: #D26939;
 }
