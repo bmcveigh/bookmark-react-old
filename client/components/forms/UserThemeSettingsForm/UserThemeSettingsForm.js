@@ -33,6 +33,11 @@ const themes = [
     colors: '#121417,#2F343D,#2F343D,#ABB2BF,#2F343D,#ABB2BF,#98C379,#98C379',
   },
   {
+    machineName: 'Cerulean (default theme)',
+    name: 'Cerulean',
+    colors: '#0074B2,#0083CA,#00A2FF,#FFFFFF,#00A5FF,#FFFFFF,#03EEFF,#00CCC2',
+  },
+  {
     machineName: 'codeMash',
     name: 'Code Mash',
     colors: '#0c84a9,#f67f01,#94C53C,#FFFFFF,#16A1C8,#FFFFFF,#FFFFFF,#94C53C',

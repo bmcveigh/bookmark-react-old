@@ -1,0 +1,15 @@
+.Footer {
+  position: relative;
+  bottom: 0;
+  background-color: transparent;
+  color: #000000;
+  margin-top: 10px;
+  padding: 10px 0 49px 0;
+  border-top: 1px solid #d0d0d0;
+}
+
+.Footer .Copyright {
+  position: absolute;
+  left: 5%;
+  height: 100%;
+}
