@@ -1,0 +1,12 @@
+.RegistrationFormWrapper {
+  position: relative;
+  left: 20%;
+  top: 100px;
+  margin-bottom: 123px;
+}
+
+.RegistrationForm {}
+
+.CancelLink {
+  margin-left: 20px;
+}

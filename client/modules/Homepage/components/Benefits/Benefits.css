@@ -1,0 +1,41 @@
+div.Benefits {
+  background-color: #d0d0d0;
+  border-radius: 0;
+  color: #000000;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.Benefit {
+  color: #000;
+  margin-bottom: 80px;
+  height: 600px;
+}
+
+.Picture {
+  border-radius: 4px;
+  margin: 20px 0 0 40px;
+  width: 100%;
+  height: 90%;
+}
+
+.Card {
+  position: relative;
+  left: 10%;
+  top: -62px;
+  height: 450px;
+  width: 116%;
+}
+
+.OrganizeBookmarks {
+  background-color: #D26939;
+}
+
+.CreateCategories {
+  background-color: #D26939;
+}
+
+.CustomizeAppearance {
+  background-color: #D26939;
+}

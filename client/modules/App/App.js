@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 // Import Actions
 import { toggleAddPost } from '../../store/actions/AppActions';
 import { switchLanguage } from '../../store/actions/IntlActions';
+import Footer from './components/Footer/Footer';
 
 let DevTools;
 if (process.env.NODE_ENV === 'development') {
@@ -36,7 +37,7 @@ export class App extends Component {
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
         <div>
           <Helmet
-            title="Bookmark Guru"
+            title={this.props.intl.messages ? this.props.intl.messages.siteTitle : ''}
             titleTemplate="%s - Blog App"
             meta={[
               { charset: 'utf-8' },
@@ -58,6 +59,7 @@ export class App extends Component {
           <div>
             {this.props.children}
           </div>
+          <Footer />
         </div>
       </div>
     );
