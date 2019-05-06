@@ -6,6 +6,8 @@ import { FormattedMessage } from 'react-intl';
 
 import classes from './Benefits.css';
 
+import createCategories from './img/createCategories.png';
+import customizeAppearance from './img/customizeAppearance.png';
 import organizeSpaces from './img/organizeSpaces.png';
 
 function Benefits() {
@@ -20,13 +22,13 @@ function Benefits() {
       title: 'Create categories for your bookmarks',
       description: 'Group related bookmarks into what we call categories. This allows you to group your bookmarks.',
       rowClass: 'CreateCategories',
-      demoImg: organizeSpaces,
+      demoImg: createCategories,
     },
     {
       title: 'Customize the appearance',
-      description: 'Customize the theme of your bookmark spaces.',
+      description: 'With over 40 themes to choose from, you can customize the theme of your bookmark spaces.',
       rowClass: 'CustomizeAppearance',
-      demoImg: organizeSpaces,
+      demoImg: customizeAppearance,
     },
   ];
 
@@ -41,7 +43,7 @@ function Benefits() {
                 <img
                   alt={benefit.description}
                   className={classes.Picture}
-                  src={organizeSpaces}
+                  src={benefit.demoImg}
                 />
               </Col>
               <Col md={3}>
