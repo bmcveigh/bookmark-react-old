@@ -1,8 +1,9 @@
 /* eslint-disable global-require */
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+
+import { Route, IndexRoute, Redirect } from 'react-router';
+
 import App from './modules/App/App';
-import RegistrationPage from './modules/User/pages/RegistrationPage/RegistrationPage';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -61,6 +62,15 @@ export default (
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
+        });
+      }}
+    />
+    <Route
+      path="/user/logout"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          localStorage.clear();
+          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
         });
       }}
     />
