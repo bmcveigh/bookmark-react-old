@@ -14,6 +14,7 @@ import MakeDefaultSpaceButton from './buttons/MakeDefaultSpaceButton/MakeDefault
 
 import classes from './BookmarkCategoriesContainer.css';
 import BookmarkAddCategoryModalForm from './forms/BookmarkAddCategoryModalForm/BookmarkAddCategoryModalForm';
+import BookmarkTableView from './BookmarkTableView/BookmarkTableView';
 
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
@@ -23,7 +24,22 @@ const confirmHandler = (props, bookmarkSpaces, index) => {
   props.dispatch(updateUserById(user._id, user));
 };
 
+const CATEGORY_VIEW = 'CATEGORY_VIEW';
+const TABLE_VIEW = 'TABLE_VIEW';
+
 class BookmarkCategoriesContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewMode: CATEGORY_VIEW,
+    };
+  }
+
+  handleViewModeClick(e) {
+    e.preventDefault();
+    this.setState({ viewMode: this.state.viewMode === TABLE_VIEW ? CATEGORY_VIEW : TABLE_VIEW });
+  }
+
   render() {
     if (!this.props.user || this.props.user.data) {
       return <div>Loading...</div>;
@@ -52,7 +68,12 @@ class BookmarkCategoriesContainer extends Component {
             <BookmarkAddSpaceForm />
           </Col>
           <Col md={4}>
-            <a href="#">Switch to table view</a>
+            <a
+              href="#"
+              onClick={(e) => this.handleViewModeClick(e)}
+            >
+              Switch to {this.state.viewMode === CATEGORY_VIEW ? 'table' : 'category'} view
+            </a>
           </Col>
         </Row>
         <div className={classes.Content}>
@@ -74,7 +95,8 @@ class BookmarkCategoriesContainer extends Component {
               }
             </Col>
           </Row>
-          <BookmarkCategories space={bookmarkSpaces[index]} />
+          {this.state.viewMode === CATEGORY_VIEW ?
+            <BookmarkCategories space={bookmarkSpaces[index]} /> : <BookmarkTableView space={bookmarkSpaces[index]} />}
         </div>
       </div>
     );
