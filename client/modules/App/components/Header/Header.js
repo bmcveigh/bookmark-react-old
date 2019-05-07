@@ -10,10 +10,6 @@ import { Link } from 'react-router';
 export function Header(props) {
   const linkData = [
     {
-      href: '/membership',
-      label: 'Membership',
-    },
-    {
       href: props.user._id ? '/user/logout' : '/user/login',
       label: props.user._id ? 'Logout' : 'Login',
     },
