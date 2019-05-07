@@ -21,7 +21,14 @@ function BookmarkTableView(props) {
         props.space.bookmarkCategories.map(category => {
           return category.bookmarks.map((bookmark, key) => (
             <tr key={key}>
-              <td><a href={bookmark.href}>{bookmark.label}</a></td>
+              <td>
+                <a
+                  href={bookmark.href}
+                  target="_blank"
+                >
+                  {bookmark.label}
+                </a>
+              </td>
               <td>{category.name}</td>
             </tr>
           ));
