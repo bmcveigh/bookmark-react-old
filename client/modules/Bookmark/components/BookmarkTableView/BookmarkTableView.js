@@ -16,10 +16,10 @@ function BookmarkTableView(props) {
       <Col md={12} className={classes.BookmarkTableView}>
         <Table>
           <thead>
-          <tr style={userPreferenceStyles.cardHeading}>
-            <th>Bookmark</th>
-            <th>Bookmark Category</th>
-          </tr>
+            <tr style={userPreferenceStyles.cardHeading}>
+              <th>Bookmark</th>
+              <th>Bookmark Category</th>
+            </tr>
           </thead>
           <tbody>
           {
