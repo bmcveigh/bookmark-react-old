@@ -1,14 +1,13 @@
 import React from 'react';
 import socialLogin from 'react-social-login';
 
-import { Button } from 'reactstrap';
-
-const SocialButton = ({ children, triggerLogin, ...props }) => (
-  <Button
+const Button = ({ children, triggerLogin, ...props }) => (
+  <button
+    className="btn btn-primary"
     onClick={triggerLogin} {...props}
   >
     {children}
-  </Button>
+  </button>
 );
 
-export default socialLogin(SocialButton);
+export default socialLogin(Button);
