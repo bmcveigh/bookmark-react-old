@@ -9,6 +9,14 @@ import { Link } from 'react-router';
 import { authenticateUser } from '../../../../store/actions/UserActions';
 import SocialButton from '../../components/SocialButton/SocialButton';
 
+const handleSocialLogin = (user) => {
+  console.log(user);
+};
+
+const handleSocialLoginFailure = (err) => {
+  console.error(err);
+};
+
 class UserLoginForm extends Component {
   handleLoginClick = () => {
     // todo: make this legit.
@@ -28,7 +36,9 @@ class UserLoginForm extends Component {
         <div>
           <SocialButton
             provider="google"
-            appId="12345"
+            appId="51928739653-qc1a21ee2ak22jl7ip7gh2t0o21vkej5.apps.googleusercontent.com"
+            onLoginSuccess={() => handleSocialLogin()}
+            onLoginFailure={(err) => handleSocialLoginFailure(err)}
           >
             Login with Google
           </SocialButton>
