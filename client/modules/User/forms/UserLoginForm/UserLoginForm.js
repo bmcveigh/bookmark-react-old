@@ -7,7 +7,6 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Link } from 'react-router';
 
 import { authenticateUser } from '../../../../store/actions/UserActions';
-import GoogleButton from '../../components/SocialButton/GoogleButton/GoogleButton';
 
 class UserLoginForm extends Component {
   handleLoginClick = () => {
@@ -25,9 +24,6 @@ class UserLoginForm extends Component {
 
     return (
       <form>
-        <div>
-          <GoogleButton />
-        </div>
         <label className={styles.label} htmlFor="username">{messages.username}</label>
         <div className={`${styles.input} ${styles['input-fullWidth']}`}>
           <input id="username" placeholder={messages.username} type="text" ref="username"/>

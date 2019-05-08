@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 
-import { Route, IndexRoute, Redirect } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './modules/App/App';
 
@@ -22,6 +22,24 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Homepage/containers/Homepage/Homepage');
 }
 
+const authenticateThroughGoogle = () => {
+  let auth2;
+
+  if (!window.gapi) {
+    const refreshId = setInterval(() => {
+      if (window.gapi) {
+        auth2 = window.gapi.auth2;
+        const googleUser = auth2.getAuthInstance().currentUser.get().getBasicProfile();
+
+        if (googleUser.getEmail) {
+          // clear interval
+          clearInterval(refreshId);
+        }
+      }
+    }, 500);
+  }
+};
+
 // react-router setup with code-splitting
 // More info: http://blog.mxstbr.com/2016/01/react-apps-with-pages/
 export default (
@@ -38,6 +56,16 @@ export default (
           if (!isUserLoggedIn) {
             cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
           }
+        });
+      }}
+    />
+    <Route
+      path="/auth"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
+
+          authenticateThroughGoogle();
         });
       }}
     />

@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import styles from './Header.css';
 import { Link } from 'react-router';
 
+import GoogleButton from '../../../User/components/GoogleButton/GoogleButton';
+
 export function Header(props) {
   const linkData = [
     {
@@ -24,6 +26,7 @@ export function Header(props) {
       <div className={styles['language-switcher']}>
         <ul>
           {navItems}
+          <li><GoogleButton /></li>
         </ul>
       </div>
     </div>
