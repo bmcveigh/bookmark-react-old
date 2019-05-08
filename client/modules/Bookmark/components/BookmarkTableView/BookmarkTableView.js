@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Col, Row, Table } from 'reactstrap';
 
 import classes from './BookmarkTableView.css';
+import BookmarkTableRow from './BookmarkTableRow/BookmarkTableRow';
 
 function BookmarkTableView(props) {
   const userPreferenceStyles = props.userPreferenceStyles || {};
@@ -15,27 +16,28 @@ function BookmarkTableView(props) {
       <Col md={12} className={classes.BookmarkTableView}>
         <Table>
           <thead>
-            <tr style={userPreferenceStyles.cardHeading}>
-              <th>Bookmark</th>
-              <th>Bookmark Category</th>
-            </tr>
+          <tr style={userPreferenceStyles.cardHeading}>
+            <th>Bookmark</th>
+            <th>Bookmark Category</th>
+          </tr>
           </thead>
           <tbody>
           {
             props.space.bookmarkCategories.map(category => {
-              return category.bookmarks.map((bookmark, key) => (
-                <tr key={key}>
-                  <td>
-                    <a
-                      href={bookmark.href}
-                      target="_blank"
-                    >
-                      {bookmark.label}
-                    </a>
-                  </td>
-                  <td>{category.name}</td>
-                </tr>
-              ));
+              return category.bookmarks.map((bookmark, key) => {
+                if (!bookmark.label) {
+                  return null;
+                }
+
+                return (
+                  <BookmarkTableRow
+                    key={key}
+                    href={bookmark.href}
+                    label={bookmark.label}
+                    categoryName={category.name}
+                  />
+                );
+              });
             })
           }
           </tbody>
