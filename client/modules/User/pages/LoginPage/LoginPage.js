@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import UserLoginForm from '../../../../components/forms/UserLoginForm/UserLoginForm';
+import UserLoginForm from '../../forms/UserLoginForm/UserLoginForm';
 
 import classes from './LoginPage.css';
 

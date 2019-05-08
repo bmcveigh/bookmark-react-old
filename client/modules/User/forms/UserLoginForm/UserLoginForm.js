@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { authenticateUser } from '../../../store/actions/UserActions';
+
 import { Link } from 'react-router';
+
+import { authenticateUser } from '../../../../store/actions/UserActions';
+import SocialButton from '../../components/SocialButton/SocialButton';
 
 class UserLoginForm extends Component {
   handleLoginClick = () => {
@@ -22,18 +25,27 @@ class UserLoginForm extends Component {
 
     return (
       <form>
+        <div>
+          <SocialButton
+            provider="google"
+            appId="12345"
+          >
+            Login with Google
+          </SocialButton>
+        </div>
         <label className={styles.label} htmlFor="username">{messages.username}</label>
         <div className={`${styles.input} ${styles['input-fullWidth']}`}>
-          <input id="username" placeholder={messages.username} type="text" ref="username" />
+          <input id="username" placeholder={messages.username} type="text" ref="username"/>
         </div>
         <label className={styles.label} htmlFor="pass">{messages.pass}</label>
         <div className={`${styles.input} ${styles['input-fullWidth']}`}>
-          <input id="pass" placeholder={messages.pass} type="password" ref="pass" />
+          <input id="pass" placeholder={messages.pass} type="password" ref="pass"/>
         </div>
         <div>
           <Link to="/user/register">Create an account</Link>
-          <a className={styles.button} href="#" onClick={this.handleLoginClick}><FormattedMessage id="submit" /></a>
+          <a className={styles.button} href="#" onClick={this.handleLoginClick}><FormattedMessage id="submit"/></a>
         </div>
+
       </form>
     );
   }
