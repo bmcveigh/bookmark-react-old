@@ -42,14 +42,17 @@ export function authenticateUser(req, res) {
   });
 }
 
-/**
- * Save a post
- * @param req
- * @param res
- * @returns void
- */
 export function loadUserById(req, res) {
   User.findOne({ _id: req.params.id }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}
+
+export function loadUserByEmail(req, res) {
+  User.findOne({ email: req.params.email }).exec((err, user) => {
     if (err) {
       res.status(500).send(err);
     }

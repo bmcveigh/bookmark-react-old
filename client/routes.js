@@ -22,24 +22,6 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Homepage/containers/Homepage/Homepage');
 }
 
-const authenticateThroughGoogle = () => {
-  let auth2;
-
-  if (!window.gapi) {
-    const refreshId = setInterval(() => {
-      if (window.gapi) {
-        auth2 = window.gapi.auth2;
-        const googleUser = auth2.getAuthInstance().currentUser.get().getBasicProfile();
-
-        if (googleUser.getEmail) {
-          // clear interval
-          clearInterval(refreshId);
-        }
-      }
-    }, 500);
-  }
-};
-
 // react-router setup with code-splitting
 // More info: http://blog.mxstbr.com/2016/01/react-apps-with-pages/
 export default (
@@ -47,15 +29,7 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
-
-          if (isUserLoggedIn) {
-            cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
-          }
-          // Fix ESLint issue.
-          if (!isUserLoggedIn) {
-            cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
-          }
+          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
         });
       }}
     />
@@ -63,9 +37,7 @@ export default (
       path="/auth"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
-
-          authenticateThroughGoogle();
+          cb(null, require('./modules/User/pages/AuthPage/AuthPage').default);
         });
       }}
     />
