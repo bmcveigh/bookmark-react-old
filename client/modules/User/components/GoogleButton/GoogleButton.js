@@ -7,6 +7,8 @@ import { GoogleLogin } from 'react-google-login';
 import PropTypes from 'prop-types';
 import { getGoogleUser } from '../../../../store/actions/googleUserActions';
 
+import classes from './GoogleButton.css';
+
 class GoogleButton extends Component {
   componentDidMount() {
     this.props.dispatch(getGoogleUser());
@@ -16,7 +18,7 @@ class GoogleButton extends Component {
 
   render() {
     return (
-      <span>
+      <span className={this.props.googleUser.getId ? classes.LoggedIn : ''}>
         {
           typeof window !== 'undefined' ? (
             <GoogleLogin
@@ -42,6 +44,7 @@ function mapStateToProps(state) {
 
 GoogleButton.propTypes = {
   dispatch: PropTypes.func,
+  googleUser: PropTypes.object,
 };
 
 export default connect(mapStateToProps)(GoogleButton);
