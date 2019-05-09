@@ -50,23 +50,6 @@ export default (
       }}
     />
     <Route
-      path="/user/login"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/user/logout"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          localStorage.clear();
-          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
-        });
-      }}
-    />
-    <Route
       path="/user/profile"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
@@ -79,14 +62,6 @@ export default (
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./components/pages/user/UserThemeSettingsPage/UserThemeSettingsPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/user/register"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/User/pages/RegistrationPage/RegistrationPage').default);
         });
       }}
     />
