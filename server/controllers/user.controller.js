@@ -8,7 +8,7 @@ import sanitizeHtml from 'sanitize-html';
  * @returns void
  */
 export function addUser(req, res) {
-  if (!req.body.post.username || !req.body.post.pass || !req.body.post.email) {
+  if (!req.body.post.email) {
     res.status(403).end();
   }
 

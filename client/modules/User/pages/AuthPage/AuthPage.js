@@ -22,7 +22,6 @@ class AuthPage extends Component {
               const registration = {
                 googleUid: googleUserProfile.getId(),
                 email: googleUserProfile.getEmail(),
-
               };
               dispatch(addUserRegistration(registration));
             }
@@ -30,6 +29,8 @@ class AuthPage extends Component {
             if (this.props.user && this.props.user._id) {
               // clear interval
               clearInterval(refreshId);
+
+              window.location = '/';
             }
           }
         }, 500);

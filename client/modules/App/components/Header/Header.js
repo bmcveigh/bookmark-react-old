@@ -5,27 +5,14 @@ import { connect } from 'react-redux';
 
 // Import Style
 import styles from './Header.css';
-import { Link } from 'react-router';
 
 import GoogleButton from '../../../User/components/GoogleButton/GoogleButton';
 
-export function Header(props) {
-  const linkData = [
-    {
-      href: props.user._id ? '/user/logout' : '/user/login',
-      label: props.user._id ? 'Logout' : 'Login',
-    },
-  ];
-
-  const navItems = linkData.map(
-    (link, index) => <li key={index}><Link to={link.href}>{link.label}</Link></li>
-  );
-
+export function Header() {
   return (
     <div className={styles.Header}>
       <div className={styles['language-switcher']}>
         <ul>
-          {navItems}
           <li><GoogleButton /></li>
         </ul>
       </div>
