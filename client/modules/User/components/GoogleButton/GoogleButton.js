@@ -16,19 +16,42 @@ class GoogleButton extends Component {
 
   responseGoogle() {}
 
+  /**
+   * Log the user out of their Google session.
+   *
+   * @param e
+   */
+  logout(e) {
+    e.preventDefault();
+    window.gapi.auth2.getAuthInstance().signOut();
+    window.location.reload();
+  }
+
   render() {
     return (
-      <span className={this.props.googleUser.getId ? classes.LoggedIn : ''}>
+      <span>
+        <span className={this.props.googleUser.getId ? classes.LoggedIn : ''}>
+          {
+            typeof window !== 'undefined' ? (
+              <GoogleLogin
+                clientId="51928739653-qc1a21ee2ak22jl7ip7gh2t0o21vkej5.apps.googleusercontent.com"
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+                redirectUri={`${window.location.origin}/auth`}
+                scope="profile email"
+                uxMode="redirect"
+              />
+            ) : null
+          }
+        </span>
         {
-          typeof window !== 'undefined' ? (
-            <GoogleLogin
-              clientId="51928739653-qc1a21ee2ak22jl7ip7gh2t0o21vkej5.apps.googleusercontent.com"
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-              redirectUri={`${window.location.origin}/auth`}
-              scope="profile email"
-              uxMode="redirect"
-            />
+          this.props.googleUser.getId ? (
+            <a
+              href="#"
+              onClick={(e) => this.logout(e)}
+            >
+              Logout
+            </a>
           ) : null
         }
       </span>
