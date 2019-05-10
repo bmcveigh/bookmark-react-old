@@ -82,23 +82,25 @@ class BookmarkCategoriesContainer extends Component {
           <Tabs data={bkSpaceTabsData} />
           <Row className="float-right">
             <Col md={12}>
-              {
-                index > 0 ? (
-                  <div>
-                    <MakeDefaultSpaceButton spaceIndex={index} />
-                    <AppModal
-                      labelId="deleteThisSpace"
-                      confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
-                    >
-                      <span>Are you sure you would like to delete this space?</span>
-                    </AppModal>
-                    <BookmarkEditSpaceModalForm
-                      index={index}
-                      space={bookmarkSpaces[index]}
-                    />
-                  </div>
-                ) : null
-              }
+              <div>
+                {
+                  index > 0 ? (
+                    <span>
+                      <MakeDefaultSpaceButton spaceIndex={index} />
+                      <AppModal
+                        labelId="deleteThisSpace"
+                        confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+                      >
+                        <span>Are you sure you would like to delete this space?</span>
+                      </AppModal>
+                    </span>
+                  ) : null
+                }
+                <BookmarkEditSpaceModalForm
+                  index={index}
+                  space={bookmarkSpaces[index]}
+                />
+              </div>
             </Col>
           </Row>
           {this.state.viewMode === CATEGORY_VIEW ?
