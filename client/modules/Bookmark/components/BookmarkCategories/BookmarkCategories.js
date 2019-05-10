@@ -5,6 +5,10 @@ import { connect } from 'react-redux';
 import BookmarkCategory from './BookmarkCategory/BookmarkCategory';
 
 function BookmarkCategories(props) {
+  if (!props.space.bookmarkCategories) {
+    return <div>No categories exist.</div>;
+  }
+
   const output = props.space.bookmarkCategories.map((category, index) => (
     <BookmarkCategory
       category={category}

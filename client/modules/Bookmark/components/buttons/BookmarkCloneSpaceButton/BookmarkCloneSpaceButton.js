@@ -10,10 +10,15 @@ import Button from '../../../../../components/elements/Button/Button';
 class BookmarkCloneSpaceButton extends Component {
   handleClick() {
     const updatedUser = this.props.user;
-    const spaceToClone = this.props.spaceToClone;
+
+    // Create a new object by value and not by reference.
+    const spaceToClone = {};
+    for (const key of Object.keys(this.props.spaceToClone)) {
+      spaceToClone[key] = this.props.spaceToClone[key];
+    }
+
     spaceToClone.name = `Clone of ${spaceToClone.name}`;
     updatedUser.bookmarkSpaces[0].push(spaceToClone);
-    console.log(spaceToClone);
 
     this.props.dispatch(updateUserById(updatedUser._id, updatedUser));
   }
