@@ -51,7 +51,10 @@ class BookmarkEditSpaceModalForm extends Component {
 
 BookmarkEditSpaceModalForm.propTypes = {
   dispatch: PropTypes.func,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   space: PropTypes.object.isRequired,
   user: PropTypes.object,
 };
