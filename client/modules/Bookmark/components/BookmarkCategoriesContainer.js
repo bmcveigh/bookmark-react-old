@@ -16,6 +16,8 @@ import classes from './BookmarkCategoriesContainer.css';
 import BookmarkAddCategoryModalForm from './forms/BookmarkAddCategoryModalForm/BookmarkAddCategoryModalForm';
 import BookmarkTableView from './BookmarkTableView/BookmarkTableView';
 
+import BookmarkEditSpaceModalForm from './forms/BookmarkEditSpaceModalForm/BookmarkEditSpaceModalForm';
+
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
 
@@ -90,6 +92,10 @@ class BookmarkCategoriesContainer extends Component {
                     >
                       <span>Are you sure you would like to delete this space?</span>
                     </AppModal>
+                    <BookmarkEditSpaceModalForm
+                      index={index}
+                      space={bookmarkSpaces[index]}
+                    />
                   </div>
                 ) : null
               }

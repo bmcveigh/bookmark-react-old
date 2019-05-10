@@ -7,7 +7,6 @@ import Helmet from 'react-helmet';
 import Header from './components/Header/Header';
 
 // Import Actions
-import { toggleAddPost } from '../../store/actions/AppActions';
 import { switchLanguage } from '../../store/actions/IntlActions';
 import Footer from './components/Footer/Footer';
 
@@ -26,10 +25,6 @@ export class App extends Component {
   componentDidMount() {
     this.setState({isMounted: true}); // eslint-disable-line
   }
-
-  toggleAddPostSection = () => {
-    this.props.dispatch(toggleAddPost());
-  };
 
   render() {
     return (
@@ -54,7 +49,6 @@ export class App extends Component {
           <Header
             switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
             intl={this.props.intl}
-            toggleAddPost={this.toggleAddPostSection}
           />
           <div>
             {this.props.children}

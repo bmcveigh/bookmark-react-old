@@ -13,7 +13,9 @@ class BookmarkListPage extends Component {
   }
 
   componentWillUpdate(nextProps) {
-    this.props.dispatch(setParams(nextProps.params));
+    if (nextProps.params) {
+      this.props.dispatch(setParams(nextProps.params));
+    }
   }
 
   render() {

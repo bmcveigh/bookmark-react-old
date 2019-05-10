@@ -8,7 +8,7 @@ import sanitizeHtml from 'sanitize-html';
  * @returns void
  */
 export function addUser(req, res) {
-  if (!req.body.post.username || !req.body.post.pass || !req.body.post.email) {
+  if (!req.body.post.email) {
     res.status(403).end();
   }
 
@@ -42,14 +42,17 @@ export function authenticateUser(req, res) {
   });
 }
 
-/**
- * Save a post
- * @param req
- * @param res
- * @returns void
- */
 export function loadUserById(req, res) {
   User.findOne({ _id: req.params.id }).exec((err, user) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ user });
+  });
+}
+
+export function loadUserByEmail(req, res) {
+  User.findOne({ email: req.params.email }).exec((err, user) => {
     if (err) {
       res.status(500).send(err);
     }

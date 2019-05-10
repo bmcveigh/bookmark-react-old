@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 
-import { Route, IndexRoute, Redirect } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from './modules/App/App';
 
@@ -29,15 +29,15 @@ export default (
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
-
-          if (isUserLoggedIn) {
-            cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
-          }
-          // Fix ESLint issue.
-          if (!isUserLoggedIn) {
-            cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
-          }
+          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
+        });
+      }}
+    />
+    <Route
+      path="/auth"
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/User/pages/AuthPage/AuthPage').default);
         });
       }}
     />
@@ -45,32 +45,7 @@ export default (
       path="/space/:id"
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
-          const isUserLoggedIn = typeof localStorage !== 'undefined' && localStorage.getItem('token') || false;
-
-          if (isUserLoggedIn) {
-            cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
-          }
-          // Fix ESLint issue.
-          if (!isUserLoggedIn) {
-            cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
-          }
-        });
-      }}
-    />
-    <Route
-      path="/user/login"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/User/pages/LoginPage/LoginPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/user/logout"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          localStorage.clear();
-          cb(null, require('./modules/Homepage/containers/Homepage/Homepage').default);
+          cb(null, require('./modules/Bookmark/pages/BookmarkListPage/BookmarkListPage').default);
         });
       }}
     />
@@ -87,14 +62,6 @@ export default (
       getComponent={(nextState, cb) => {
         require.ensure([], require => {
           cb(null, require('./components/pages/user/UserThemeSettingsPage/UserThemeSettingsPage').default);
-        });
-      }}
-    />
-    <Route
-      path="/user/register"
-      getComponent={(nextState, cb) => {
-        require.ensure([], require => {
-          cb(null, require('./modules/User/pages/RegistrationPage/RegistrationPage').default);
         });
       }}
     />

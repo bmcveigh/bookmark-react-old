@@ -2,9 +2,9 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  googleUid: { type: 'String', required: true },
   username: { type: 'String', required: true },
   email: { type: 'String', required: true },
-  pass: { type: 'String', required: true },
   created: { type: 'Number', required: true },
   lastLogin: { type: 'Number', required: true },
   isAdmin: { type: 'Number', required: true },
