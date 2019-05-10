@@ -9,9 +9,7 @@ import { setParams } from '../../../../store/actions/routeParamsActions';
 class BookmarkListPage extends Component {
   constructor(props) {
     super(props);
-    if (props.params) {
-      props.dispatch(setParams(props.params));
-    }
+    props.dispatch(setParams(props.params));
   }
 
   componentWillUpdate(nextProps) {
