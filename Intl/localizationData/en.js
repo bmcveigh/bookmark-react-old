@@ -23,6 +23,7 @@ export default {
     postTitle: 'Post Title',
     postContent: 'Post Content',
     register: 'Register',
+    spaceSettings: 'Space Settings',
     submit: 'Submit',
     themeSettings: 'Theme Settings',
     update: 'Update',
