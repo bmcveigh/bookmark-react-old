@@ -17,6 +17,7 @@ import BookmarkAddCategoryModalForm from './forms/BookmarkAddCategoryModalForm/B
 import BookmarkTableView from './BookmarkTableView/BookmarkTableView';
 
 import BookmarkEditSpaceModalForm from './forms/BookmarkEditSpaceModalForm/BookmarkEditSpaceModalForm';
+import BookmarkCloneSpaceButton from './buttons/BookmarkCloneSpaceButton/BookmarkCloneSpaceButton';
 
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
@@ -100,6 +101,7 @@ class BookmarkCategoriesContainer extends Component {
                   index={index}
                   space={bookmarkSpaces[index]}
                 />
+                <BookmarkCloneSpaceButton spaceToClone={bookmarkSpaces[index]} />
               </div>
             </Col>
           </Row>
