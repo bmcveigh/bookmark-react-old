@@ -74,6 +74,7 @@ class BookmarkCategoriesContainer extends Component {
             <a
               href="#"
               onClick={(e) => this.handleViewModeClick(e)}
+              style={this.props.userPreferenceStyles.body}
             >
               Switch to {this.state.viewMode === CATEGORY_VIEW ? 'table' : 'category'} view
             </a>
