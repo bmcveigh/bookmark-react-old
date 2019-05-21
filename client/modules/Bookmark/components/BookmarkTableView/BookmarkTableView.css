@@ -1,4 +1,7 @@
 .BookmarkTableView {
+  margin-top: 40px;
+}
+.BookmarkTableView table {
   background-color: #ffffff;
   color: #333;
 }

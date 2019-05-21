@@ -153,6 +153,11 @@ const themes = [
     colors: '#573D82,#453068,#3FBA91,#FFFFFF,#453068,#FFFFFF,#3FBA91,#FF3E88',
   },
   {
+    machineName: 'snazzy',
+    name: 'Snazzy',
+    colors: '#282a36,#2D2D2D,#ff5c57,#ffffff,#515151,#dee1db,#5af78e,#57c7ff',
+  },
+  {
     machineName: 'starbucks',
     name: 'Starbucks',
     colors: '#0A6242,#0A6242,#3D3935,#BC7E3B,#BC7E3B,#F7F7F7,#3D3935,#3D3935',

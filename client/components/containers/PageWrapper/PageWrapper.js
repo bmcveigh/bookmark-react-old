@@ -17,6 +17,8 @@ import routes from '../../../routes';
 
 import { fetchUserFromSession } from '../../../store/actions/UserActions';
 
+import classes from './PageWrapper.css';
+
 class PageWrapper extends React.Component {
 
   constructor(props) {
@@ -27,9 +29,11 @@ class PageWrapper extends React.Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
-        {routes}
-      </Router>
+      <div className={classes.PageWrapper}>
+        <Router history={browserHistory}>
+          {routes}
+        </Router>
+      </div>
     );
   }
 }

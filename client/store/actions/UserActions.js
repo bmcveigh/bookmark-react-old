@@ -9,9 +9,9 @@ export const UPDATE_USER = 'UPDATE_USER';
 export function addUserRegistration(user) {
   return callApi('user-registration', 'post', {
     post: {
-      username: user.username,
+      googleUid: user.googleUid,
       email: user.email,
-      pass: user.pass,
+      pass: '',
       created: 0,
       lastLogin: 0,
       isAdmin: 0,
@@ -45,12 +45,40 @@ export const authenticateUser = (username, pass) => dispatch => {
 };
 
 export const fetchUserFromSession = () => dispatch => {
-  const id = localStorage && localStorage.getItem('token') ? localStorage.getItem('token') : '';
+  let email = '';
 
-  if (!id.length) {
+  const intervalId = setInterval(() => {
+    if (window.gapi) {
+      const auth2 = window.gapi.auth2;
+
+      if (auth2 && auth2.getAuthInstance) {
+        const googleUserProfile = auth2.getAuthInstance()
+          .currentUser
+          .get()
+          .getBasicProfile();
+
+        if (googleUserProfile && googleUserProfile.getEmail) {
+          email = googleUserProfile.getEmail();
+
+          clearInterval(intervalId);
+        }
+
+        if (!email) {
+          return false;
+        }
+
+        return callApi(`user-email/${email}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
+      }
+    }
+
     return false;
-  }
-  return callApi(`user/${id}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
+  }, 500);
+
+  return false;
+};
+
+export const fetchUserFromEmail = (email) => dispatch => {
+  return callApi(`user-email/${email}`, 'get').then(res => dispatch({ type: GET_USER, user: res.user }));
 };
 
 export const updateUserById = (id, body) => dispatch => {

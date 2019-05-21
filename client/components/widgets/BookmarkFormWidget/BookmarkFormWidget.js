@@ -105,6 +105,7 @@ class BookmarkFormWidget extends Component {
                 type="text"
                 placeholder="Label"
                 onKeyDown={(e) => this.handleKeyDown(e, bookmark, this.props)}
+                onMouseLeave={(e) => this.handleMouseLeave(e, bookmark, this.props)}
                 defaultValue={bookmark.label}
                 ref={`label--${bookmark.bookmarkId}`}
               />

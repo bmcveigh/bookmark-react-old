@@ -16,6 +16,9 @@ import classes from './BookmarkCategoriesContainer.css';
 import BookmarkAddCategoryModalForm from './forms/BookmarkAddCategoryModalForm/BookmarkAddCategoryModalForm';
 import BookmarkTableView from './BookmarkTableView/BookmarkTableView';
 
+import BookmarkEditSpaceModalForm from './forms/BookmarkEditSpaceModalForm/BookmarkEditSpaceModalForm';
+import BookmarkCloneSpaceButton from './buttons/BookmarkCloneSpaceButton/BookmarkCloneSpaceButton';
+
 const confirmHandler = (props, bookmarkSpaces, index) => {
   const user = props.user;
 
@@ -71,6 +74,7 @@ class BookmarkCategoriesContainer extends Component {
             <a
               href="#"
               onClick={(e) => this.handleViewModeClick(e)}
+              style={this.props.userPreferenceStyles.body}
             >
               Switch to {this.state.viewMode === CATEGORY_VIEW ? 'table' : 'category'} view
             </a>
@@ -80,19 +84,26 @@ class BookmarkCategoriesContainer extends Component {
           <Tabs data={bkSpaceTabsData} />
           <Row className="float-right">
             <Col md={12}>
-              {
-                index > 0 ? (
-                  <div>
-                    <MakeDefaultSpaceButton spaceIndex={index} />
-                    <AppModal
-                      labelId="deleteThisSpace"
-                      confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
-                    >
-                      <span>Are you sure you would like to delete this space?</span>
-                    </AppModal>
-                  </div>
-                ) : null
-              }
+              <div>
+                {
+                  index > 0 ? (
+                    <span>
+                      <MakeDefaultSpaceButton spaceIndex={index} />
+                      <AppModal
+                        labelId="deleteThisSpace"
+                        confirmHandler={() => confirmHandler(this.props, bookmarkSpaces, index)}
+                      >
+                        <span>Are you sure you would like to delete this space?</span>
+                      </AppModal>
+                    </span>
+                  ) : null
+                }
+                <BookmarkEditSpaceModalForm
+                  index={index}
+                  space={bookmarkSpaces[index]}
+                />
+                <BookmarkCloneSpaceButton spaceToClone={bookmarkSpaces[index]} />
+              </div>
             </Col>
           </Row>
           {this.state.viewMode === CATEGORY_VIEW ?

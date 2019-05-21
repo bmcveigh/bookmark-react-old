@@ -1,13 +1,20 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import { Col, Row } from 'reactstrap';
 
 import classes from './Homepage.css';
 import Pricing from '../../components/Pricing/Pricing';
 import Heading from '../../components/Heading/Heading';
 import Benefits from '../../components/Benefits/Benefits';
+import BookmarkListPage from '../../../Bookmark/pages/BookmarkListPage/BookmarkListPage';
 
-function Homepage() {
+function Homepage(props) {
+  if (props.user && props.user._id) {
+    return <BookmarkListPage dispatch={props.dispatch} user={props.user} />;
+  }
+
   return (
     <div>
       <Row className={classes.HomepageSection}>
@@ -29,4 +36,10 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  };
+}
+
+export default connect(mapStateToProps)(Homepage);

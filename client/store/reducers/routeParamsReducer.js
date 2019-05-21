@@ -5,7 +5,7 @@ const initialState = {};
 const routeParamsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_ROUTE_PARAMS: {
-      return action.data;
+      return action.data || { id: 0 };
     }
 
     default: {

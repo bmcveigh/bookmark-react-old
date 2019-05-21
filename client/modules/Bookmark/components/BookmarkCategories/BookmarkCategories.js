@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookmarkCategory from './BookmarkCategory/BookmarkCategory';
 
+import classes from './BookmarkCategories.css';
+
 function BookmarkCategories(props) {
+  if (!props.space.bookmarkCategories) {
+    return <div>No categories exist.</div>;
+  }
+
   const output = props.space.bookmarkCategories.map((category, index) => (
     <BookmarkCategory
       category={category}
@@ -13,10 +19,8 @@ function BookmarkCategories(props) {
   ));
 
   return (
-    <div>
-      <div className={`${props.styles.row}`}>
-        {output}
-      </div>
+    <div className={`${props.styles.row} ${classes.BookmarkCategories}`}>
+      {output}
     </div>
   );
 }
