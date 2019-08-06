@@ -27,7 +27,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'client',
       'node_modules',
@@ -77,6 +77,11 @@ module.exports = {
         test: /\.jsx*$/,
         exclude: [/node_modules/, /.+\.config.js/],
         use: 'babel-loader',
+      },
+      {
+        test: /\.ts|\.tsx$/,
+        use: 'awesome-typescript-loader',
+        include: __dirname
       },
       {
         test: /\.(jpe?g|gif|png|svg)$/i,
